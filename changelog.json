@@ -1,12 +1,13 @@
 {
   "notification_id": "2026-03-05",
   "changes": [
-    "— v3.6.5→v3.73 + push.py v0.3 + protocol v11.13 (2026-03-05) —",
+    "— v3.6.5→v3.74 + push.py v0.3 + protocol v11.13 (2026-03-05) —",
     "sync.py v3.6.5: Real activity/event IDs (opaque keys, not PII). coach_notes + chat_notes arrays for AI annotation round-trip",
     "sync.py v3.7: Phase detection v2 — dual-stream (retrospective history + prospective calendar). 8 states, confidence scoring, reason codes, hysteresis. weekly_180d enriched with per-week phase, acwr, monotony",
     "sync.py v3.71: HRRc (heart rate recovery) — per-activity + 7d/28d aggregate trend in capability namespace. Display only",
     "sync.py v3.72: Readiness Decision — deterministic go/modify/skip via P0-P3 priority ladder. 7 signals (HRV/RHR/Sleep/TSB/ACWR/Feel/RI) with phase-adjusted thresholds. Replaces phantom AAS",
     "sync.py v3.73: Phase detection fix — prospective windows aligned to training week (configurable via WEEK_START secret/config/env, default Monday). Fixes mid-week deload misclassification",
+    "sync.py v3.74: Null-safe handling for planned event fields (moving_time, description). auto-sync.yml git config fix for README update step",
     "push.py v0.3: set-threshold (sport-specific FTP/LTHR updates with preview), annotate (notes on activities/events via description or chat). push-workout.yml for GitHub Actions dispatch",
     "SECTION_11.md v11.11→v11.13: Phase detection criteria, HRRc, Readiness Decision section. AAS replaced with deterministic priority ladder",
     "Report templates: Phase narrative (weekly/block), HRRc (all templates), readiness_decision (pre-workout), EF added. XhYm formatting throughout",
