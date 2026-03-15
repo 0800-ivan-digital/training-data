@@ -30,7 +30,7 @@
       "hash": "ca70a5a728b04de59dbe85cca058210dc732dd1828f9c61d73c4fea63c7c946e"
     },
     "examples/README.md": {
-      "hash": "4a4334df657ec5e0954696a6b1563ebf89ba9514af5ffd38aaa9a5dd94cbab6c"
+      "hash": "6ac10932c08f7853cc0354ad1bc653253411092260101f74d852681430af2be3"
     },
     "examples/agentic/README.md": {
       "hash": "c5aed7fc8ac04d54c006b2f0b49e26ede7fda52e38ba134b1919fc945352dd42"
@@ -53,14 +53,20 @@
     "examples/json-auto-sync/auto-sync.yml": {
       "hash": "c6a484c0b79a7896db029a7c940c5367d9158e65c8500a24aa12dbed25aacae0"
     },
-    "examples/json-auto-sync/ftp_history.json": {
-      "hash": "074a8c441e843935e93ce515f10f787b3ac27fcce28ecc3aa404ead919db44b2"
+    "examples/json-examples/README.md": {
+      "hash": "f86d5f75075ad9464bf44eb7bbfc6a9c4e62eba4abbe537bb7941fa6ccc98308"
     },
-    "examples/json-auto-sync/history.json": {
-      "hash": "242bb6a7595a1d4dd712d5415733f61f4a76e164a1ed1ead452b7e3f793bf834"
+    "examples/json-examples/ftp_history.json": {
+      "hash": "b2f2d569327c7b030c02969efdadd224bcc6d3df4c63857c3f4e614a75cfcb75"
     },
-    "examples/json-auto-sync/latest.json": {
-      "hash": "4bb8409294e1a34b2f1edc30e3dfbd6adda45970f2977f6e9d76ec75f9ef2ba8"
+    "examples/json-examples/history.json": {
+      "hash": "d9e65b0b268057d903a7cfc9960be42605874d127a7271db133e3aa8fa4e9222"
+    },
+    "examples/json-examples/intervals.json": {
+      "hash": "4a81690d04656e7a51e9f3c73f0f3e8f8f16efb126a1b6cc69768d72f7e5ed24"
+    },
+    "examples/json-examples/latest.json": {
+      "hash": "ebd2a29d402a8de7af945744bb62f86c12706ac84a0382364674292bd0dc8d48"
     },
     "examples/json-local-sync/SETUP.md": {
       "hash": "f98dc017f954b610d702ab9d3ad5186490b2a536514389caf1fe3185a7f8e953"

@@ -1,0 +1,383 @@
+{
+  "generated_at": "2026-01-20T12:00:00.000000",
+  "version": "3.85",
+  "scan_hours": 168,
+  "retention_days": 14,
+  "activities": [
+    {
+      "activity_id": "activity_2",
+      "date": "2026-01-19",
+      "type": "VirtualRide",
+      "name": "Sweet Spot Intervals",
+      "interval_summary": {
+        "work_count": 3,
+        "rest_count": 3,
+        "other_count": 2
+      },
+      "intervals": [
+        {
+          "type": "WARMUP",
+          "duration_secs": 600,
+          "avg_power": 155,
+          "max_power": 165,
+          "avg_hr": 115,
+          "max_hr": 128,
+          "avg_cadence": 85,
+          "zone": "Z2",
+          "training_load": 5.2,
+          "decoupling": null
+        },
+        {
+          "type": "WORK",
+          "duration_secs": 720,
+          "avg_power": 248,
+          "max_power": 260,
+          "avg_hr": 158,
+          "max_hr": 168,
+          "avg_cadence": 92,
+          "zone": "Z4",
+          "training_load": 18.5,
+          "decoupling": 2.1
+        },
+        {
+          "type": "REST",
+          "duration_secs": 300,
+          "avg_power": 120,
+          "max_power": 140,
+          "avg_hr": 128,
+          "max_hr": 158,
+          "avg_cadence": 80,
+          "zone": "Z1",
+          "training_load": 2.0,
+          "decoupling": null
+        },
+        {
+          "type": "WORK",
+          "duration_secs": 720,
+          "avg_power": 245,
+          "max_power": 258,
+          "avg_hr": 160,
+          "max_hr": 170,
+          "avg_cadence": 91,
+          "zone": "Z4",
+          "training_load": 18.2,
+          "decoupling": 2.5
+        },
+        {
+          "type": "REST",
+          "duration_secs": 300,
+          "avg_power": 118,
+          "max_power": 138,
+          "avg_hr": 130,
+          "max_hr": 160,
+          "avg_cadence": 78,
+          "zone": "Z1",
+          "training_load": 1.8,
+          "decoupling": null
+        },
+        {
+          "type": "WORK",
+          "duration_secs": 720,
+          "avg_power": 242,
+          "max_power": 255,
+          "avg_hr": 162,
+          "max_hr": 172,
+          "avg_cadence": 90,
+          "zone": "Z4",
+          "training_load": 17.8,
+          "decoupling": 3.0
+        },
+        {
+          "type": "REST",
+          "duration_secs": 300,
+          "avg_power": 115,
+          "max_power": 135,
+          "avg_hr": 132,
+          "max_hr": 162,
+          "avg_cadence": 78,
+          "zone": "Z1",
+          "training_load": 1.5,
+          "decoupling": null
+        },
+        {
+          "type": "COOLDOWN",
+          "duration_secs": 600,
+          "avg_power": 135,
+          "max_power": 150,
+          "avg_hr": 112,
+          "max_hr": 132,
+          "avg_cadence": 82,
+          "zone": "Z1",
+          "training_load": 3.5,
+          "decoupling": null
+        }
+      ]
+    },
+    {
+      "activity_id": "activity_5",
+      "date": "2026-01-17",
+      "type": "VirtualRide",
+      "name": "Threshold Efforts",
+      "interval_summary": {
+        "work_count": 4,
+        "rest_count": 4,
+        "other_count": 2
+      },
+      "intervals": [
+        {
+          "type": "WARMUP",
+          "duration_secs": 600,
+          "avg_power": 160,
+          "max_power": 175,
+          "avg_hr": 118,
+          "max_hr": 132,
+          "avg_cadence": 86,
+          "zone": "Z2",
+          "training_load": 5.5,
+          "decoupling": null
+        },
+        {
+          "type": "WORK",
+          "duration_secs": 480,
+          "avg_power": 270,
+          "max_power": 285,
+          "avg_hr": 165,
+          "max_hr": 175,
+          "avg_cadence": 95,
+          "zone": "Z5",
+          "training_load": 15.2,
+          "decoupling": 3.5
+        },
+        {
+          "type": "REST",
+          "duration_secs": 240,
+          "avg_power": 125,
+          "max_power": 145,
+          "avg_hr": 135,
+          "max_hr": 165,
+          "avg_cadence": 80,
+          "zone": "Z1",
+          "training_load": 1.5,
+          "decoupling": null
+        },
+        {
+          "type": "WORK",
+          "duration_secs": 480,
+          "avg_power": 268,
+          "max_power": 282,
+          "avg_hr": 168,
+          "max_hr": 176,
+          "avg_cadence": 94,
+          "zone": "Z5",
+          "training_load": 14.8,
+          "decoupling": 3.8
+        },
+        {
+          "type": "REST",
+          "duration_secs": 240,
+          "avg_power": 122,
+          "max_power": 142,
+          "avg_hr": 138,
+          "max_hr": 168,
+          "avg_cadence": 79,
+          "zone": "Z1",
+          "training_load": 1.3,
+          "decoupling": null
+        },
+        {
+          "type": "WORK",
+          "duration_secs": 480,
+          "avg_power": 265,
+          "max_power": 280,
+          "avg_hr": 170,
+          "max_hr": 178,
+          "avg_cadence": 93,
+          "zone": "Z5",
+          "training_load": 14.5,
+          "decoupling": 4.2
+        },
+        {
+          "type": "REST",
+          "duration_secs": 240,
+          "avg_power": 120,
+          "max_power": 140,
+          "avg_hr": 140,
+          "max_hr": 170,
+          "avg_cadence": 78,
+          "zone": "Z1",
+          "training_load": 1.2,
+          "decoupling": null
+        },
+        {
+          "type": "WORK",
+          "duration_secs": 480,
+          "avg_power": 262,
+          "max_power": 278,
+          "avg_hr": 172,
+          "max_hr": 178,
+          "avg_cadence": 92,
+          "zone": "Z5",
+          "training_load": 14.0,
+          "decoupling": 4.8
+        },
+        {
+          "type": "REST",
+          "duration_secs": 240,
+          "avg_power": 118,
+          "max_power": 138,
+          "avg_hr": 142,
+          "max_hr": 172,
+          "avg_cadence": 77,
+          "zone": "Z1",
+          "training_load": 1.0,
+          "decoupling": null
+        },
+        {
+          "type": "COOLDOWN",
+          "duration_secs": 480,
+          "avg_power": 140,
+          "max_power": 155,
+          "avg_hr": 108,
+          "max_hr": 142,
+          "avg_cadence": 82,
+          "zone": "Z1",
+          "training_load": 3.0,
+          "decoupling": null
+        }
+      ]
+    },
+    {
+      "activity_id": "activity_8",
+      "date": "2026-01-14",
+      "type": "Row",
+      "name": "Rowing - Intervals",
+      "interval_summary": {
+        "work_count": 4,
+        "rest_count": 4,
+        "other_count": 2
+      },
+      "intervals": [
+        {
+          "type": "WARMUP",
+          "duration_secs": 180,
+          "avg_power": null,
+          "max_power": null,
+          "avg_hr": 110,
+          "max_hr": 125,
+          "avg_cadence": null,
+          "zone": "Z1",
+          "training_load": 1.2,
+          "decoupling": null
+        },
+        {
+          "type": "WORK",
+          "duration_secs": 120,
+          "avg_power": null,
+          "max_power": null,
+          "avg_hr": 152,
+          "max_hr": 158,
+          "avg_cadence": null,
+          "zone": "Z4",
+          "training_load": 2.5,
+          "decoupling": null
+        },
+        {
+          "type": "REST",
+          "duration_secs": 60,
+          "avg_power": null,
+          "max_power": null,
+          "avg_hr": 130,
+          "max_hr": 152,
+          "avg_cadence": null,
+          "zone": "Z2",
+          "training_load": 0.5,
+          "decoupling": null
+        },
+        {
+          "type": "WORK",
+          "duration_secs": 120,
+          "avg_power": null,
+          "max_power": null,
+          "avg_hr": 155,
+          "max_hr": 158,
+          "avg_cadence": null,
+          "zone": "Z4",
+          "training_load": 2.6,
+          "decoupling": null
+        },
+        {
+          "type": "REST",
+          "duration_secs": 60,
+          "avg_power": null,
+          "max_power": null,
+          "avg_hr": 132,
+          "max_hr": 155,
+          "avg_cadence": null,
+          "zone": "Z2",
+          "training_load": 0.5,
+          "decoupling": null
+        },
+        {
+          "type": "WORK",
+          "duration_secs": 120,
+          "avg_power": null,
+          "max_power": null,
+          "avg_hr": 154,
+          "max_hr": 156,
+          "avg_cadence": null,
+          "zone": "Z4",
+          "training_load": 2.4,
+          "decoupling": null
+        },
+        {
+          "type": "REST",
+          "duration_secs": 60,
+          "avg_power": null,
+          "max_power": null,
+          "avg_hr": 135,
+          "max_hr": 154,
+          "avg_cadence": null,
+          "zone": "Z2",
+          "training_load": 0.5,
+          "decoupling": null
+        },
+        {
+          "type": "WORK",
+          "duration_secs": 120,
+          "avg_power": null,
+          "max_power": null,
+          "avg_hr": 152,
+          "max_hr": 155,
+          "avg_cadence": null,
+          "zone": "Z4",
+          "training_load": 2.3,
+          "decoupling": null
+        },
+        {
+          "type": "REST",
+          "duration_secs": 60,
+          "avg_power": null,
+          "max_power": null,
+          "avg_hr": 138,
+          "max_hr": 152,
+          "avg_cadence": null,
+          "zone": "Z2",
+          "training_load": 0.5,
+          "decoupling": null
+        },
+        {
+          "type": "COOLDOWN",
+          "duration_secs": 180,
+          "avg_power": null,
+          "max_power": null,
+          "avg_hr": 112,
+          "max_hr": 138,
+          "avg_cadence": null,
+          "zone": "Z1",
+          "training_load": 1.0,
+          "decoupling": null
+        }
+      ]
+    }
+  ]
+}

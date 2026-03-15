@@ -13,6 +13,7 @@ Working implementations for Section 11 integrations.
 | [reports](reports/) | Pre/post workout report templates | ✅ Ready |
 | [agentic](agentic/) | Write planned workouts to Intervals.icu calendar (code execution required) | ✅ Ready |
 | [workout-library](workout-library/) | Structured workout templates for AI prescription | ✅ Ready |
+| [json-examples](json-examples/) | Example JSON output (v3.85 schema reference) | ✅ Ready |
 
 ---
 
@@ -50,6 +51,8 @@ Both methods use the same `sync.py` script and produce these files:
 | `ftp_history.json` | FTP tracking for Benchmark Index | Yes |
 | `archive/` | Timestamped snapshots (auto-sync only) | Yes |
 
+See [json-examples/](json-examples/) for example output showing the full v3.85 schema.
+
 ```bash
 # Manual local export
 python sync.py --output latest.json
@@ -71,20 +74,24 @@ All methods produce the same JSON structure compatible with Section 11 protocol:
 
 ```
 latest.json
-├── READ_THIS_FIRST      → AI instructions + quick stats
+├── READ_THIS_FIRST      → AI instructions + quick stats + wellness_field_scales legend
 ├── metadata             → Timestamps, version
 ├── alerts               → Graduated severity flags (info → alarm)
+├── readiness_decision   → Pre-computed go/modify/skip with signal breakdown
 ├── summary              → Activity breakdown by type
 ├── current_status
 │   ├── fitness          → CTL, ATL, TSB, ramp_rate
-│   ├── thresholds       → FTP, eFTP, LTHR, W', P-max, VO2max
-│   └── current_metrics  → Weight, RHR, HRV, sleep_quality, sleep_hours
+│   ├── thresholds       → FTP, eFTP, LTHR, W', P-max, VO2max (per-sport)
+│   └── current_metrics  → Weight, RHR, HRV, sleep, subjective state, vitals, body comp
 ├── derived_metrics      → Section 11 calculated values (see below)
-│   ├── capability       → Durability trend + TID drift (7d vs 28d)
-├── recent_activities    → Detailed activity data with zones
-├── wellness_data        → Daily HRV, RHR, sleep, fatigue
-├── planned_workouts     → Upcoming scheduled sessions
-└── weekly_summary       → Aggregated totals
+│   ├── capability       → Durability, EF, HRRc trends + TID drift (7d vs 28d)
+│   └── phase_detection  → Dual-stream phase detection with confidence
+├── recent_activities    → Detailed activity data with zones, EF, HRRc, has_intervals
+├── wellness_data        → Daily HRV, RHR, sleep, subjective state, vitals, nutrition, lifestyle
+├── planned_workouts     → Upcoming scheduled sessions with workout_summary
+├── workout_summary_stats → Planned-vs-actual matching statistics
+├── weekly_summary       → Aggregated totals
+└── race_calendar        → Upcoming races, taper/race-week alerts
 
 history.json
 ├── data_range           → Earliest/latest dates, total months
