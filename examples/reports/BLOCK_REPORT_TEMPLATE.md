@@ -49,6 +49,16 @@ Key Performance Markers:
   HR curve rotation: [+/-X.X] ([intensity-biased/endurance-biased/balanced])
   HR context: [cross-ref with HRV/RHR trend] — omit both lines if hr_curve_delta null
 
+Sustainability Ceilings (omit section if sustainability_profile null):
+  Coverage: [X/Y] anchors observed ([XX]%) — [sport]
+  [duration]: [XXX]W ([X.XX] W/kg) — [source] | Coggan [XXX]W | CP model [XXX]W | divergence [+/-X.X]%
+  [duration]: [XXX]W ([X.XX] W/kg) — [source] | Coggan [XXX]W | CP model [XXX]W | divergence [+/-X.X]%
+  [repeat per observed anchor — skip anchors with null actual_watts]
+  FTP used: [XXX]W | W′: [XXXXX]J | FTP staleness: [XX] days
+  Model trust: CP/W′ primary ≤20min, Coggan reference ≥60min
+  [For non-cycling sports: show actual_watts + actual_hr + pct_lthr only, no model columns]
+  Block-over-block: [did ceilings move? did coverage improve? did model divergence shift?]
+
 Polarization (block average):
   Z1+Z2: [XX]%
   Z3 (Grey Zone): [X]% (target <5%)
@@ -127,6 +137,7 @@ Next Block Plan:
 | **Performance Markers** | Best efforts + target comparison | Shows whether stimulus is producing adaptation |
 | **Power Curve Rotation** | rotation_index from capability.power_curve_delta | Sprint-biased (positive) vs endurance-biased (negative) adaptation across the block. Omit if null |
 | **HR Curve Rotation** | rotation_index from capability.hr_curve_delta | Intensity-biased (positive) vs endurance-biased (negative) HR shift. AMBIGUOUS — cross-reference with HRV/RHR. Omit if null |
+| **Sustainability Ceilings** | capability.sustainability_profile.{sport}.anchors | Per-sport MMP + HR at race-relevant durations. Cycling: Coggan + CP/W' model layers with divergence. Coverage ratio flags data gaps. Block-over-block: compare ceilings, coverage, and divergence shift. Omit if null |
 | **Decoupling trend** | Long ride aerobic efficiency | Improving decoupling = aerobic base building |
 | **Polarization by Week** | Weekly zone distributions | Catches grey zone creep within a block. Append classification + PI only when week diverges from block-scale TID |
 | **Durability by Week** | Weekly mean decoupling from steady-state sessions | VI ≤ 1.05, ≥ 90min. Shows aerobic efficiency trajectory across block |
@@ -167,6 +178,7 @@ Next Block Plan:
 - **Durability by Week** catches aerobic efficiency regression that single-session decoupling can miss; the block trend is the headline
 - **Efficiency Factor by Week** catches aerobic fitness trends that complement durability; rising EF at same intensity = improving fitness
 - **HRRc by Week** shows recovery quality trajectory across the block; omit entire section if fewer than 3 qualifying sessions in the block. Individual weeks with 0 qualifying sessions show "— no data". Context-dependent: varies with exercise intensity, type, and recording conditions
+- **Sustainability Ceilings** show what the athlete can sustain right now at race-relevant durations. Block-over-block: rising ceilings confirm adaptation; narrowing model divergence confirms model inputs are current; improving coverage means the athlete is producing efforts across more durations. Low coverage (<50%) means the profile is heavily model-dependent — note this. Indoor source on key anchors means outdoor race ceiling is likely 3–5% higher
 - **Phase Timeline** makes phase stability visible across the block — the Phase Progression Check is more meaningful when you can see the phase held steady or oscillated
 - **Phase Progression Check** makes the protocol's decision logic transparent to the athlete
 - **Next Block Plan** should flow directly from the Phase Progression Check — if criteria aren't met, explain what the next block does differently
