@@ -124,6 +124,10 @@ jobs:
               git add intervals.json
               echo "✅ Staged intervals.json"
             fi
+            if [ -f routes.json ]; then
+              git add routes.json
+              echo "✅ Staged routes.json"
+            fi
             
             # Now pull - autostash will safely stash staged changes
             git pull --rebase --autostash origin main

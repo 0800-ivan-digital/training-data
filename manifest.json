@@ -51,7 +51,7 @@
       "hash": "86d745fa1195808419919b84f16e5d074095a6ef9cb7ade1ed9a3736ec3335e2"
     },
     "examples/json-auto-sync/auto-sync.yml": {
-      "hash": "c6a484c0b79a7896db029a7c940c5367d9158e65c8500a24aa12dbed25aacae0"
+      "hash": "482f91cb7cf0a7fbb14bf8ebba271e2656c6f226add514b59002158208f8cb79"
     },
     "examples/json-examples/README.md": {
       "hash": "eb3a89811904ff7ac3c3bb1d46761e3dee680cf9fe0ea29dec2b72a809bd6d1b"
@@ -105,7 +105,7 @@
       "hash": "dea437cb289785c243314d11d1fdb897a0e367420e0c4336931f443cb23a44a2"
     },
     "examples/sync.py": {
-      "hash": "4dc76ea6f33dfe942201a48a3429d5928a70b1eee83e62f1256b0dec52cc2c5f"
+      "hash": "f21d661a947849fb85048845b74e7c26379a3a709014bc35e6443f67c8313b6b"
     },
     "examples/workout-library/README.md": {
       "hash": "f22d96050da8a601aac627ddb44b717f31daa9adc88b1cedf3f56a0b87dec6f4"

@@ -4,6 +4,15 @@ Intervals.icu → GitHub/Local JSON Export
 Exports training data for LLM access.
 Supports both automated GitHub sync and manual local export.
   
+Version 3.93 - Route & Terrain Intelligence: GPX/TCX attachments on events parsed into routes.json.
+  Climb/descent detection, course character, elevation_per_km. Cached by attachment ID.
+  has_terrain flag on planned workouts and race calendar entries. GPX + TCX via stdlib
+  xml.etree.ElementTree (zero new deps). FIT format stubbed. Elevation smoothing (50m window).
+  Start trimming (2km local gradient) prevents flat approaches inflating climbs. Course character
+  uses total elevation + elevation_per_km + climb category upgrades. Hash-based cache invalidation:
+  script_hash (SHA256 of sync.py) on routes.json, intervals.json, history.json — any code change
+  auto-invalidates cached files on next run. activity_types order-preserving dedup (was set()).
+
 Version 3.92 - Local-Sync: --update auto-clears history.json + intervals.json when sync.py
   changes. Prevents stale-schema bugs. Full data restored after 2 sync cycles.
 
@@ -50,6 +59,7 @@ import shutil
 import atexit
 from collections import defaultdict
 from pathlib import Path
+import xml.etree.ElementTree as ET
 
 
 class IntervalsSync:
@@ -61,8 +71,9 @@ class IntervalsSync:
     HISTORY_FILE = "history.json"
     UPSTREAM_REPO = "CrankAddict/section-11"
     CHANGELOG_FILE = "changelog.json"
-    VERSION = "3.92"
+    VERSION = "3.93"
     INTERVALS_FILE = "intervals.json"
+    ROUTES_FILE = "routes.json"
 
     # Sport families eligible for interval-level data extraction.
     # Only structured sessions in these families are worth fetching
@@ -153,6 +164,19 @@ class IntervalsSync:
         self.data_dir = Path.cwd()  # Data files (history.json, ftp_history.json) write to caller's working directory
         self.week_start_day = week_start_day if week_start_day is not None else self.WEEK_START_DAY
         self.zone_preference = zone_preference or {}  # {"run": "hr", "cycling": "power", ...}
+        self._cached_script_hash = None  # lazy-computed
+    
+    @property
+    def script_hash(self) -> str:
+        """SHA256 of sync.py itself. Used to invalidate cached files on any code change."""
+        if self._cached_script_hash is None:
+            script_path = Path(__file__).resolve()
+            h = hashlib.sha256()
+            with open(script_path, 'rb') as f:
+                for chunk in iter(lambda: f.read(8192), b''):
+                    h.update(chunk)
+            self._cached_script_hash = h.hexdigest()[:12]  # short hash, sufficient for change detection
+        return self._cached_script_hash
     
     def _intervals_get(self, endpoint: str, params: Dict = None) -> Dict:
         """Fetch from Intervals.icu API"""
@@ -227,6 +251,12 @@ class IntervalsSync:
             try:
                 with open(intervals_path, 'r') as f:
                     cached = json.load(f)
+                # Invalidate cache if sync.py changed
+                if cached.get("script_hash") != self.script_hash:
+                    if self.debug:
+                        print(f"    🔄 intervals.json stale (sync.py changed), re-scanning all")
+                    cached = {"activities": []}
+                    first_run = True
             except Exception as e:
                 if self.debug:
                     print(f"    ⚠️  Could not read intervals.json: {e}")
@@ -310,6 +340,7 @@ class IntervalsSync:
         self._intervals_data = {
             "generated_at": now.isoformat(),
             "version": self.VERSION,
+            "script_hash": self.script_hash,
             "scan_hours": self.INTERVAL_SCAN_HOURS,
             "retention_days": self.INTERVAL_RETENTION_DAYS,
             "activities": all_entries
@@ -317,6 +348,517 @@ class IntervalsSync:
         
         # Return all activity IDs that have interval data
         return {a["activity_id"] for a in all_entries}
+    
+    # ── Route & Terrain Intelligence (v3.93) ─────────────────────────────
+    
+    def _generate_terrain(self, events: List[Dict]) -> Dict:
+        """
+        Parse GPX/TCX attachments on events into routes.json.
+        
+        Scans all events for attachments, downloads and parses route files,
+        produces terrain_summary with climb/descent detection. Caches by
+        attachment ID to avoid re-downloading unchanged files.
+        
+        Returns dict of event_id → terrain_summary for has_terrain flags.
+        """
+        routes_path = self.data_dir / self.ROUTES_FILE
+        
+        # Load existing cache
+        cached = {"events": []}
+        if routes_path.exists():
+            try:
+                with open(routes_path, 'r') as f:
+                    cached = json.load(f)
+                # Invalidate cache if sync.py changed (schema may differ)
+                if cached.get("script_hash") != self.script_hash:
+                    if self.debug:
+                        print(f"    🔄 routes.json stale (sync.py changed), re-parsing all")
+                    cached = {"events": []}
+            except Exception as e:
+                if self.debug:
+                    print(f"    ⚠️  Could not read routes.json: {e}")
+                cached = {"events": []}
+        
+        # Build lookup of cached attachment_id → terrain entry
+        cached_by_attachment = {}
+        for entry in cached.get("events", []):
+            aid = entry.get("attachment_id")
+            if aid:
+                cached_by_attachment[aid] = entry
+        
+        # Scan events for attachments
+        new_entries = []
+        for evt in events:
+            attachments = evt.get("attachments")
+            if not attachments:
+                continue
+            
+            evt_id = evt.get("id")
+            evt_name = evt.get("name", "Unnamed")
+            evt_date = (evt.get("start_date_local") or "")[:10]
+            evt_category = evt.get("category", "")
+            
+            for att in attachments:
+                att_id = att.get("id")
+                filename = att.get("filename", "")
+                url = att.get("url", "")
+                
+                if not att_id or not url:
+                    continue
+                
+                # Skip non-route files by extension
+                ext = filename.lower().rsplit(".", 1)[-1] if "." in filename else ""
+                if ext not in ("gpx", "tcx", "fit"):
+                    continue
+                
+                # Check cache — reuse if attachment ID unchanged
+                if att_id in cached_by_attachment:
+                    entry = cached_by_attachment[att_id].copy()
+                    # Update event metadata (name/date may change)
+                    entry["event_id"] = evt_id
+                    entry["event_name"] = evt_name
+                    entry["event_date"] = evt_date
+                    entry["category"] = evt_category
+                    new_entries.append(entry)
+                    if self.debug:
+                        print(f"    ✓ Cached terrain: {evt_name} ({filename})")
+                    continue
+                
+                # Download and parse
+                if self.debug:
+                    print(f"    ↓ Downloading: {filename} for {evt_name}")
+                
+                terrain_summary = self._download_and_parse_route(url, filename)
+                
+                new_entries.append({
+                    "event_id": evt_id,
+                    "event_name": evt_name,
+                    "event_date": evt_date,
+                    "category": evt_category,
+                    "attachment_id": att_id,
+                    "filename": filename,
+                    "terrain_summary": terrain_summary
+                })
+        
+        # Build routes.json
+        self._routes_data = {
+            "generated_at": datetime.now().isoformat(),
+            "sync_version": self.VERSION,
+            "script_hash": self.script_hash,
+            "events": new_entries
+        }
+        
+        # Return event_id → True for has_terrain flags
+        return {e["event_id"] for e in new_entries if e.get("terrain_summary")}
+    
+    def _download_and_parse_route(self, url: str, filename: str) -> Optional[Dict]:
+        """Download a route file attachment and parse it into a terrain_summary."""
+        try:
+            response = requests.get(url, timeout=30)
+            if response.status_code != 200:
+                return {"error": f"download failed (HTTP {response.status_code})"}
+            content = response.content
+        except Exception as e:
+            return {"error": f"download failed: {str(e)[:100]}"}
+        
+        if not content or len(content) < 50:
+            return {"error": "empty or invalid file"}
+        
+        return self._parse_route_file(content, filename)
+    
+    def _parse_route_file(self, content: bytes, filename: str) -> Optional[Dict]:
+        """Detect route file format and dispatch to parser."""
+        text_start = content[:200].decode("utf-8", errors="ignore").strip()
+        
+        if text_start.startswith("<?xml") or text_start.startswith("<gpx") or "<gpx" in text_start[:500]:
+            return self._parse_gpx(content)
+        elif "<TrainingCenterDatabase" in text_start or "TrainingCenterDatabase" in content[:500].decode("utf-8", errors="ignore"):
+            return self._parse_tcx(content)
+        elif content[:2] == b'.F' or content[:4] == b'\x0e\x10\xd9\x07':
+            # FIT binary magic bytes
+            return {"error": "FIT format not yet supported"}
+        else:
+            # Fall back to extension
+            ext = filename.lower().rsplit(".", 1)[-1] if "." in filename else ""
+            if ext == "gpx":
+                return self._parse_gpx(content)
+            elif ext == "tcx":
+                return self._parse_tcx(content)
+            elif ext == "fit":
+                return {"error": "FIT format not yet supported"}
+            return {"error": f"unrecognized route file format"}
+    
+    def _parse_gpx(self, content: bytes) -> Optional[Dict]:
+        """Parse GPX file into trackpoints, then analyze terrain."""
+        try:
+            root = ET.fromstring(content)
+        except ET.ParseError as e:
+            return {"error": f"GPX parse error: {str(e)[:100]}"}
+        
+        # Handle namespace
+        ns = ""
+        tag = root.tag
+        if "}" in tag:
+            ns = tag[:tag.index("}") + 1]
+        
+        trackpoints = []
+        for trkpt in root.iter(f"{ns}trkpt"):
+            lat = trkpt.get("lat")
+            lon = trkpt.get("lon")
+            ele_elem = trkpt.find(f"{ns}ele")
+            if lat and lon:
+                tp = {"lat": float(lat), "lon": float(lon)}
+                if ele_elem is not None and ele_elem.text:
+                    try:
+                        tp["ele"] = float(ele_elem.text)
+                    except ValueError:
+                        pass
+                trackpoints.append(tp)
+        
+        if len(trackpoints) < 2:
+            return {"error": "insufficient trackpoints"}
+        
+        return self._analyze_terrain(trackpoints)
+    
+    def _parse_tcx(self, content: bytes) -> Optional[Dict]:
+        """Parse TCX file into trackpoints, then analyze terrain."""
+        try:
+            root = ET.fromstring(content)
+        except ET.ParseError as e:
+            return {"error": f"TCX parse error: {str(e)[:100]}"}
+        
+        # Handle namespace
+        ns = ""
+        tag = root.tag
+        if "}" in tag:
+            ns = tag[:tag.index("}") + 1]
+        
+        trackpoints = []
+        for tp_elem in root.iter(f"{ns}Trackpoint"):
+            pos = tp_elem.find(f"{ns}Position")
+            if pos is None:
+                continue
+            lat_elem = pos.find(f"{ns}LatitudeDegrees")
+            lon_elem = pos.find(f"{ns}LongitudeDegrees")
+            alt_elem = tp_elem.find(f"{ns}AltitudeMeters")
+            
+            if lat_elem is not None and lon_elem is not None:
+                try:
+                    tp = {"lat": float(lat_elem.text), "lon": float(lon_elem.text)}
+                    if alt_elem is not None and alt_elem.text:
+                        tp["ele"] = float(alt_elem.text)
+                    trackpoints.append(tp)
+                except (ValueError, TypeError):
+                    continue
+        
+        if len(trackpoints) < 2:
+            return {"error": "insufficient trackpoints"}
+        
+        return self._analyze_terrain(trackpoints)
+    
+    @staticmethod
+    def _haversine(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+        """Haversine distance in meters between two GPS coordinates."""
+        R = 6371000  # Earth radius in meters
+        phi1, phi2 = math.radians(lat1), math.radians(lat2)
+        dphi = math.radians(lat2 - lat1)
+        dlam = math.radians(lon2 - lon1)
+        a = math.sin(dphi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlam / 2) ** 2
+        return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    
+    def _analyze_terrain(self, trackpoints: List[Dict]) -> Dict:
+        """
+        Analyze trackpoints into terrain_summary.
+        
+        Computes: total distance, total elevation gain, climb/descent detection,
+        course character, elevation_per_km. Elevation smoothed with rolling
+        window (~50m) before gradient calculation to reduce GPS jitter.
+        """
+        has_elevation = any("ele" in tp for tp in trackpoints)
+        
+        # Compute cumulative distance and collect elevation
+        cum_dist = [0.0]  # cumulative distance in meters
+        for i in range(1, len(trackpoints)):
+            d = self._haversine(
+                trackpoints[i - 1]["lat"], trackpoints[i - 1]["lon"],
+                trackpoints[i]["lat"], trackpoints[i]["lon"]
+            )
+            cum_dist.append(cum_dist[-1] + d)
+        
+        total_distance_m = cum_dist[-1]
+        total_distance_km = round(total_distance_m / 1000, 1)
+        
+        if not has_elevation or total_distance_m < 100:
+            return {
+                "source": "gpx_attachment" if has_elevation else "gpx_attachment_no_elevation",
+                "total_distance_km": total_distance_km,
+                "total_elevation_m": 0,
+                "elevation_per_km": 0.0,
+                "course_character": "flat",
+                "climbs": [],
+                "descents": []
+            } if not has_elevation else None
+        
+        # Smooth elevation: rolling window ~50m of distance
+        raw_ele = [tp.get("ele", 0.0) for tp in trackpoints]
+        smoothed_ele = list(raw_ele)  # copy
+        SMOOTH_WINDOW_M = 50.0
+        
+        for i in range(len(trackpoints)):
+            # Find indices within ±SMOOTH_WINDOW_M/2 of current point
+            lo, hi = i, i
+            while lo > 0 and cum_dist[i] - cum_dist[lo - 1] < SMOOTH_WINDOW_M / 2:
+                lo -= 1
+            while hi < len(trackpoints) - 1 and cum_dist[hi + 1] - cum_dist[i] < SMOOTH_WINDOW_M / 2:
+                hi += 1
+            if lo < hi:
+                smoothed_ele[i] = sum(raw_ele[lo:hi + 1]) / (hi - lo + 1)
+        
+        # Total elevation gain (from smoothed)
+        total_gain = 0.0
+        for i in range(1, len(smoothed_ele)):
+            diff = smoothed_ele[i] - smoothed_ele[i - 1]
+            if diff > 0:
+                total_gain += diff
+        total_elevation_m = round(total_gain)
+        
+        elevation_per_km = round(total_elevation_m / total_distance_km, 1) if total_distance_km > 0 else 0.0
+        
+        # Detect climbs and descents
+        # Entry gradient is low (1.5%) to catch long gradual climbs like Brocken.
+        # Post-filter by elevation gain: segments with <100m gain AND <3% avg are
+        # filtered out to avoid detecting gentle inclines as "climbs."
+        raw_climbs = self._detect_segments(trackpoints, cum_dist, smoothed_ele, min_gradient=1.5, min_distance=500.0, ascending=True)
+        climbs = [c for c in raw_climbs if c["elevation_m"] >= 100 or c["avg_gradient_pct"] >= 3.0]
+        raw_descents = self._detect_segments(trackpoints, cum_dist, smoothed_ele, min_gradient=1.5, min_distance=500.0, ascending=False)
+        descents = [d for d in raw_descents if abs(d["elevation_m"]) >= 100 or abs(d["avg_gradient_pct"]) >= 3.0]
+        
+        # Course character — base from total elevation + elevation_per_km,
+        # then upgrade based on detected climb categories.
+        # A route with a Cat 1 climb is hilly regardless of total elevation.
+        if total_elevation_m >= 3000 or elevation_per_km >= 30:
+            course_character = "mountain"
+        elif total_elevation_m >= 1500 or elevation_per_km >= 20:
+            course_character = "hilly"
+        elif total_elevation_m >= 200 or elevation_per_km >= 5:
+            course_character = "rolling"
+        else:
+            course_character = "flat"
+        
+        # Upgrade based on climb severity
+        max_category = None
+        for c in climbs:
+            cat = c.get("category")
+            if cat in ("HC", "Cat 1", "Cat 2"):
+                max_category = "hilly"
+                break
+        if max_category == "hilly" and course_character in ("flat", "rolling"):
+            course_character = "hilly"
+        
+        return {
+            "source": "gpx_attachment",
+            "total_distance_km": total_distance_km,
+            "total_elevation_m": total_elevation_m,
+            "elevation_per_km": elevation_per_km,
+            "course_character": course_character,
+            "climbs": climbs,
+            "descents": descents
+        }
+    
+    def _detect_segments(self, trackpoints: List[Dict], cum_dist: List[float],
+                         smoothed_ele: List[float], min_gradient: float,
+                         min_distance: float, ascending: bool) -> List[Dict]:
+        """
+        Detect sustained climb or descent segments using chunk-based analysis.
+        
+        Divides route into ~200m chunks, classifies each by gradient, then finds
+        contiguous climbing/descending runs. Tolerates brief flats and small dips
+        within a climb (real climbs have false flats and switchbacks). A climb ends
+        when elevation drops >50m from the local high water mark, indicating a
+        genuine descent, not a brief dip.
+        """
+        CHUNK_M = 200  # chunk size for gradient classification
+        DIP_TOLERANCE_M = 50  # max elevation loss before ending a climb
+        
+        n = len(trackpoints)
+        if n < 2 or cum_dist[-1] < CHUNK_M:
+            return []
+        
+        # Build chunks: each has start_idx, end_idx, gradient, distance, ele_change
+        chunks = []
+        ci = 0
+        while ci < n - 1:
+            cj = ci + 1
+            while cj < n and cum_dist[cj] - cum_dist[ci] < CHUNK_M:
+                cj += 1
+            if cj >= n:
+                cj = n - 1
+            if cj <= ci:
+                break
+            
+            chunk_dist = cum_dist[cj] - cum_dist[ci]
+            chunk_ele = smoothed_ele[cj] - smoothed_ele[ci]
+            chunk_grad = (chunk_ele / chunk_dist * 100) if chunk_dist > 10 else 0
+            
+            chunks.append({
+                "si": ci, "ei": cj,
+                "dist": chunk_dist, "ele": chunk_ele, "grad": chunk_grad
+            })
+            ci = cj
+        
+        if not chunks:
+            return []
+        
+        # Find climbing or descending segments using high-water-mark logic
+        segments = []
+        i = 0
+        
+        while i < len(chunks):
+            c = chunks[i]
+            
+            # Look for start of a potential segment
+            if ascending and c["grad"] < 1.0:
+                i += 1
+                continue
+            elif not ascending and c["grad"] > -1.0:
+                i += 1
+                continue
+            
+            # Start tracking a segment
+            seg_start_idx = c["si"]
+            seg_start_ele = smoothed_ele[seg_start_idx]
+            
+            if ascending:
+                high_mark = seg_start_ele
+                high_mark_chunk = i
+            else:
+                low_mark = seg_start_ele
+                low_mark_chunk = i
+            
+            j = i
+            while j < len(chunks):
+                current_ele = smoothed_ele[chunks[j]["ei"]]
+                
+                if ascending:
+                    if current_ele > high_mark:
+                        high_mark = current_ele
+                        high_mark_chunk = j
+                    # End if we've dropped too far from high water mark
+                    if high_mark - current_ele > DIP_TOLERANCE_M:
+                        break
+                else:
+                    if current_ele < low_mark:
+                        low_mark = current_ele
+                        low_mark_chunk = j
+                    # End if we've risen too far from low water mark
+                    if current_ele - low_mark > DIP_TOLERANCE_M:
+                        break
+                j += 1
+            
+            # Determine segment boundaries
+            if ascending:
+                seg_end_idx = chunks[high_mark_chunk]["ei"]
+            else:
+                seg_end_idx = chunks[low_mark_chunk]["ei"]
+            
+            # Trim flat approach: advance start until the LOCAL gradient
+            # (over the next ~1km) shows sustained climbing. Prevents valley
+            # roads with slight uphill trend being included in mountain climbs.
+            LOCAL_TRIM_DIST = 2000  # look 2km ahead for local gradient check
+            LOCAL_TRIM_GRAD = 2.5   # minimum local gradient to start the climb
+            if ascending:
+                for t in range(i, min(high_mark_chunk, len(chunks))):
+                    t_start = chunks[t]["si"]
+                    # Find point ~1km ahead
+                    ahead_idx = t_start
+                    for ai in range(t_start + 1, min(chunks[high_mark_chunk]["ei"] + 1, len(cum_dist))):
+                        if cum_dist[ai] - cum_dist[t_start] >= LOCAL_TRIM_DIST:
+                            ahead_idx = ai
+                            break
+                    if ahead_idx > t_start:
+                        local_dist = cum_dist[ahead_idx] - cum_dist[t_start]
+                        local_ele = smoothed_ele[ahead_idx] - smoothed_ele[t_start]
+                        if local_dist > 0 and (local_ele / local_dist * 100) >= LOCAL_TRIM_GRAD:
+                            seg_start_idx = t_start
+                            break
+            elif not ascending:
+                end_chunk = low_mark_chunk
+                for t in range(i, min(end_chunk, len(chunks))):
+                    t_start = chunks[t]["si"]
+                    ahead_idx = t_start
+                    for ai in range(t_start + 1, min(chunks[end_chunk]["ei"] + 1, len(cum_dist))):
+                        if cum_dist[ai] - cum_dist[t_start] >= LOCAL_TRIM_DIST:
+                            ahead_idx = ai
+                            break
+                    if ahead_idx > t_start:
+                        local_dist = cum_dist[ahead_idx] - cum_dist[t_start]
+                        local_ele = smoothed_ele[ahead_idx] - smoothed_ele[t_start]
+                        if local_dist > 0 and (local_ele / local_dist * 100) <= -LOCAL_TRIM_GRAD:
+                            seg_start_idx = t_start
+                            break
+            
+            seg_dist = cum_dist[seg_end_idx] - cum_dist[seg_start_idx]
+            seg_ele = smoothed_ele[seg_end_idx] - smoothed_ele[seg_start_idx]
+            
+            # Check minimum criteria
+            if seg_dist >= min_distance and abs(seg_ele) >= 50:
+                avg_gradient = (seg_ele / seg_dist) * 100 if seg_dist > 0 else 0
+                
+                if (ascending and avg_gradient >= min_gradient) or \
+                   (not ascending and avg_gradient <= -min_gradient):
+                    
+                    position_km = round(cum_dist[seg_start_idx] / 1000, 1)
+                    distance_km = round(seg_dist / 1000, 1)
+                    elevation_m = round(abs(seg_ele))
+                    
+                    segment = {
+                        "position_km": position_km,
+                        "distance_km": distance_km,
+                        "elevation_m": elevation_m if ascending else -elevation_m,
+                        "avg_gradient_pct": round(abs(avg_gradient), 1),
+                        "start_coords": [round(trackpoints[seg_start_idx]["lat"], 5),
+                                         round(trackpoints[seg_start_idx]["lon"], 5)],
+                        "end_coords": [round(trackpoints[seg_end_idx]["lat"], 5),
+                                       round(trackpoints[seg_end_idx]["lon"], 5)]
+                    }
+                    
+                    if ascending:
+                        # Max gradient over 200m subsections
+                        max_grad = 0.0
+                        for k in range(seg_start_idx, seg_end_idx):
+                            for m in range(k + 1, seg_end_idx + 1):
+                                sub_dist = cum_dist[m] - cum_dist[k]
+                                if sub_dist >= 200:
+                                    sub_grad = abs((smoothed_ele[m] - smoothed_ele[k]) / sub_dist * 100)
+                                    max_grad = max(max_grad, sub_grad)
+                                    break
+                        segment["max_gradient_pct"] = round(max_grad, 1) if max_grad > 0 else segment["avg_gradient_pct"]
+                        
+                        # UCI-derived climb category
+                        if elevation_m >= 1000:
+                            segment["category"] = "HC"
+                        elif elevation_m >= 650:
+                            segment["category"] = "Cat 1"
+                        elif elevation_m >= 400:
+                            segment["category"] = "Cat 2"
+                        elif elevation_m >= 200:
+                            segment["category"] = "Cat 3"
+                        elif elevation_m >= 100:
+                            segment["category"] = "Cat 4"
+                        else:
+                            segment["category"] = None  # uncategorized — below Cat 4 threshold
+                    else:
+                        segment["avg_gradient_pct"] = -segment["avg_gradient_pct"]
+                    
+                    segments.append(segment)
+            
+            # Advance past this segment
+            if ascending:
+                i = high_mark_chunk + 1
+            else:
+                i = low_mark_chunk + 1
+        
+        return segments
     
     def _fetch_today_wellness(self) -> Dict:
         """
@@ -628,6 +1170,13 @@ class IntervalsSync:
         benchmark_index_outdoor, ftp_8_weeks_ago_outdoor = self._calculate_benchmark_index(
             current_ftp_outdoor, ftp_history.get("outdoor", {}), "outdoor"
         )
+        
+        # Generate routes.json from GPX/TCX attachments (v3.93)
+        print("Scanning events for route attachments...")
+        terrain_event_ids = self._generate_terrain(events)
+        self._terrain_event_ids = terrain_event_ids
+        if terrain_event_ids:
+            print(f"   🗺️  Route data for {len(terrain_event_ids)} event(s)")
         
         # Build race calendar (v3.5.0) — moved before derived metrics for phase detection
         print("Building race calendar...")
@@ -4275,6 +4824,17 @@ class IntervalsSync:
                 print("  history.json missing — will generate (first run)")
             return True
         
+        # If sync.py changed, regenerate regardless of time gate
+        try:
+            with open(history_path, 'r') as f:
+                history_data = json.load(f)
+            if history_data.get("script_hash") != self.script_hash:
+                if self.debug:
+                    print("  history.json stale (sync.py changed) — will regenerate")
+                return True
+        except Exception:
+            return True
+        
         # For REFRESH of existing history, apply the time gate
         now = datetime.now()
         
@@ -4430,6 +4990,7 @@ class IntervalsSync:
             "generated_at": now.isoformat(),
             "source": "Intervals.icu API",
             "sync_version": self.VERSION,
+            "script_hash": self.script_hash,
             "data_range": {
                 "earliest": earliest_date,
                 "latest": latest_date,
@@ -4466,7 +5027,7 @@ class IntervalsSync:
             
             total_tss = sum(a.get("icu_training_load", 0) or 0 for a in day_activities)
             total_seconds = sum(a.get("moving_time", 0) or 0 for a in day_activities)
-            activity_types = list(set(a.get("type", "Unknown") for a in day_activities)) if day_activities else ["Rest"]
+            activity_types = list(dict.fromkeys(a.get("type", "Unknown") for a in day_activities)) if day_activities else ["Rest"]
             
             # Hard day detection via shared classifier (power + HR fallback)
             day_zones_by_basis = {}
@@ -5874,7 +6435,8 @@ class IntervalsSync:
                 "planned_tss": evt.get("icu_training_load"),
                 "duration_hours": round((evt.get("moving_time") or 0) / 3600, 2),
                 "duration_formatted": self._format_duration(int(evt.get("moving_time") or 0)),
-                "workout_summary": summary
+                "workout_summary": summary,
+                "has_terrain": evt.get("id", f"unknown_{i+1}") in getattr(self, '_terrain_event_ids', set())
             }
 
             if coach_notes:
@@ -5930,6 +6492,7 @@ class IntervalsSync:
                                 "days_until": days_until,
                                 "moving_time_seconds": evt.get("moving_time"),
                                 "distance_meters": evt.get("distance"),
+                                "has_terrain": evt.get("id") in getattr(self, '_terrain_event_ids', set()),
                                 "_raw": evt  # Keep raw for race-week building
                             })
                     except ValueError:
@@ -6759,7 +7322,7 @@ def do_update():
         sync_updated = any(u["path"] == "examples/sync.py" for u in updated)
         if sync_updated:
             cache_cleared = []
-            for cache_file in ("history.json", "intervals.json"):
+            for cache_file in ("history.json", "intervals.json", "routes.json"):
                 cache_path = data_dir / cache_file
                 if cache_path.exists():
                     try:
@@ -7221,6 +7784,14 @@ def main():
                 json.dump(intervals_data, f, indent=2, default=str)
             print(f"   📊 intervals.json saved ({len(intervals_data['activities'])} activities)")
         
+        # === SAVE ROUTES.JSON (local mode) ===
+        routes_data = getattr(sync, '_routes_data', None)
+        if routes_data and routes_data.get("events"):
+            routes_path = sync.data_dir / sync.ROUTES_FILE
+            with open(routes_path, 'w') as f:
+                json.dump(routes_data, f, indent=2, default=str)
+            print(f"   🗺️  routes.json saved ({len(routes_data['events'])} event(s))")
+        
         # === AUTO HISTORY GENERATION (local mode) ===
         if sync.should_generate_history():
             try:
@@ -7257,6 +7828,20 @@ def main():
                 print(f"   📊 intervals.json pushed ({len(intervals_data['activities'])} activities)")
             except Exception as e:
                 print(f"   ⚠️ intervals.json push failed (non-critical): {e}")
+        
+        # === PUBLISH ROUTES.JSON (GitHub mode) ===
+        routes_data = getattr(sync, '_routes_data', None)
+        if routes_data and routes_data.get("events"):
+            # Save locally for cache on next run
+            routes_path = sync.data_dir / sync.ROUTES_FILE
+            with open(routes_path, 'w') as f:
+                json.dump(routes_data, f, indent=2, default=str)
+            try:
+                sync.publish_to_github(routes_data, filepath="routes.json",
+                                       commit_message=f"Update routes.json - {datetime.now().strftime('%Y-%m-%d')}")
+                print(f"   🗺️  routes.json pushed ({len(routes_data['events'])} event(s))")
+            except Exception as e:
+                print(f"   ⚠️ routes.json push failed (non-critical): {e}")
         
         # === AUTO HISTORY GENERATION (Sundays/Mondays, first two runs after midnight) ===
         if sync.should_generate_history():
