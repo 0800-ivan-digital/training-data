@@ -1,14 +1,15 @@
 {
-  "notification_id": "2026-04-02",
+  "notification_id": "2026-04-10",
   "changes": [
-    "— sync.py v3.93–v3.96 + SECTION_11.md v11.23–v11.25 (2026-03-24–04-02) —",
-    "v3.93: Route & Terrain Intelligence — GPX/TCX attachments parsed into routes.json. Climb detection (Cat 4–HC), descent detection, course character, elevation smoothing. Cached by attachment ID. has_terrain flag on events.",
-    "v3.94: Phase detection rewrite — live 4-week bucketing from activities_28d. Eliminates stale history.json row bug. recent_activities widened to 28 days.",
-    "v3.95: 500m polyline in routes.json, start_time on planned events, indoor flag passthrough.",
-    "v3.96: Course character fix — elevation_per_km only, absolute thresholds removed.",
-    "v11.23: No Conversational Data Substitution — AI must re-read JSON before citing metrics. No cached values from prior messages.",
-    "v11.24–v11.25: Route & Terrain Protocol — terrain-adjusted power, wind overlay, segment reasoning, drafting, nutrition timing, pre-ride briefing flow, course character table. 11 evidence base entries.",
-    "Hash-based cache invalidation on all cached files. On-demand sync path (phone/browser). Pre-workout terrain context block. Report template/example alignment. External API reference (Strava + yr.no). routes.json documentation sweep.",
-    "Upgrade: replace your sync.py + pull fresh docs. Most files touched."
+    "— sync.py v3.97–v4.00 + SECTION_11.md v11.26–v11.31 (2026-04-10) —",
+    "v11.26: Nutrition & Pacing Protocol — Route & Terrain expanded with carbs/h guidance, glycogen budget logic, hydration timing, glycogen-linked W′ penalties, and stronger pacing rules.",
+    "v11.27 / v3.97: Readiness Signal Hygiene — low-side ACWR removed from readiness ambers, RI amber now requires 2-day persistence, and ACWR high-side thresholds unified.",
+    "v11.28 / v3.98: Schema Hygiene — renamed derived_metrics.polarisation_index to easy_time_ratio. Rename only, no formula change.",
+    "v11.29: Post-Workout Report Completeness Rules — never omit completed activities, never merge activity IDs, never invent explanations for anomalous sessions.",
+    "v11.30 / v3.99: DFA a1 Protocol — added per-session DFA blocks, quality gating, drift interpretation, LT1/LT2 crossing estimates, dfa_a1_profile, and report/template support.",
+    "Activity name anonymization removed — route/terrain context preserved, athlete_id redaction remains.",
+    "v11.31 / v4.00: DFA Power Calibration Indoor/Outdoor Split — cycling watts now split into indoor and outdoor estimates, HR remains pooled.",
+    "Claude Google Drive connector now reads .json files.",
+    "Upgrade: replace sync.py + pull fresh docs/templates."
   ]
 }
