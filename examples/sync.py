@@ -4,6 +4,19 @@ Intervals.icu → GitHub/Local JSON Export
 Exports training data for LLM access.
 Supports both automated GitHub sync and manual local export.
 
+Version 3.101 - has_dfa split + dfa_summary: new has_dfa boolean on recent_activities[] in
+  latest.json, independent from has_intervals. has_intervals semantics narrowed to structured
+  segments only — a steady Z2 ride with AlphaHRV now reports has_intervals: false, has_dfa: true
+  (previously the latter overloaded the former). New compact dfa_summary block attached when
+  has_dfa: true AND quality.sufficient: true — fields: avg, dominant_band (max-pct, alphabetical
+  tiebreak), tiz_pct (4 bands), valid_pct, sufficient, plus optional drift_delta/drift_interpretable
+  and lt1/lt2 watts/hr (omitted when underlying data absent — never null-filled). Lets the AI
+  write post-workout DFA commentary from latest.json alone for the common case. quality.sufficient
+  tightened: previously duration-only (>=20 min valid); now also requires valid_pct >= 70%. New
+  constant DFA_SUFFICIENT_MIN_VALID_PCT = 70.0. Excludes noisy AlphaHRV sessions that previously
+  passed the duration gate (pre-existing latent bug). New helper _build_dfa_summary() — pure
+  extractor, no computation, single source of truth shared with capability summary.
+
 Version 3.100 - DFA power calibration indoor/outdoor split: trailing_by_sport.cycling lt1/lt2
   estimates now split watts by environment (watts_outdoor, watts_indoor — always present, null
   when no qualifying sessions). HR stays pooled. Per-environment n_sessions for depth assessment.
@@ -35,48 +48,7 @@ Version 3.96 - Course character fix: elevation_per_km as sole density metric (to
   is distance-blind); absolute elevation thresholds removed. Climb-category upgrade retained for
   "flat with one big climb" cases.
 
-Version 3.95 - Polyline + event metadata: 500m downsampled polyline in terrain_summary for
-  weather/wind/pacing lookups. Start time (HH:MM) on events when set. Indoor flag passthrough.
-
-Version 3.94 - Phase detection: live weekly rows from activities_28d. Replaces v3.89 single-week
-  overlay with full 4-week bucketing — all weekly rows (TSS, primary_sport_tss, hard_days) computed
-  fresh every run. CTL/ATL enriched from history.json as stable background. Eliminates the entire
-  class of stale-row bugs (previously, completed weeks snapshotted mid-progress stayed frozen until
-  history.json regeneration). recent_activities widened from 7d to 28d (activities_extended) so
-  latest.json always covers the full window between history.json regenerations.
-
-Version 3.93 - Route & Terrain Intelligence: GPX/TCX attachments on events parsed into routes.json.
-  Climb/descent detection, course character, elevation_per_km. Cached by attachment ID.
-  has_terrain flag on planned workouts and race calendar entries. GPX + TCX via stdlib
-  xml.etree.ElementTree (zero new deps). FIT format stubbed. Elevation smoothing (50m window).
-  Start trimming (2km local gradient) prevents flat approaches inflating climbs. Course character
-  uses elevation_per_km + climb category upgrades. Hash-based cache invalidation:
-  script_hash (SHA256 of sync.py) on routes.json, intervals.json, history.json — any code change
-  auto-invalidates cached files on next run. activity_types order-preserving dedup (was set()).
-
-Version 3.92 - Local-Sync: --update auto-clears history.json + intervals.json when sync.py
-  changes. Prevents stale-schema bugs. Full data restored after 2 sync cycles.
-
-Version 3.91 - Sustainability Profile: per-sport power/HR sustainability table for race estimation.
-  42-day window, sport-filtered curves (power-curves + hr-curves per sport family). Cycling gets
-  three model layers (actual MMP, Coggan duration factors, CP/W' model) with model_divergence_pct.
-  Non-cycling power sports get actual MMP only. Indoor/outdoor source flag for cycling (max of
-  Ride vs VirtualRide). Per-anchor: watts, W/kg, HR, %LTHR, source, date, recency. Block-level:
-  coverage_ratio, ftp_staleness_days (cycling only). Weight fallback chain. capability namespace.
-
-Version 3.90 - Sleep signal simplified: hours only. Sleep quality/score removed from readiness
-  classification — they are device-derived composites of HRV + HR during sleep, already captured as
-  independent signals. Quality still passes through in signal output as coaching context.
-
-Version 3.89 - Phase detection current-week patch: overlay fresh CTL/TSS/hard_days/ACWR/monotony
-  onto the current week's weekly_180d row at runtime, so phase classification always uses live data
-  instead of stale history.json snapshot (up to 28 days old). Fixes phase flip caused by stale
-  current-week row. Runtime only — does not write back to history.json. Respects week_start_day.
-
-Version 3.88 - HR Curve Delta: max sustained HR comparison at 4 anchor durations (60s/300s/1200s/3600s)
-  across two 28-day windows. New hr-curves API call (no sport filter — HR is cross-sport physiological).
-  Data key is 'values' (not 'watts'). Rotation index: mean(60s,300s) - mean(1200s,3600s).
-  Same capability namespace, same guards, same pattern as power_curve_delta.
+Version 3.95–3.88 — Polyline + event metadata; phase detection live weekly rows; Route & Terrain Intelligence (GPX/TCX → routes.json); local-sync auto-clear on script change; Sustainability Profile (per-sport power/HR for race estimation); sleep signal simplified to hours-only; phase detection current-week runtime overlay; HR Curve Delta (4 anchor durations, cross-sport).
 
 Version 3.87–3.85 — Power curve delta, primary sport TSS filtering for phase detection, wellness field expansion
 Version 3.84–3.80 — Activity description passthrough, per-sport zone preference, interval-level data, feel removed from readiness, orphan cleanup
@@ -112,7 +84,7 @@ class IntervalsSync:
     HISTORY_FILE = "history.json"
     UPSTREAM_REPO = "CrankAddict/section-11"
     CHANGELOG_FILE = "changelog.json"
-    VERSION = "3.100"
+    VERSION = "3.101"
     INTERVALS_FILE = "intervals.json"
     ROUTES_FILE = "routes.json"
 
@@ -136,6 +108,7 @@ class IntervalsSync:
     DFA_ARTIFACT_MAX_PCT = 5.0          # drop seconds where artifacts % exceeds this
     DFA_MIN_VALID_VALUE = 0.01          # exclude AlphaHRV sentinel zeros
     DFA_MIN_DURATION_SECS = 1200        # 20 min minimum valid data for sufficient=True
+    DFA_SUFFICIENT_MIN_VALID_PCT = 70.0 # min valid_pct for sufficient=True (excludes noisy AlphaHRV sessions)
     DFA_DRIFT_INTERPRETABLE_MAX_LT2_PCT = 15.0  # if >15% time above LT2, drift is structural noise
     DFA_TRAILING_WINDOW_N = 7           # latest N AlphaHRV sessions for trailing window (≥6 needed for 'high' confidence)
     DFA_VALIDATED_SPORTS = {"cycling"}  # sports where 1.0/0.5 mapping is literature-validated
@@ -395,7 +368,10 @@ class IntervalsSync:
         total_secs = n
         valid_pct = round(100.0 * valid_secs / total_secs, 1) if total_secs else 0.0
         artifact_rate_avg = round(artifact_sum / artifact_count, 2) if artifact_count else None
-        sufficient = valid_secs >= self.DFA_MIN_DURATION_SECS
+        sufficient = (
+            valid_secs >= self.DFA_MIN_DURATION_SECS
+            and valid_pct >= self.DFA_SUFFICIENT_MIN_VALID_PCT
+        )
 
         quality = {
             "valid_secs": valid_secs,
@@ -514,6 +490,56 @@ class IntervalsSync:
             "lt2_crossing": lt2_crossing,
             "quality": quality,
         }
+
+    def _build_dfa_summary(self, dfa_block: Dict) -> Dict:
+        """
+        Build the compact dfa_summary attached to recent_activities[] in latest.json (v3.100).
+
+        Pure extractor — no computation. All numbers come from _compute_dfa_block output.
+        Caller must only invoke this when dfa_block["quality"]["sufficient"] is True;
+        the sufficient=False branch of _compute_dfa_block returns all-None tiz_* fields
+        and is not summarisable. Per-band None (zero time in band) is handled here as 0.0.
+        Optional fields are omitted (not nulled) when their underlying data is absent.
+        """
+        def _band_pct(name):
+            b = dfa_block.get(name)
+            return b["pct"] if b else 0.0
+
+        bands = {
+            "below_lt1": _band_pct("tiz_below_lt1"),
+            "lt1_transition": _band_pct("tiz_lt1_transition"),
+            "transition_lt2": _band_pct("tiz_transition_lt2"),
+            "above_lt2": _band_pct("tiz_above_lt2"),
+        }
+        # Dominant band: max pct, alphabetical tiebreak (deterministic, conservative).
+        dominant_band = sorted(bands.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
+
+        summary = {
+            "avg": dfa_block["avg"],
+            "dominant_band": dominant_band,
+            "tiz_pct": bands,
+            "valid_pct": dfa_block["quality"]["valid_pct"],
+            "sufficient": dfa_block["quality"]["sufficient"],
+        }
+
+        drift = dfa_block.get("drift")
+        if drift is not None and drift.get("delta") is not None:
+            summary["drift_delta"] = drift["delta"]
+            summary["drift_interpretable"] = drift.get("interpretable", False)
+
+        lt1 = dfa_block.get("lt1_crossing") or {}
+        if lt1.get("avg_watts") is not None:
+            summary["lt1_watts"] = lt1["avg_watts"]
+        if lt1.get("avg_hr") is not None:
+            summary["lt1_hr"] = lt1["avg_hr"]
+
+        lt2 = dfa_block.get("lt2_crossing") or {}
+        if lt2.get("avg_watts") is not None:
+            summary["lt2_watts"] = lt2["avg_watts"]
+        if lt2.get("avg_hr") is not None:
+            summary["lt2_hr"] = lt2["avg_hr"]
+
+        return summary
 
     
     def _generate_intervals(self, activities: List[Dict]) -> set:
@@ -6315,6 +6341,12 @@ class IntervalsSync:
     def _format_activities(self, activities: List[Dict], interval_activity_ids: set = None) -> List[Dict]:
         """Format activities for LLM analysis"""
         interval_activity_ids = interval_activity_ids or set()
+        # v3.100: O(1) lookup from intervals.json entries for has_intervals/has_dfa split.
+        intervals_by_id = {
+            str(e.get("activity_id")): e
+            for e in (self._intervals_data or {}).get("activities", [])
+            if e.get("activity_id") is not None
+        }
         chat_notes_cutoff = (datetime.now() - timedelta(days=7)).strftime("%Y-%m-%d")
         formatted = []
         for i, act in enumerate(activities):
@@ -6420,8 +6452,21 @@ class IntervalsSync:
                 "feel": act.get("feel"),
                 "rpe": act.get("icu_rpe"),
                 "zone_distribution": zone_dist,
-                "has_intervals": act.get("id", f"unknown_{i+1}") in interval_activity_ids
+                "has_intervals": False,
+                "has_dfa": False,
             }
+
+            # v3.100: has_intervals narrowed to structured segments only;
+            # has_dfa flags AlphaHRV sessions; dfa_summary attached only when sufficient.
+            _entry = intervals_by_id.get(str(act.get("id")))
+            if _entry:
+                if _entry.get("intervals"):
+                    activity["has_intervals"] = True
+                _dfa = _entry.get("dfa")
+                if _dfa:
+                    activity["has_dfa"] = True
+                    if _dfa.get("quality", {}).get("sufficient"):
+                        activity["dfa_summary"] = self._build_dfa_summary(_dfa)
 
             # Pass through full description + extract NOTE: lines for push.py round-trip (v3.84)
             raw_desc = act.get("description") or ""

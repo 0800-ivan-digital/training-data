@@ -1,6 +1,6 @@
 ---
 name: section-11
-description: Evidence-based endurance coaching protocol (v11.31). Use when analyzing training data, reviewing sessions, generating pre/post-workout reports, planning workouts, answering training questions, or giving endurance coaching advice. Always read or fetch athlete JSON data before responding to any training question.
+description: Evidence-based endurance coaching protocol (v11.32). Use when analyzing training data, reviewing sessions, generating pre/post-workout reports, planning workouts, answering training questions, or giving endurance coaching advice. Always read or fetch athlete JSON data before responding to any training question.
 ---
 
 # Section 11 — AI Coaching Protocol
@@ -55,7 +55,7 @@ Load the coaching protocol using this precedence:
 
 If both root and `section11/` copies exist, prefer the root copy.
 
-**Current version:** 11.31
+**Current version:** 11.32
 
 ## External Sources
 
@@ -74,7 +74,7 @@ All external files referenced by this skill (`sync.py`, `SECTION_11.md`, templat
 
 - Read or fetch latest.json before any training question. Check data directory first, then connected repo (if GitHub connector is available), then fall back to dossier-specified URLs.
 - Read or fetch history.json when trend analysis, phase context, or longitudinal comparison is needed. Same precedence.
-- Load `intervals.json` when analysing a specific activity with `has_intervals: true`. Use for: interval compliance, pacing analysis, cardiac drift per set, recovery quality. Do not load for readiness, load management, or weekly summaries.
+- Load `intervals.json` when analyzing a specific activity where `has_intervals: true` OR `has_dfa: true`. For block reports, load when any session in the block has either flag. Use for: interval compliance, pacing analysis, cardiac drift per set, recovery quality, DFA a1 session-level interpretation. Do not load for readiness, load management, or weekly summaries.
 - Load `routes.json` when a planned event has `has_terrain: true`. Use for: route analysis, terrain-adjusted pacing, pre-ride briefing, race preparation. Same precedence as other JSON files.
 - For all files (JSON data, protocol, dossier, templates): data directory → connected repo → uploaded/attached files → URL fetch.
 - No virtual math on pre-computed metrics — use values from the JSON for CTL, ATL, TSB, ACWR, RI, zones, etc. Custom analysis from raw data is fine when pre-computed values don't cover the question.

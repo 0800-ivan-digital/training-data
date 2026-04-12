@@ -1,10 +1,21 @@
 # Section 11 — AI Coach Protocol
 
-**Protocol Version:** 11.31  
+**Protocol Version:** 11.32  
 **Last Updated:** 2026-04-10
 **License:** [MIT](https://opensource.org/licenses/MIT)
 
 ### Changelog
+
+**v11.32 — has_dfa Split & dfa_summary:**
+- New `has_dfa` boolean on `recent_activities[]` in `latest.json` — independent from `has_intervals`. AlphaHRV-equipped sessions now flag explicitly rather than overloading `has_intervals`
+- `has_intervals` semantics narrowed: now `true` only when structured interval segments exist. A steady Z2 ride with AlphaHRV gets `has_intervals: false`, `has_dfa: true` (previously the latter overloaded the former)
+- New compact `dfa_summary` block attached to `recent_activities[]` when `has_dfa: true` AND `quality.sufficient: true`. Fields: `avg`, `dominant_band` (max-pct, alphabetical tiebreak), `tiz_pct` (4 bands), `valid_pct`, `sufficient`, plus optional `drift_delta`/`drift_interpretable` and `lt1_watts`/`lt1_hr`/`lt2_watts`/`lt2_hr` (omitted when underlying data absent — never null-filled)
+- AI layer can now write post-workout DFA commentary from `latest.json` alone without loading `intervals.json` for the common case. Full per-band HR/watts averages and per-interval detail still live in `intervals.json` for deep analysis
+- `quality.sufficient` tightened: previously duration-only (≥20 min valid); now also requires `valid_pct ≥ 70%`. Excludes noisy AlphaHRV sessions that previously passed the duration gate. New constant `DFA_SUFFICIENT_MIN_VALID_PCT = 70.0`. Pre-existing latent bug where 40%-valid sessions reported `sufficient: true`
+- `has_dfa: true` without a `dfa_summary` means AlphaHRV recorded but data quality was insufficient — AI must not cite DFA numbers in that case
+- Interval Data Mirror loading rule simplified to two-flag form: load when `has_intervals: true` OR `has_dfa: true`. Three-trigger rule retired
+- Docs sync across SECTION_11.md, SKILL.md, README.md, SETUP_ASSISTANT.md, examples/README.md, examples/json-examples/README.md, examples/json-local-sync/SETUP.md
+- Requires sync.py v3.101
 
 **v11.31 — DFA Power Calibration Indoor/Outdoor Split:**
 - `trailing_by_sport.cycling` lt1_estimate / lt2_estimate: watts split by environment — `watts_outdoor`, `watts_indoor` (always present, null when no qualifying sessions in that environment). HR stays pooled (physiology signal, not environment-dependent). Non-cycling sports unchanged (`watts` key retained)
@@ -267,7 +278,7 @@ In addition to the real-time `latest.json` mirror, athletes may provide a `histo
 
 #### Interval Data Mirror (intervals.json)
 
-Per-interval segment data for recent structured sessions, plus optional DFA a1 session-level rollups when AlphaHRV recorded. Activities in `latest.json` with `has_intervals: true` have corresponding detail in `intervals.json`.
+Per-interval segment data for recent structured sessions, plus optional DFA a1 session-level rollups when AlphaHRV recorded. Activities in `latest.json` are flagged with two independent booleans: `has_intervals: true` (structured segments present) and `has_dfa: true` (AlphaHRV recorded). Either flag indicates a corresponding entry in `intervals.json`. Sessions with `has_dfa: true` and sufficient data quality also carry a compact `dfa_summary` block on the activity in `latest.json` (avg, dominant_band, tiz_pct, valid_pct, sufficient, plus optional drift_delta/drift_interpretable and lt1/lt2 watts/hr when crossings dwelled long enough). `has_dfa: true` without a `dfa_summary` means AlphaHRV recorded but data quality was insufficient to interpret — do not cite DFA numbers.
 
 **Scope:** 14-day retention, incrementally cached (72h scan window on subsequent runs, 14-day backfill on first run). Activities in whitelisted sport families (cycling, run, ski, rowing, swim) are included when they have **either** detected interval structure (`intervals` array populated) **or** an AlphaHRV-recorded `dfa_a1` stream (`dfa` block present). Pure endurance rides without structured intervals appear in this file when they have a DFA block — that's by design, since steady-state rides are exactly where DFA a1 drift detection is most useful.
 
@@ -308,7 +319,7 @@ Null fields are stripped from output — only populated fields appear per segmen
 
 **See DFA a1 Protocol section for interpretation rules.**
 
-**Loading rule:** Load `intervals.json` when (a) analysing a specific activity with `has_intervals: true`, or (b) analysing a specific activity that has a `dfa` block (steady-state rides without structured intervals now appear in this file when AlphaHRV recorded — see widened entry rule above), or (c) generating a block report and the cycling block has DFA-equipped sessions (for the DFA a1 Calibration section). Use for: interval compliance, pacing analysis, cardiac drift per set, recovery quality, DFA a1 session-level interpretation, block-scale calibration deltas. Do not load for readiness, load management, or weekly summaries.
+**Loading rule:** Load `intervals.json` when analyzing a specific activity where `has_intervals: true` OR `has_dfa: true`. For block reports, load `intervals.json` when any session in the block has either flag set. Use for: interval compliance, pacing analysis, cardiac drift per set, recovery quality, DFA a1 session-level interpretation, block-scale calibration deltas. Do not load for readiness, load management, or weekly summaries.
 
 #### Data Source Usage Hierarchy
 
@@ -316,14 +327,14 @@ Null fields are stripped from output — only populated fields appear per segmen
 |--------|---------|-------------|
 | `latest.json` | Current state — readiness, load, go/modify/skip decisions | **Always primary.** All immediate coaching decisions use this. |
 | `history.json` | Longitudinal context — trends, seasonal patterns, phase transitions | **Context only.** Reference when questions require historical depth. |
-| `intervals.json` | Per-interval segment data for structured sessions | **On-demand.** Load only when analysing activities with `has_intervals: true`. |
+| `intervals.json` | Per-interval segment data for structured sessions, plus DFA a1 session rollups | **On-demand.** Load when analyzing activities with `has_intervals: true` or `has_dfa: true`. |
 
 **Rules:**
 1. `latest.json` is always primary. All immediate coaching decisions (readiness, load prescription, go/modify/skip) use `latest.json`.
 2. `history.json` is context, never override. It informs interpretation but never overrides current readiness signals.
 3. Reference `history.json` for: trend questions, seasonal pattern matching, phase transition decisions, FTP/Benchmark interpretation, and when data confidence is limited.
 4. Do NOT reference `history.json` for: daily pre/post workout reports (unless investigating), simple go/modify/skip decisions where readiness is clear, or any time `latest.json` provides a definitive answer on its own.
-5. `intervals.json` is on-demand only. Load when the athlete asks about a specific structured session, when generating a post-workout report for an activity with `has_intervals: true`, or when evaluating pacing/compliance across interval sets.
+5. `intervals.json` is on-demand only. Load when the athlete asks about a specific session, when generating a post-workout report for an activity with `has_intervals: true` or `has_dfa: true`, or when evaluating pacing/compliance across interval sets or DFA a1 session-level detail.
 
 ---
 
@@ -2510,7 +2521,7 @@ This subsection defines the formal self-validation and audit metadata structure 
   "validation_metadata": {
     "data_source_fetched": true,
     "json_fetch_status": "success",
-    "protocol_version": "11.11",
+    "protocol_version": "11.32",
     "checklist_passed": [1, 2, 3, 4, 5, "5b", 6, "6b", 7, 8, 9, 10],
     "checklist_failed": [],
     "data_timestamp": "2026-01-13T22:32:05Z",

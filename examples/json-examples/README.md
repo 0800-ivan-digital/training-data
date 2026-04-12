@@ -21,7 +21,9 @@ These examples reflect sync.py v3.86 / Section 11 v11.17. Key fields added since
 - `readiness_decision` — pre-computed go/modify/skip recommendation with signal breakdown
 - `workout_summary_stats` — planned-vs-actual matching statistics
 - `race_calendar` — upcoming races and taper/race-week alerts
-- `has_intervals` — boolean flag on activities linking to intervals.json
+- `has_intervals` — boolean flag indicating structured interval segments exist in intervals.json
+- `has_dfa` — boolean flag indicating AlphaHRV DFA a1 data exists in intervals.json (independent from has_intervals)
+- `dfa_summary` — compact DFA a1 rollup attached when has_dfa is true and data quality is sufficient (omitted otherwise)
 - `efficiency_factor`, `hrrc` — per-activity capability metrics
 - `description` — activity description passthrough
 - `chat_notes` — athlete notes extracted from activity description (conditional)
