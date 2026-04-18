@@ -2262,6 +2262,8 @@ The dossier’s performance-objective tables define the **authoritative phase st
 AI systems should structure athlete reports consistently.  
 See https://github.com/CrankAddict/section-11/tree/main/examples/reports for annotated templates and examples.
 
+**Data Freshness:** Every numeric value in any report must come from a current read of its source JSON file (`latest.json`, `history.json`, `intervals.json`, `ftp_history.json`, or `routes.json` as appropriate for the metric). Do not carry forward values from an earlier report or an earlier point in the conversation — upstream data may have updated between reads. This rule applies especially to AI systems with persistent memory or long-running sessions, where values from prior reports may be cached and reused inadvertently.
+
 **Pre-Workout Reports must include:**
 - Weather and coach note (if athlete location is available)
 - Phase context (when confidence is high or medium)

@@ -2,6 +2,8 @@
 
 **Structure only — no data. Replace `[placeholders]` with actual values.**
 
+**Data Freshness:** Every numeric value in a report must come from a current read of its source JSON file. Do not carry forward values from earlier reports or earlier in the conversation — re-read before quoting.
+
 Generated at end of each training block (3–5 weeks).
 
 ---

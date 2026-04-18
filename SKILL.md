@@ -7,7 +7,7 @@ description: Evidence-based endurance coaching protocol (v11.33). Use when analy
 
 ## File Locations
 
-Data files (`latest.json`, `history.json`, `intervals.json`, `routes.json`, `DOSSIER.md`, `section11/`) live in the athlete's **data directory** — typically `~/training-data/`. HEARTBEAT.md lives in the **agent workspace** — the directory the agent runs from (e.g., `~/clawd/`). These may or may not be the same directory.
+Data files (`latest.json`, `history.json`, `intervals.json`, `ftp_history.json`, `routes.json`, `DOSSIER.md`, `section11/`) live in the athlete's **data directory** — typically `~/training-data/`. HEARTBEAT.md lives in the **agent workspace** — the directory the agent runs from (e.g., `~/clawd/`). These may or may not be the same directory.
 
 ## First Use Setup
 
@@ -22,12 +22,13 @@ On first use:
    - Save as DOSSIER.md in the data directory root
 
 2. **Set up JSON data source**
-   - **Local setup (recommended):** Athlete runs sync.py on a timer, producing `latest.json`, `history.json`, `intervals.json`, and `routes.json` (when events have GPX/TCX attachments) in the data directory. See `examples/json-local-sync/SETUP.md` for the full local pipeline.
+   - **Local setup (recommended):** Athlete runs sync.py on a timer, producing `latest.json`, `history.json`, `intervals.json`, `ftp_history.json`, and `routes.json` (when events have GPX/TCX attachments) in the data directory. See `examples/json-local-sync/SETUP.md` for the full local pipeline.
    - **GitHub connector:** If the platform has a GitHub connector (Claude, ChatGPT, Gemini, Mistral, etc.), the athlete connects their private data repo directly. The AI reads files through the connector — no URLs needed. If the athlete also commits `DOSSIER.md` and `SECTION_11.md` to the data repo, the connector provides everything in one connection.
    - **GitHub URL fetch:** Athlete creates a private or public GitHub repo for training data with automated sync. Save raw URLs in DOSSIER.md under "Data Source".
    - `latest.json` — current 7-day snapshot + 28-day derived metrics
    - `history.json` — longitudinal data (daily 90d, weekly 180d, monthly 3y)
    - `intervals.json` — per-interval segment data for recent structured sessions, plus DFA a1 session rollups when AlphaHRV recorded (14-day retention)
+   - `ftp_history.json` — dated FTP changes (indoor/outdoor), used for staleness tracking and benchmark comparison
    - `routes.json` — route/terrain data for events with GPX/TCX attachments (when present)
    - See: https://github.com/CrankAddict/section-11#2-set-up-your-data-mirror-optional-but-recommended
 
