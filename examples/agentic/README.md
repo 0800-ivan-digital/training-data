@@ -76,6 +76,8 @@ The agent needs a `GITHUB_TOKEN` with `actions:write` scope on the data repo.
 
 For agents running locally with direct filesystem access.
 
+`push.py` depends on `requests`. Install it into the same Python environment you use for `sync.py`: `pip install requests`.
+
 ```bash
 # Single workout (preview)
 python push.py push --name "Sweet Spot 3x15" --date 2026-03-10 --type Ride \
@@ -90,6 +92,22 @@ Credentials loaded from (first match wins):
 1. CLI args: `--athlete-id`, `--api-key`
 2. `.sync_config.json` in working directory (same file sync.py uses)
 3. Environment: `ATHLETE_ID`, `INTERVALS_KEY`
+
+`ATHLETE_ID` must include the leading `i` — e.g. `i113739`, not `113739`. `INTERVALS_KEY` is the raw API key string from Intervals.icu → Settings → Developer.
+
+```bash
+# CLI flags
+python push.py list --athlete-id i123456 --api-key abc123...
+
+# Env vars
+export ATHLETE_ID=i123456
+export INTERVALS_KEY=abc123...
+python push.py list
+
+# .sync_config.json (next to push.py)
+# {"athlete_id": "i123456", "intervals_key": "abc123..."}
+python push.py list
+```
 
 To keep your local JSON data fresh automatically (so push.py and your agent always have current data), see [json-local-sync](../json-local-sync/SETUP.md).
 
@@ -228,7 +246,7 @@ Provide `--activity-id` OR `--event-id`, not both.
 
 ## Intervals.icu Workout Syntax
 
-The `description` field uses Intervals.icu's native workout builder syntax. When provided, push.py sends `workout_doc: {}` which tells Intervals.icu to parse the description into structured workout steps.
+The `description` field uses Intervals.icu's native workout builder syntax. When provided, Intervals.icu parses the description into structured workout steps server-side.
 
 ### Targets
 
@@ -293,8 +311,13 @@ Maps Section 11 Workout Reference template IDs to Intervals.icu description synt
 - **Don't nest repeats** — Intervals.icu doesn't support it
 - **Don't push past dates** — validation rejects them. Planned workouts are future events
 - **Don't skip blank lines around repeat blocks** — parsing breaks without them
-- **Don't send workout_doc with no description** — push.py handles this automatically
 - **Don't update thresholds from estimates** — only from validated test results
+
+## Troubleshooting
+
+- **`403 Access denied`** — `ATHLETE_ID` is missing the leading `i` (e.g. `113739` instead of `i113739`), the API key is wrong, or the key doesn't belong to that athlete
+- **Error saying `requests` is not installed** — push.py is running under a Python interpreter that doesn't have `requests` installed; run `pip install requests` in the same env as `sync.py`, or invoke that env's Python explicitly
+- **Command appears to have done nothing** — preview is the default for all write operations. Add `--confirm` to actually write
 
 ## Files
 
