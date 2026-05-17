@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-17T11:41:11.372351",
+  "generated_at": "2026-05-17T15:40:55.893128",
   "version": "3.112",
   "script_hash": "a60c2ee19b34",
   "scan_hours": 72,
@@ -393,6 +393,27 @@
           "avg_cadence": 63.88165,
           "zone": 1,
           "training_load": 21.91346
+        }
+      ]
+    },
+    {
+      "activity_id": "i149094855",
+      "date": "2026-05-17",
+      "type": "Ride",
+      "name": "Vuelta ciclista por la ma\u00f1ana",
+      "interval_summary": null,
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 6658,
+          "avg_power": 99,
+          "max_power": 574,
+          "avg_hr": 113,
+          "max_hr": 150,
+          "avg_cadence": 69.51448,
+          "zone": 1,
+          "training_load": 46.779686,
+          "decoupling": -0.66324055
         }
       ]
     }
