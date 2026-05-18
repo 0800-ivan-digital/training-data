@@ -3,18 +3,19 @@
 ## Athlete Profile
 - Age: 34
 - Weight: 74 kg
-- FTP: 240w
-- W/kg: 3.24
+- FTP: 220w
+- W/kg: 2.97
 - Max HR: 196 bpm
 
-## Training Zones (Power — based on FTP 240w)
-- Z1 Recovery: < 144w
-- Z2 Endurance: 144–192w
-- Z3 Tempo: 192–216w
-- Z4 Threshold: 216–264w
-- Z5 VO2max: 264–288w
-- Z6 Anaerobic: 288–336w
-- Z7 Neuromuscular: > 336w
+## Training Zones (Power — based on FTP 220w)
+- Z1 Active Recovery: < 121w
+- Z2 Endurance: 122–165w
+- Z3 Tempo: 166–198w
+- Z4 Threshold: 199–231w
+- Z5 VO2max: 232–264w
+- Z6 Anaerobic: 265–330w
+- Z7 Neuromuscular: 331w+
+- Sweet Spot: 184–213w
 
 ## Training Zones (HR — based on Max HR 196 bpm)
 - Z1: < 118 bpm
