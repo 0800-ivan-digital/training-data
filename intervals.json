@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T18:24:23.683398",
+  "generated_at": "2026-05-18T22:12:04.428159",
   "version": "3.112",
   "script_hash": "a60c2ee19b34",
   "scan_hours": 72,
@@ -414,6 +414,27 @@
           "zone": 1,
           "training_load": 46.779686,
           "decoupling": -0.66324055
+        }
+      ]
+    },
+    {
+      "activity_id": "i149511802",
+      "date": "2026-05-18",
+      "type": "Ride",
+      "name": "Vuelta ciclista vespertina",
+      "interval_summary": null,
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 916,
+          "avg_power": 82,
+          "max_power": 343,
+          "avg_hr": 113,
+          "max_hr": 136,
+          "avg_cadence": 53.71502,
+          "zone": 1,
+          "training_load": 4.761175,
+          "decoupling": -2.6173658
         }
       ]
     }
