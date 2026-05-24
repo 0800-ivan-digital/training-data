@@ -1,31 +1,10 @@
 {
-  "generated_at": "2026-05-23T23:13:50.042815",
+  "generated_at": "2026-05-24T08:09:58.569717",
   "version": "3.112",
   "script_hash": "a60c2ee19b34",
   "scan_hours": 72,
   "retention_days": 14,
   "activities": [
-    {
-      "activity_id": "i146830236",
-      "date": "2026-05-09",
-      "type": "Ride",
-      "name": "Vuelta ciclista por la tarde",
-      "interval_summary": null,
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 5637,
-          "avg_power": 135,
-          "max_power": 663,
-          "avg_hr": 128,
-          "max_hr": 158,
-          "avg_cadence": 76.39793,
-          "zone": 2,
-          "training_load": 55.425346,
-          "decoupling": 2.1089377
-        }
-      ]
-    },
     {
       "activity_id": "i148004821",
       "date": "2026-05-13",
