@@ -1,58 +1,10 @@
 {
-  "generated_at": "2026-05-27T20:33:39.892126",
+  "generated_at": "2026-05-28T00:16:19.999002",
   "version": "3.112",
   "script_hash": "a60c2ee19b34",
   "scan_hours": 72,
   "retention_days": 14,
   "activities": [
-    {
-      "activity_id": "i148004821",
-      "date": "2026-05-13",
-      "type": "Ride",
-      "name": "Vuelta ciclista por la tarde",
-      "interval_summary": [
-        "1x 2m14s 223w"
-      ],
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 7056,
-          "avg_power": 148,
-          "max_power": 416,
-          "avg_hr": 130,
-          "max_hr": 160,
-          "avg_cadence": 85.80154,
-          "zone": 2,
-          "training_load": 76.79287,
-          "decoupling": 6.1166167
-        },
-        {
-          "type": "WORK",
-          "label": "134s@223w96rpm",
-          "duration_secs": 134,
-          "avg_power": 223,
-          "max_power": 289,
-          "avg_hr": 162,
-          "max_hr": 166,
-          "avg_cadence": 95.589554,
-          "zone": 4,
-          "training_load": 3.0993316,
-          "decoupling": -1.0323075
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 1161,
-          "avg_power": 97,
-          "max_power": 361,
-          "avg_hr": 122,
-          "max_hr": 167,
-          "avg_cadence": 55.33849,
-          "zone": 1,
-          "training_load": 8.154074,
-          "decoupling": 13.22786
-        }
-      ]
-    },
     {
       "activity_id": "i148877171",
       "date": "2026-05-16",
