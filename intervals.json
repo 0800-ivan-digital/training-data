@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T19:54:50.561937",
+  "generated_at": "2026-05-29T23:58:57.429347",
   "version": "3.112",
   "script_hash": "a60c2ee19b34",
   "scan_hours": 72,
@@ -560,6 +560,27 @@
           "zone": 1,
           "training_load": 12.123967,
           "decoupling": -27.795721
+        }
+      ]
+    },
+    {
+      "activity_id": "i152605312",
+      "date": "2026-05-29",
+      "type": "Ride",
+      "name": "Z2 Base \u2014 Parque Sarmiento",
+      "interval_summary": null,
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 7714,
+          "avg_power": 129,
+          "max_power": 368,
+          "avg_hr": 123,
+          "max_hr": 142,
+          "avg_cadence": 78.784706,
+          "zone": 2,
+          "training_load": 77.74604,
+          "decoupling": 4.0667343
         }
       ]
     }
