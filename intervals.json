@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22T20:43:08.074660",
+  "generated_at": "2026-06-22T22:26:34.150207",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -196,6 +196,28 @@
           "zone": 1,
           "training_load": 14.930041,
           "decoupling": -4.6936455
+        }
+      ],
+      "pedaling_retry": true
+    },
+    {
+      "activity_id": "i159520172",
+      "date": "2026-06-22",
+      "type": "Ride",
+      "name": "Z2 Recuperaci\u00f3n \u2014 Lunes",
+      "interval_summary": null,
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 5327,
+          "avg_power": 136,
+          "max_power": 616,
+          "avg_hr": 121,
+          "max_hr": 146,
+          "avg_cadence": 76.61528,
+          "zone": 2,
+          "training_load": 59.682644,
+          "decoupling": 3.3086162
         }
       ],
       "pedaling_retry": true
