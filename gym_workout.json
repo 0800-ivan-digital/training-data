@@ -1,0 +1,106 @@
+{
+  "block": "Fuerza base — Bloque 1",
+  "week": 1,
+  "rest_seconds": 120,
+  "recommended_next": "lower",
+  "sessions": {
+    "upper": {
+      "name": "Tren superior",
+      "exercises": [
+        {
+          "id": "bench_press",
+          "name": "Press de banca",
+          "sets": 4,
+          "reps": 5,
+          "weight_kg": 70,
+          "rest_seconds": 150,
+          "image_url": null,
+          "description": "Agarre ligeramente más ancho que los hombros. Bajás la barra hasta rozar el pecho. Empuje explosivo manteniendo los omóplatos juntos y los pies apoyados.",
+          "notes": null
+        },
+        {
+          "id": "pull_up",
+          "name": "Dominadas",
+          "sets": 4,
+          "reps": 6,
+          "weight_kg": 0,
+          "rest_seconds": 120,
+          "image_url": null,
+          "description": "Agarre prono al ancho de hombros. Partís de extensión completa. Subís hasta que el mentón supere la barra. Bajada controlada.",
+          "notes": null
+        },
+        {
+          "id": "ohp",
+          "name": "Press militar",
+          "sets": 3,
+          "reps": 8,
+          "weight_kg": 50,
+          "rest_seconds": 120,
+          "image_url": null,
+          "description": "De pie o sentado, barra a la altura de los hombros. Empujás verticalmente hasta extensión completa. Core apretado durante todo el movimiento.",
+          "notes": null
+        },
+        {
+          "id": "db_row",
+          "name": "Remo con mancuerna",
+          "sets": 3,
+          "reps": 10,
+          "weight_kg": 24,
+          "rest_seconds": 90,
+          "image_url": null,
+          "description": "Apoyás una mano y rodilla en el banco. Espalda paralela al piso. Tirás la mancuerna hacia la cadera sin rotar el torso.",
+          "notes": null
+        }
+      ]
+    },
+    "lower": {
+      "name": "Tren inferior",
+      "exercises": [
+        {
+          "id": "squat",
+          "name": "Sentadilla",
+          "sets": 4,
+          "reps": 5,
+          "weight_kg": 80,
+          "rest_seconds": 180,
+          "image_url": null,
+          "description": "Barra sobre trapecios. Pies al ancho de hombros. Bajás hasta paralela o más manteniendo el torso erguido y las rodillas alineadas con los pies.",
+          "notes": null
+        },
+        {
+          "id": "rdl",
+          "name": "RDL",
+          "sets": 3,
+          "reps": 8,
+          "weight_kg": 70,
+          "rest_seconds": 120,
+          "image_url": null,
+          "description": "De pie con barra. Bisagra de cadera manteniendo la espalda neutra. Bajás hasta sentir tensión en los isquios. No flexionás la rodilla significativamente.",
+          "notes": null
+        },
+        {
+          "id": "leg_press",
+          "name": "Prensa de piernas",
+          "sets": 3,
+          "reps": 12,
+          "weight_kg": 120,
+          "rest_seconds": 90,
+          "image_url": null,
+          "description": "Pies al ancho de hombros en la plataforma. Bajás hasta 90° de rodilla. Empuje completo sin bloquear la rodilla al final.",
+          "notes": null
+        },
+        {
+          "id": "calf_raise",
+          "name": "Elevación de pantorrillas",
+          "sets": 4,
+          "reps": 15,
+          "weight_kg": 40,
+          "rest_seconds": 60,
+          "image_url": null,
+          "description": "De pie en escalón o superficie elevada. Bajás el talón completamente. Subís hasta la punta máxima con pausa de 1 segundo arriba.",
+          "notes": null
+        }
+      ]
+    }
+  }
+}
