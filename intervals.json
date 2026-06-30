@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T19:29:41.963115",
+  "generated_at": "2026-06-30T19:08:53.162789",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -354,91 +354,6 @@
           "total_ascent_m": 23,
           "total_descent_m": 15,
           "calories": 88
-        }
-      ]
-    },
-    {
-      "activity_id": "i157513879",
-      "date": "2026-06-15",
-      "type": "Ride",
-      "name": "Lunch Ride",
-      "interval_summary": [
-        "1x 12s 366w"
-      ],
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 5291,
-          "avg_power": 134,
-          "max_power": 613,
-          "avg_hr": 124,
-          "max_hr": 151,
-          "avg_cadence": 74.86085,
-          "zone": 2,
-          "training_load": 59.268486,
-          "decoupling": -2.2162883
-        },
-        {
-          "type": "WORK",
-          "label": "12s@366w70rpm",
-          "duration_secs": 12,
-          "avg_power": 366,
-          "max_power": 423,
-          "avg_hr": 142,
-          "max_hr": 151,
-          "avg_cadence": 69.666664,
-          "zone": 7,
-          "training_load": 0.3675,
-          "decoupling": 13.772434
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 1417,
-          "avg_power": 113,
-          "max_power": 423,
-          "avg_hr": 122,
-          "max_hr": 156,
-          "avg_cadence": 56.108917,
-          "zone": 1,
-          "training_load": 14.930041,
-          "decoupling": -4.6936455
-        }
-      ],
-      "pedaling": {
-        "balance": {
-          "avg_left_pct": 48.5,
-          "avg_right_pct": 51.5,
-          "cv_pct": 7.5,
-          "coverage_pct": 85.5,
-          "source": "stance_time_balance_coros"
-        },
-        "cadence_distribution": {
-          "avg_rpm": 78.7,
-          "median_rpm": 82,
-          "sub70_pct": 14.4,
-          "r70_80_pct": 18.0,
-          "r80_90_pct": 62.6,
-          "r90_100_pct": 5.0,
-          "over100_pct": 0.0
-        },
-        "coasting_pct": 10.9,
-        "power_cadence_corr": -0.219,
-        "hr_drop_final_60s": 4
-      },
-      "laps": [
-        {
-          "lap": 1,
-          "duration_secs": 6173,
-          "distance_km": 42.97,
-          "avg_power": 131,
-          "normalized_power": 151,
-          "avg_hr": 124,
-          "min_hr": 77,
-          "max_hr": 156,
-          "avg_cadence": 79,
-          "total_ascent_m": 254,
-          "total_descent_m": 240,
-          "calories": 877
         }
       ]
     },
@@ -1618,6 +1533,55 @@
           "calories": 870
         }
       ]
+    },
+    {
+      "activity_id": "i161352396",
+      "date": "2026-06-29",
+      "type": "Ride",
+      "name": "Vuelta ciclista por la tarde",
+      "interval_summary": [
+        "1x 1h25m 146w"
+      ],
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 1368,
+          "avg_power": 116,
+          "max_power": 644,
+          "avg_hr": 109,
+          "max_hr": 136,
+          "avg_cadence": 69.691345,
+          "zone": 1,
+          "training_load": 12.092415,
+          "decoupling": -3.123173
+        },
+        {
+          "type": "WORK",
+          "label": "5100s@146w83rpm",
+          "duration_secs": 5100,
+          "avg_power": 146,
+          "max_power": 273,
+          "avg_hr": 120,
+          "max_hr": 150,
+          "avg_cadence": 83.13426,
+          "zone": 2,
+          "training_load": 58.51878,
+          "decoupling": -0.25613603
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 1267,
+          "avg_power": 110,
+          "max_power": 723,
+          "avg_hr": 110,
+          "max_hr": 137,
+          "avg_cadence": 57.96047,
+          "zone": 1,
+          "training_load": 11.278971,
+          "decoupling": -2.3542907
+        }
+      ],
+      "pedaling_retry": true
     }
   ]
 }
