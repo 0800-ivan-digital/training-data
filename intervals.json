@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T17:14:55.876326",
+  "generated_at": "2026-06-28T19:29:41.963115",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -354,6 +354,91 @@
           "total_ascent_m": 23,
           "total_descent_m": 15,
           "calories": 88
+        }
+      ]
+    },
+    {
+      "activity_id": "i157513879",
+      "date": "2026-06-15",
+      "type": "Ride",
+      "name": "Lunch Ride",
+      "interval_summary": [
+        "1x 12s 366w"
+      ],
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 5291,
+          "avg_power": 134,
+          "max_power": 613,
+          "avg_hr": 124,
+          "max_hr": 151,
+          "avg_cadence": 74.86085,
+          "zone": 2,
+          "training_load": 59.268486,
+          "decoupling": -2.2162883
+        },
+        {
+          "type": "WORK",
+          "label": "12s@366w70rpm",
+          "duration_secs": 12,
+          "avg_power": 366,
+          "max_power": 423,
+          "avg_hr": 142,
+          "max_hr": 151,
+          "avg_cadence": 69.666664,
+          "zone": 7,
+          "training_load": 0.3675,
+          "decoupling": 13.772434
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 1417,
+          "avg_power": 113,
+          "max_power": 423,
+          "avg_hr": 122,
+          "max_hr": 156,
+          "avg_cadence": 56.108917,
+          "zone": 1,
+          "training_load": 14.930041,
+          "decoupling": -4.6936455
+        }
+      ],
+      "pedaling": {
+        "balance": {
+          "avg_left_pct": 48.5,
+          "avg_right_pct": 51.5,
+          "cv_pct": 7.5,
+          "coverage_pct": 85.5,
+          "source": "stance_time_balance_coros"
+        },
+        "cadence_distribution": {
+          "avg_rpm": 78.7,
+          "median_rpm": 82,
+          "sub70_pct": 14.4,
+          "r70_80_pct": 18.0,
+          "r80_90_pct": 62.6,
+          "r90_100_pct": 5.0,
+          "over100_pct": 0.0
+        },
+        "coasting_pct": 10.9,
+        "power_cadence_corr": -0.219,
+        "hr_drop_final_60s": 4
+      },
+      "laps": [
+        {
+          "lap": 1,
+          "duration_secs": 6173,
+          "distance_km": 42.97,
+          "avg_power": 131,
+          "normalized_power": 151,
+          "avg_hr": 124,
+          "min_hr": 77,
+          "max_hr": 156,
+          "avg_cadence": 79,
+          "total_ascent_m": 254,
+          "total_descent_m": 240,
+          "calories": 877
         }
       ]
     },
@@ -1482,29 +1567,57 @@
           "decoupling": -2.8301432
         }
       ],
-      "pedaling_retry": true
-    },
-    {
-      "activity_id": "i161352396",
-      "date": "2026-06-29",
-      "type": "Ride",
-      "name": "Z2 \u2014 Lunes",
-      "interval_summary": null,
-      "intervals": [
+      "pedaling": {
+        "balance": {
+          "avg_left_pct": 48.8,
+          "avg_right_pct": 51.2,
+          "cv_pct": 9.4,
+          "coverage_pct": 87.9,
+          "source": "stance_time_balance_coros"
+        },
+        "cadence_distribution": {
+          "avg_rpm": 81.8,
+          "median_rpm": 86,
+          "sub70_pct": 11.8,
+          "r70_80_pct": 11.5,
+          "r80_90_pct": 50.6,
+          "r90_100_pct": 25.9,
+          "over100_pct": 0.1
+        },
+        "coasting_pct": 7.8,
+        "power_cadence_corr": 0.213,
+        "hr_drop_final_60s": 1
+      },
+      "laps": [
         {
-          "type": "RECOVERY",
-          "duration_secs": 7735,
-          "avg_power": 135,
-          "max_power": 723,
+          "lap": 1,
+          "duration_secs": 1386,
+          "distance_km": 9.04,
+          "avg_power": 121,
+          "normalized_power": 134,
           "avg_hr": 116,
-          "max_hr": 150,
-          "avg_cadence": 76.71451,
-          "zone": 2,
-          "training_load": 82.763054,
-          "decoupling": 0.06858333
+          "min_hr": 72,
+          "max_hr": 139,
+          "avg_cadence": 80,
+          "total_ascent_m": 41,
+          "total_descent_m": 56,
+          "calories": 182
+        },
+        {
+          "lap": 2,
+          "duration_secs": 5888,
+          "distance_km": 45.83,
+          "avg_power": 136,
+          "normalized_power": 161,
+          "avg_hr": 124,
+          "min_hr": 84,
+          "max_hr": 161,
+          "avg_cadence": 82,
+          "total_ascent_m": 292,
+          "total_descent_m": 281,
+          "calories": 870
         }
-      ],
-      "pedaling_retry": true
+      ]
     }
   ]
 }
