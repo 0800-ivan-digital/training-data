@@ -1,86 +1,196 @@
 {
-  "block": "Fuerza base — Fase AA",
+  "block": "Fuerza Base — Transición AA→FM",
+  "phase": "AA→FM",
   "week": 1,
   "rest_seconds": 90,
-  "session": {
-    "id": "lower",
-    "name": "Tren inferior",
-    "subtitle": "PIERNAS · GLÚTEOS · CORE",
-    "warmup": "5 min bicicleta estática suave + movilidad de cadera y cuádriceps.",
-    "exercises": [
-      {
-        "id": "goblet_squat",
-        "name": "Sentadilla goblet",
-        "type": "libre",
-        "sets": 3,
-        "reps": 15,
-        "weight_kg": 14,
-        "rest_seconds": 90,
-        "image_url": "https://www.ivandigital.net/gym/img/half_squat.png",
-        "description": "Sostenés una mancuerna a la altura del pecho con ambas manos. Pies al ancho de hombros. Bajás manteniendo <strong>el torso erguido</strong> y las rodillas alineadas con los pies.",
-        "notes": null
-      },
-      {
-        "id": "bulgarian_split_squat",
-        "name": "Bulgarian split squat",
-        "type": "libre",
-        "sets": 3,
-        "reps": 15,
-        "weight_kg": 0,
-        "rest_seconds": 90,
-        "image_url": "https://www.ivandigital.net/gym/img/bulgarian_split_squat.png",
-        "description": "Pie trasero elevado en banco. Pie delantero al frente. <strong>Bajás hasta 90° de rodilla delantera</strong>. Rodilla no supera la punta del pie.",
-        "notes": "Sin peso esta semana — ejercicio nuevo. Foco en equilibrio y técnica. Ejecutar ambos lados."
-      },
-      {
-        "id": "rdl",
-        "name": "Peso muerto rumano",
-        "type": "libre",
-        "sets": 3,
-        "reps": 15,
-        "weight_kg": 20,
-        "rest_seconds": 90,
-        "image_url": "https://www.ivandigital.net/gym/img/rdl.webp",
-        "description": "De pie con mancuernas. <strong>Bisagra de cadera</strong> manteniendo la espalda neutra. Bajás hasta sentir tensión en los isquios sin flexionar significativamente la rodilla.",
-        "notes": null
-      },
-      {
-        "id": "leg_press",
-        "name": "Prensa unilateral",
-        "type": "maquina",
-        "sets": 3,
-        "reps": 15,
-        "weight_kg": 30,
-        "rest_seconds": 90,
-        "image_url": "https://www.ivandigital.net/gym/img/leg_press_unilateral.png",
-        "description": "Un pie a la vez en la plataforma. Bajás hasta <strong>90° de rodilla</strong>. Empuje completo sin bloquear la rodilla al final.",
-        "notes": "Peso por pierna. Ejecutar ambos lados."
-      },
-      {
-        "id": "calf_raise",
-        "name": "Elevación de pantorrillas",
-        "type": "libre",
-        "sets": 3,
-        "reps": 20,
-        "weight_kg": 0,
-        "rest_seconds": 60,
-        "image_url": "https://www.ivandigital.net/gym/img/calf_raise.png",
-        "description": "De pie en escalón o superficie elevada. <strong>Bajás el talón completamente</strong>. Subís hasta la punta máxima con pausa de 1 segundo arriba.",
-        "notes": null
-      },
-      {
-        "id": "plank",
-        "name": "Plancha frontal",
-        "type": "core",
-        "sets": 3,
-        "reps": 40,
-        "weight_kg": 0,
-        "rest_seconds": 60,
-        "unit_is_seconds": true,
-        "image_url": "https://www.ivandigital.net/gym/img/plank.jpg",
-        "description": "Apoyás antebrazos y puntas de pie. Cuerpo en línea recta de cabeza a talones. <strong>Core apretado, no dejar caer las caderas</strong>.",
-        "notes": "El número indica segundos."
-      }
-    ]
+  "recommended_next": "upper",
+  "sessions": {
+    "lower": {
+      "name": "Tren inferior",
+      "day": "Martes",
+      "subtitle": "CUÁDRICEPS · GLÚTEOS · ISQUIOS · CORE",
+      "duration_min": 60,
+      "warmup": "5 min bicicleta estática suave + movilidad de cadera, isquiotibiales y tobillos.",
+      "exercises": [
+        {
+          "id": "half_squat",
+          "name": "Media sentadilla con barra",
+          "type": "libre",
+          "sets": 3,
+          "reps": 8,
+          "weight_kg": 30,
+          "rest_seconds": 120,
+          "image_url": "https://www.ivandigital.net/gym/img/half_squat.png",
+          "description": "Barra sobre trapecios. Pies al ancho de hombros. Bajás hasta <strong>90° de rodilla</strong> manteniendo el torso erguido y las rodillas alineadas con los pies. Concéntrico con intención explosiva.",
+          "notes": "Ejercicio principal del protocolo (Rønnestad/Sunde). Primera sesión con barra — priorizá técnica sobre carga. 120s de descanso."
+        },
+        {
+          "id": "bulgarian_split_squat",
+          "name": "Bulgarian split squat",
+          "type": "libre",
+          "sets": 3,
+          "reps": 10,
+          "weight_kg": 8,
+          "rest_seconds": 90,
+          "image_url": "https://www.ivandigital.net/gym/img/bulgarian_split_squat.png",
+          "description": "Pie trasero elevado en banco. Pie delantero al frente. <strong>Bajás hasta 90° de rodilla delantera</strong>. Rodilla no supera la punta del pie. Ejecutar ambos lados.",
+          "notes": "8kg c/u (16kg total). Reemplaza el step-up. Primera sesión — ajustá si es necesario."
+        },
+        {
+          "id": "rdl",
+          "name": "RDL",
+          "type": "libre",
+          "sets": 3,
+          "reps": 10,
+          "weight_kg": 30,
+          "rest_seconds": 90,
+          "image_url": "https://www.ivandigital.net/gym/img/rdl.webp",
+          "description": "De pie con barra. <strong>Bisagra de cadera</strong> manteniendo la espalda neutra. Bajás hasta sentir tensión en los isquios. No flexionás la rodilla significativamente.",
+          "notes": "Subida desde 25kg."
+        },
+        {
+          "id": "hip_thrust",
+          "name": "Hip thrust",
+          "type": "libre",
+          "sets": 3,
+          "reps": 10,
+          "weight_kg": 40,
+          "rest_seconds": 90,
+          "image_url": "https://www.ivandigital.net/gym/img/hip_thrust.webp",
+          "description": "Espalda superior apoyada en banco. Barra sobre las caderas con colchoneta. <strong>Empujás las caderas hacia arriba</strong> hasta extensión completa. Pausa 1 segundo arriba.",
+          "notes": "Reemplaza el glúteo bridge. Mismo peso, mayor rango con banco."
+        },
+        {
+          "id": "calf_raise",
+          "name": "Elevación de pantorrillas",
+          "type": "libre",
+          "sets": 3,
+          "reps": 15,
+          "weight_kg": 40,
+          "rest_seconds": 60,
+          "image_url": "https://www.ivandigital.net/gym/img/calf_raise.png",
+          "description": "De pie en escalón o superficie elevada. <strong>Bajás el talón completamente</strong>. Subís hasta la punta máxima con pausa de 1 segundo arriba.",
+          "notes": null
+        },
+        {
+          "id": "leg_raises",
+          "name": "Elevación de piernas tumbado",
+          "type": "peso_propio",
+          "sets": 3,
+          "reps": 12,
+          "weight_kg": 0,
+          "rest_seconds": 60,
+          "image_url": null,
+          "description": "Tumbado boca arriba, manos bajo la zona lumbar. Piernas juntas y extendidas. <strong>Subís las piernas hasta 90°</strong> controlando la bajada sin apoyarlas completamente.",
+          "notes": "Foco en abdominales inferiores. Lumbar pegada al piso durante todo el movimiento."
+        },
+        {
+          "id": "plank",
+          "name": "Plancha frontal",
+          "type": "peso_propio",
+          "sets": 3,
+          "reps": 1,
+          "duration_seconds": 40,
+          "weight_kg": 0,
+          "rest_seconds": 60,
+          "image_url": null,
+          "description": "Apoyado en antebrazos y puntas de pie. Cuerpo en línea recta. <strong>Core apretado, glúteos activados.</strong> No dejes caer la cadera.",
+          "notes": "40 segundos por serie."
+        }
+      ]
+    },
+    "upper": {
+      "name": "Tren superior",
+      "day": "Jueves",
+      "subtitle": "EMPUJE · TIRÓN · CORE",
+      "duration_min": 60,
+      "warmup": "5 min bicicleta estática suave + movilidad de hombros y rotadores externos.",
+      "exercises": [
+        {
+          "id": "db_bench_press",
+          "name": "Press de banca con mancuernas",
+          "type": "libre",
+          "sets": 3,
+          "reps": 10,
+          "weight_kg": 10,
+          "rest_seconds": 90,
+          "image_url": "https://www.ivandigital.net/gym/img/bench_press.png",
+          "description": "Tumbado en banco. Mancuernas a los costados del pecho. <strong>Empuje explosivo</strong> hasta extensión sin bloquear el codo. Bajada controlada en 3 segundos.",
+          "notes": "10kg c/u (20kg total). Subida desde 7.5kg."
+        },
+        {
+          "id": "db_row",
+          "name": "Remo con mancuerna",
+          "type": "libre",
+          "sets": 3,
+          "reps": 10,
+          "weight_kg": 14,
+          "rest_seconds": 90,
+          "image_url": "https://www.ivandigital.net/gym/img/dumbbell_row.jpg",
+          "description": "Apoyás una mano y rodilla en el banco. Espalda paralela al piso. <strong>Tirás la mancuerna hacia la cadera</strong> sin rotar el torso.",
+          "notes": "Subida desde 12kg."
+        },
+        {
+          "id": "ohp",
+          "name": "Press militar con mancuernas",
+          "type": "libre",
+          "sets": 3,
+          "reps": 10,
+          "weight_kg": 8,
+          "rest_seconds": 90,
+          "image_url": null,
+          "description": "De pie o sentado. Mancuernas a la altura de los hombros. <strong>Empujás verticalmente hasta extensión completa.</strong> Core apretado durante todo el movimiento.",
+          "notes": "8kg c/u. Reemplaza las elevaciones laterales — mayor transferencia al ciclismo (postura y estabilidad)."
+        },
+        {
+          "id": "lat_pulldown",
+          "name": "Jalón de pecho",
+          "type": "maquina",
+          "sets": 3,
+          "reps": 10,
+          "weight_kg": 32,
+          "rest_seconds": 90,
+          "image_url": null,
+          "description": "Agarre prono al ancho de hombros. <strong>Tirás la barra hasta el pecho</strong> llevando los codos hacia abajo y atrás. Controlá la subida.",
+          "notes": "Subida leve desde 30kg."
+        },
+        {
+          "id": "machine_row",
+          "name": "Remo con máquina",
+          "type": "maquina",
+          "sets": 3,
+          "reps": 12,
+          "weight_kg": 35,
+          "rest_seconds": 90,
+          "image_url": null,
+          "description": "Pecho apoyado en el soporte. <strong>Tirás los mangos hacia el torso</strong> apretando los omóplatos al final del movimiento. Bajada controlada.",
+          "notes": null
+        },
+        {
+          "id": "reverse_crunch",
+          "name": "Crunch inverso",
+          "type": "peso_propio",
+          "sets": 3,
+          "reps": 15,
+          "weight_kg": 0,
+          "rest_seconds": 60,
+          "image_url": null,
+          "description": "Tumbado boca arriba, manos apoyadas en el suelo. <strong>Llevás las rodillas hacia el pecho curvando la pelvis.</strong> Controlá la bajada sin apoyar completamente.",
+          "notes": "Foco en abdominales inferiores. El movimiento es pélvico, no de piernas."
+        },
+        {
+          "id": "dead_bug",
+          "name": "Dead bug",
+          "type": "peso_propio",
+          "sets": 3,
+          "reps": 8,
+          "weight_kg": 0,
+          "rest_seconds": 60,
+          "image_url": null,
+          "description": "Tumbado boca arriba, brazos hacia el techo, caderas y rodillas a 90°. <strong>Extendés brazo opuesto a pierna opuesta</strong> sin despegar la zona lumbar del piso.",
+          "notes": "8 repeticiones por lado."
+        }
+      ]
+    }
   }
 }
