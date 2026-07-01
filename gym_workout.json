@@ -44,7 +44,8 @@
           "reps": 10,
           "weight_kg": 30,
           "rest_seconds": 90,
-          "image_url": null,
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Romanian-deadlift-1.png",
+          "image_url_2": "https://upload.wikimedia.org/wikipedia/commons/5/58/Romanian-deadlift-2.png",
           "description": "De pie con barra. <strong>Bisagra de cadera</strong> manteniendo la espalda neutra. Bajás hasta sentir tensión en los isquios. No flexionás la rodilla significativamente.",
           "notes": "Subida desde 25kg."
         },
@@ -93,7 +94,8 @@
           "duration_seconds": 40,
           "weight_kg": 0,
           "rest_seconds": 60,
-          "image_url": null,
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Plank.jpg",
+          "image_url_2": null,
           "description": "Apoyado en antebrazos y puntas de pie. Cuerpo en línea recta. <strong>Core apretado, glúteos activados.</strong> No dejes caer la cadera.",
           "notes": "40 segundos por serie."
         }
