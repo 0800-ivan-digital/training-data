@@ -170,16 +170,16 @@
           "notes": null
         },
         {
-          "id": "reverse_crunch",
-          "name": "Crunch inverso",
-          "type": "peso_propio",
+          "id": "ab_crunch_machine",
+          "name": "Máquina de abdominales",
+          "type": "maquina",
           "sets": 3,
           "reps": 15,
           "weight_kg": 0,
-          "rest_seconds": 60,
-          "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Decline_Reverse_Crunch/0.jpg",
-          "description": "Tumbado boca arriba, manos apoyadas en el suelo. <strong>Llevás las rodillas hacia el pecho curvando la pelvis.</strong> Controlá la bajada sin apoyar completamente.",
-          "notes": "Foco en abdominales inferiores. El movimiento es pélvico, no de piernas."
+          "rest_seconds": 90,
+          "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Ab_Crunch_Machine/0.jpg",
+          "description": "Sentado en la máquina, pies bajo los apoyos. <strong>Flexionás el torso hacia adelante</strong> contrayendo el abdomen. Controlá la vuelta sin dejar caer el peso.",
+          "notes": "Peso corporal. Foco en la contracción — no uses impulso."
         },
         {
           "id": "dead_bug",
