@@ -32,7 +32,8 @@
           "reps": 10,
           "weight_kg": 8,
           "rest_seconds": 90,
-          "image_url": null,
+          "image_url": "https://www.ivandigital.net/gym/gym_img/bulgarian-split-squat.jpg",
+          "image_url_2": null,
           "description": "Pie trasero elevado en banco. Pie delantero al frente. <strong>Bajás hasta 90° de rodilla delantera</strong>. Rodilla no supera la punta del pie. Ejecutar ambos lados.",
           "notes": "8kg c/u (16kg total). Reemplaza el step-up. Primera sesión — ajustá si es necesario."
         },
