@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T22:47:13.226636",
+  "generated_at": "2026-07-03T00:03:02.698365",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -1452,6 +1452,28 @@
           "zone": 1,
           "training_load": 11.278971,
           "decoupling": -2.3542907
+        }
+      ],
+      "pedaling_retry": true
+    },
+    {
+      "activity_id": "i162223692",
+      "date": "2026-07-02",
+      "type": "Ride",
+      "name": "Rodillo Z2 \u2014 Jueves",
+      "interval_summary": null,
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 3071,
+          "avg_power": 136,
+          "max_power": 257,
+          "avg_hr": 124,
+          "max_hr": 138,
+          "avg_cadence": 88.9419,
+          "zone": 2,
+          "training_load": 36.838074,
+          "decoupling": 7.1938014
         }
       ],
       "pedaling_retry": true
