@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T13:56:43.372742",
+  "generated_at": "2026-07-04T15:06:01.443903",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -1487,6 +1487,28 @@
           "zone": 2,
           "training_load": 31.214205,
           "decoupling": -14.583304
+        }
+      ],
+      "pedaling_retry": true
+    },
+    {
+      "activity_id": "i162649375",
+      "date": "2026-07-04",
+      "type": "Ride",
+      "name": "Z2 Rodillo \u2014 S\u00e1bado",
+      "interval_summary": null,
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 3705,
+          "avg_power": 132,
+          "max_power": 222,
+          "avg_hr": 121,
+          "max_hr": 140,
+          "avg_cadence": 81.601166,
+          "zone": 2,
+          "training_load": 41.281017,
+          "decoupling": 5.705902
         }
       ],
       "pedaling_retry": true
