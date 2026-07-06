@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T22:02:25.302331",
+  "generated_at": "2026-07-06T23:31:10.526586",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -1397,6 +1397,55 @@
           "zone": 2,
           "training_load": 41.281017,
           "decoupling": 5.705902
+        }
+      ],
+      "pedaling_retry": true
+    },
+    {
+      "activity_id": "i163374157",
+      "date": "2026-07-06",
+      "type": "Ride",
+      "name": "Z2 Exterior \u2014 Lunes",
+      "interval_summary": [
+        "1x 10s 379w"
+      ],
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 6890,
+          "avg_power": 132,
+          "max_power": 725,
+          "avg_hr": 123,
+          "max_hr": 150,
+          "avg_cadence": 75.35225,
+          "zone": 2,
+          "training_load": 72.13014,
+          "decoupling": 3.2120643
+        },
+        {
+          "type": "WORK",
+          "label": "10s@379w70rpm",
+          "duration_secs": 10,
+          "avg_power": 379,
+          "max_power": 450,
+          "avg_hr": 137,
+          "max_hr": 141,
+          "avg_cadence": 69.9,
+          "zone": 7,
+          "training_load": 0.29834712,
+          "decoupling": 12.842463
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 1148,
+          "avg_power": 108,
+          "max_power": 874,
+          "avg_hr": 116,
+          "max_hr": 148,
+          "avg_cadence": 59.84698,
+          "zone": 1,
+          "training_load": 9.228568,
+          "decoupling": 0.063454
         }
       ],
       "pedaling_retry": true
