@@ -17,7 +17,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-s
 .scr{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(80px + env(safe-area-inset-bottom));overflow-y:auto}
 .scr-mid{padding-bottom:24px;justify-content:center;gap:20px;overflow-y:visible}
 
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 0;flex-shrink:0}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top)) 16px 0;flex-shrink:0}
 .topbar-logo{font-size:11px;font-weight:600;letter-spacing:1.5px;color:#5A5A5A;text-transform:uppercase}
 .topbar-badge{font-size:10px;font-weight:700;letter-spacing:1px;color:#C8FF00;border:1px solid #C8FF00;border-radius:4px;padding:2px 7px;text-transform:uppercase}
 
@@ -51,7 +51,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-s
 .seg.done{background:#C8FF00}
 .seg.cur{background:#C8FF00;opacity:.35}
 
-.set-header{display:flex;align-items:flex-start;justify-content:space-between;padding:14px 16px 0;flex-shrink:0}
+.set-header{display:flex;align-items:flex-start;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top)) 16px 0;flex-shrink:0}
 .set-ex-num{font-size:12px;color:#3A3A3A;font-weight:600;margin-right:10px;margin-top:2px;flex-shrink:0}
 .set-ex-name{font-size:18px;font-weight:700;letter-spacing:-0.3px;flex:1}
 .set-ex-sub{font-size:12px;color:#5A5A5A;margin-top:4px}
@@ -254,6 +254,11 @@ function applyEdit(){
   S.editing=false;render();
 }
 
+function openEdit(){
+  S.editing=true;render();
+  setTimeout(()=>{const el=document.getElementById('ew');if(el){el.scrollIntoView({behavior:'smooth',block:'center'});}},100);
+}
+
 function confirmSet(){
   const w=S.ew??curEx().weight_kg;
   const r2=S.er??curEx().reps;
@@ -446,7 +451,7 @@ function renderSet(){
   </div>
   ${imgHtml}
   ${descHtml}
-  <div class="scr" style="padding-top:0;padding-bottom:calc(90px + env(safe-area-inset-bottom))">
+  <div class="scr" style="padding-top:0;padding-bottom:calc(190px + env(safe-area-inset-bottom))">
     <div class="set-card">
       <div class="set-label">Set ${S.si+1} de ${totalSets()}</div>
       <div class="set-nums">
@@ -457,7 +462,7 @@ function renderSet(){
       ${notesHtml}
       <div class="rest-ref">⏱ Descanso: <span>${restLabel(ex)}</span></div>
       ${editHtml}
-      ${!S.editing?`<div class="edit-link" onclick="S.editing=true;render()">Editar peso o ${ex.unit_is_seconds?'tiempo':'reps'}</div>`:''}
+      ${!S.editing?`<div class="edit-link" onclick="openEdit()">Editar peso o ${ex.unit_is_seconds?'tiempo':'reps'}</div>`:''}
     </div>
   </div>
   <div class="sticky-btn">
