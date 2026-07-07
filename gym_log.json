@@ -205,17 +205,17 @@
           "sets": [
             {
               "weight_kg": 40,
-              "reps": 15,
+              "reps": 10,
               "rpe": null
             },
             {
               "weight_kg": 40,
-              "reps": 15,
+              "reps": 10,
               "rpe": null
             },
             {
               "weight_kg": 40,
-              "reps": 15,
+              "reps": 10,
               "rpe": 8
             }
           ]
