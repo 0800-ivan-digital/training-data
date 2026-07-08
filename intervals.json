@@ -71,7 +71,17 @@
         },
         "coasting_pct": 6.8,
         "power_cadence_corr": -0.07,
-        "hr_drop_final_60s": 13
+        "hr_drop_final_60s": 13,
+        "pedal_smoothness": {
+          "left_pct": 18.0,
+          "right_pct": 19.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 65,
+          "right_pct": 65,
+          "source": "coros_mcp"
+        }
       },
       "laps": [
         {
@@ -198,7 +208,17 @@
         },
         "coasting_pct": 0.2,
         "power_cadence_corr": -0.343,
-        "hr_drop_final_60s": 0
+        "hr_drop_final_60s": 0,
+        "pedal_smoothness": {
+          "left_pct": 18.0,
+          "right_pct": 19.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 65,
+          "right_pct": 66,
+          "source": "coros_mcp"
+        }
       },
       "laps": [
         {
@@ -888,7 +908,17 @@
         },
         "coasting_pct": 10.6,
         "power_cadence_corr": 0.237,
-        "hr_drop_final_60s": 2
+        "hr_drop_final_60s": 2,
+        "pedal_smoothness": {
+          "left_pct": 18.0,
+          "right_pct": 18.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 65,
+          "right_pct": 64,
+          "source": "coros_mcp"
+        }
       },
       "laps": [
         {
@@ -1149,7 +1179,17 @@
         },
         "coasting_pct": 7.8,
         "power_cadence_corr": 0.213,
-        "hr_drop_final_60s": 1
+        "hr_drop_final_60s": 1,
+        "pedal_smoothness": {
+          "left_pct": 18.0,
+          "right_pct": 18.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 63,
+          "right_pct": 63,
+          "source": "coros_mcp"
+        }
       },
       "laps": [
         {
@@ -1248,7 +1288,17 @@
         },
         "coasting_pct": 5.8,
         "power_cadence_corr": -0.08,
-        "hr_drop_final_60s": -5
+        "hr_drop_final_60s": -5,
+        "pedal_smoothness": {
+          "left_pct": 19.0,
+          "right_pct": 19.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 66,
+          "right_pct": 65,
+          "source": "coros_mcp"
+        }
       },
       "laps": [
         {
@@ -1348,7 +1398,17 @@
         },
         "coasting_pct": 0.5,
         "power_cadence_corr": 0.184,
-        "hr_drop_final_60s": -2
+        "hr_drop_final_60s": -2,
+        "pedal_smoothness": {
+          "left_pct": 18.0,
+          "right_pct": 18.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 63,
+          "right_pct": 63,
+          "source": "coros_mcp"
+        }
       },
       "laps": [
         {
@@ -1551,7 +1611,17 @@
         },
         "coasting_pct": 10.1,
         "power_cadence_corr": 0.103,
-        "hr_drop_final_60s": 6
+        "hr_drop_final_60s": 6,
+        "pedal_smoothness": {
+          "left_pct": 20.0,
+          "right_pct": 20.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 69,
+          "right_pct": 69,
+          "source": "coros_mcp"
+        }
       },
       "laps": [
         {
@@ -1762,7 +1832,17 @@
         },
         "coasting_pct": 0.0,
         "power_cadence_corr": 0.057,
-        "hr_drop_final_60s": 0
+        "hr_drop_final_60s": 0,
+        "pedal_smoothness": {
+          "left_pct": 18.0,
+          "right_pct": 19.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 66,
+          "right_pct": 68,
+          "source": "coros_mcp"
+        }
       },
       "laps": [
         {
@@ -1889,7 +1969,17 @@
         },
         "coasting_pct": 10.4,
         "power_cadence_corr": -0.14,
-        "hr_drop_final_60s": 3
+        "hr_drop_final_60s": 3,
+        "pedal_smoothness": {
+          "left_pct": 19.0,
+          "right_pct": 19.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 66,
+          "right_pct": 65,
+          "source": "coros_mcp"
+        }
       },
       "laps": [
         {
