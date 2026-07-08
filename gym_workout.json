@@ -3,7 +3,7 @@
   "phase": "AA→FM",
   "week": 1,
   "rest_seconds": 90,
-  "recommended_next": "lower",
+  "recommended_next": "upper",
   "sessions": {
     "lower": {
       "name": "Tren inferior",

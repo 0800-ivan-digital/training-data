@@ -71,21 +71,6 @@
             {
               "weight_kg": 32,
               "reps": 10,
-              "rpe": null
-            },
-            {
-              "weight_kg": 35,
-              "reps": 10,
-              "rpe": null
-            },
-            {
-              "weight_kg": 35,
-              "reps": 10,
-              "rpe": null
-            },
-            {
-              "weight_kg": 30,
-              "reps": 10,
               "rpe": 8
             }
           ]
@@ -231,22 +216,7 @@
             {
               "weight_kg": 40,
               "reps": 15,
-              "rpe": null
-            },
-            {
-              "weight_kg": 40,
-              "reps": 10,
-              "rpe": null
-            },
-            {
-              "weight_kg": 40,
-              "reps": 10,
-              "rpe": null
-            },
-            {
-              "weight_kg": 40,
-              "reps": 10,
-              "rpe": 9
+              "rpe": 8
             }
           ]
         },
