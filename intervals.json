@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "generated_at": "2026-07-08T15:33:09.843259",
-=======
-  "generated_at": "2026-07-06T21:48:06.854703",
->>>>>>> b5087db (Fix gym_log data entry errors + advance recommended_next)
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
