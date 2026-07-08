@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T22:43:02.458793",
+  "generated_at": "2026-07-08T23:46:43.659881",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -1902,6 +1902,28 @@
           "calories": 66
         }
       ]
+    },
+    {
+      "activity_id": "i164013893",
+      "date": "2026-07-08",
+      "type": "Ride",
+      "name": "Rodillo Z2 \u2014 Mi\u00e9rcoles",
+      "interval_summary": null,
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 3663,
+          "avg_power": 127,
+          "max_power": 266,
+          "avg_hr": 120,
+          "max_hr": 137,
+          "avg_cadence": 82.13626,
+          "zone": 2,
+          "training_load": 38.39505,
+          "decoupling": 1.8402371
+        }
+      ],
+      "pedaling_retry": true
     }
   ]
 }
