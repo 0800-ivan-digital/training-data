@@ -151,11 +151,11 @@
           "type": "maquina",
           "sets": 3,
           "reps": 10,
-          "weight_kg": 34,
+          "weight_kg": 35,
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Full_Range-Of-Motion_Lat_Pulldown/0.jpg",
           "description": "Agarre prono al ancho de hombros. <strong>Tirás la barra hasta el pecho</strong> llevando los codos hacia abajo y atrás. Controlá la subida.",
-          "notes": "Subida leve desde 32kg (RPE8)."
+          "notes": "Máquina salta de 5 en 5kg (25/30/35/40). Mantener en 35kg — RPE9 la vez pasada, dejar asentar antes de subir a 40kg."
         },
         {
           "id": "machine_row",
