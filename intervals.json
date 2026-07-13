@@ -1690,7 +1690,19 @@
           "training_load": 3.5
         }
       ],
-      "pedaling_retry": true
+      "pedaling_retry": true,
+      "pedaling": {
+        "pedal_smoothness": {
+          "left_pct": 19.0,
+          "right_pct": 19.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 67,
+          "right_pct": 65,
+          "source": "coros_mcp"
+        }
+      }
     },
     {
       "activity_id": "i165078132",
@@ -1839,7 +1851,19 @@
           "decoupling": 18.059784
         }
       ],
-      "pedaling_retry": true
+      "pedaling_retry": true,
+      "pedaling": {
+        "pedal_smoothness": {
+          "left_pct": 17.0,
+          "right_pct": 18.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 63,
+          "right_pct": 63,
+          "source": "coros_mcp"
+        }
+      }
     }
   ]
 }
