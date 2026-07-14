@@ -419,6 +419,162 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-07-14",
+      "session_id": "lower",
+      "session_name": "Tren inferior",
+      "week": 2,
+      "block": "Fuerza Base — Transición AA→FM",
+      "exercises": [
+        {
+          "id": "half_squat",
+          "name": "Media sentadilla con barra",
+          "sets": [
+            {
+              "weight_kg": 30,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 30,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 30,
+              "reps": 10,
+              "rpe": 8
+            }
+          ]
+        },
+        {
+          "id": "bulgarian_split_squat",
+          "name": "Bulgarian split squat",
+          "sets": [
+            {
+              "weight_kg": 8,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 8,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 8,
+              "reps": 10,
+              "rpe": 8
+            }
+          ]
+        },
+        {
+          "id": "rdl",
+          "name": "RDL",
+          "sets": [
+            {
+              "weight_kg": 30,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 30,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 30,
+              "reps": 10,
+              "rpe": 7
+            }
+          ]
+        },
+        {
+          "id": "hip_thrust",
+          "name": "Hip thrust",
+          "sets": [
+            {
+              "weight_kg": 40,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 40,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 40,
+              "reps": 10,
+              "rpe": 9
+            }
+          ]
+        },
+        {
+          "id": "calf_raise",
+          "name": "Elevación de pantorrillas",
+          "sets": [
+            {
+              "weight_kg": 20,
+              "reps": 12,
+              "rpe": null
+            },
+            {
+              "weight_kg": 20,
+              "reps": 12,
+              "rpe": null
+            },
+            {
+              "weight_kg": 20,
+              "reps": 12,
+              "rpe": 8
+            }
+          ]
+        },
+        {
+          "id": "leg_raises",
+          "name": "Elevación de piernas tumbado",
+          "sets": [
+            {
+              "weight_kg": 0,
+              "reps": 12,
+              "rpe": null
+            },
+            {
+              "weight_kg": 0,
+              "reps": 12,
+              "rpe": null
+            },
+            {
+              "weight_kg": 0,
+              "reps": 12,
+              "rpe": 8
+            }
+          ]
+        },
+        {
+          "id": "plank",
+          "name": "Plancha frontal",
+          "sets": [
+            {
+              "weight_kg": 0,
+              "reps": 1,
+              "rpe": null
+            },
+            {
+              "weight_kg": 0,
+              "reps": 1,
+              "rpe": null
+            },
+            {
+              "weight_kg": 0,
+              "reps": 1,
+              "rpe": 8
+            }
+          ]
+        }
+      ]
     }
   ]
 }
