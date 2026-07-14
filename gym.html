@@ -143,6 +143,7 @@ let S = {
   scr: localStorage.getItem('gym_pat') ? 'loading' : 'setup',
   pat: localStorage.getItem('gym_pat') || '',
   workout: null, log: null, logSha: null,
+  workoutUpdatedAt: null,
   exs: [], ei: 0, si: 0,
   editing: false, ew: null, er: null,
   rpe: null, logs: {},
@@ -168,6 +169,27 @@ async function ghPut(file,obj,sha,msg){
     {method:'PUT',headers:{Authorization:`token ${S.pat}`,'Content-Type':'application/json'},body:JSON.stringify(body)});
   if(!res.ok)throw new Error(`GitHub ${res.status}: ${(await res.text().catch(()=>'')).slice(0,120)}`);
   return res.json();
+}
+
+// Real "as of" signal: date of the last commit that actually touched the file
+// on GitHub — not when this app happened to fetch it (those can differ if the
+// app was already open from before a new prescription was pushed).
+async function ghLastCommitDate(file){
+  try{
+    const res=await fetch(`https://api.github.com/repos/${REPO}/commits?path=${encodeURIComponent(file)}&per_page=1`,
+      {headers:{Authorization:`token ${S.pat}`,Accept:'application/vnd.github.v3+json'}});
+    if(!res.ok)return null;
+    const arr=await res.json();
+    return arr?.[0]?.commit?.committer?.date || arr?.[0]?.commit?.author?.date || null;
+  }catch(e){return null}
+}
+
+function fmtUpdated(iso){
+  if(!iso)return'';
+  const d=new Date(iso);
+  const date=d.toLocaleDateString('es-AR',{day:'numeric',month:'short'});
+  const time=d.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'});
+  return`${date}, ${time}`;
 }
 
 function go(scr){S.scr=scr;render()}
@@ -223,9 +245,10 @@ function deltaBadge(last,curW){
 
 async function loadData(){
   try{
-    const[w,l]=await Promise.all([ghGet(WF),ghGet(LF)]);
+    const[w,l,modDate]=await Promise.all([ghGet(WF),ghGet(LF),ghLastCommitDate(WF)]);
     if(!w)throw new Error('No se encontró gym_workout.json en el repo. Pedile a Claude Code que lo genere.');
     S.workout=w.data;S.log=l?l.data:{sessions:[]};S.logSha=l?l.sha:null;
+    S.workoutUpdatedAt=modDate;
     // Support new sessions.lower/upper format via recommended_next
     if(!S.workout.session && S.workout.sessions && S.workout.recommended_next){
       const key=S.workout.recommended_next;
@@ -239,6 +262,14 @@ async function loadData(){
     S.ei=0;S.si=0;S.logs={};S.rpe=null;S.editing=false;S.ew=null;S.er=null;S.saved=false;
     go('overview');
   }catch(e){S.err=e.message;go('error')}
+}
+
+function requestRefresh(){
+  const hasUnsaved=Object.values(S.logs).some(arr=>arr&&arr.length>0);
+  const msg=hasUnsaved
+    ?'Tenés sets sin guardar en esta sesión. Actualizar ahora los va a perder. ¿Continuar de todos modos?'
+    :'¿Actualizar los datos desde GitHub?';
+  if(confirm(msg))go('loading');
 }
 
 function startExercise(idx){
@@ -393,11 +424,13 @@ function renderOverview(){
     <div class="topbar-logo">S11 / Gym</div>
     <div style="display:flex;align-items:center;gap:8px">
       <div class="topbar-badge">${w.week?'SEM '+w.week:''}</div>
+      <button class="topbar-badge" style="background:none;cursor:pointer" onclick="requestRefresh()" title="Actualizar desde GitHub">↻</button>
       <button class="topbar-badge" style="background:none;cursor:pointer" onclick="localStorage.removeItem('gym_pat');location.reload()">⚙</button>
     </div>
   </div>
   <div class="scr" style="padding-top:14px">
     <div style="font-size:13px;color:#71717A;margin-bottom:4px;text-transform:capitalize">${today()}</div>
+    ${S.workoutUpdatedAt?`<div style="font-size:11px;color:#3A3A3A;margin-bottom:10px">Prescripción actualizada: ${fmtUpdated(S.workoutUpdatedAt)}</div>`:''}
     ${done?'<div class="complete-note">✓ Todos los ejercicios completados</div>':''}
     <div class="sec-title">${session.name||'Sesión de hoy'}</div>
     <div class="sec-sub">${session.subtitle||''}</div>
