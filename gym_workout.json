@@ -67,12 +67,12 @@
           "name": "Elevación de pantorrillas",
           "type": "libre",
           "sets": 3,
-          "reps": 10,
-          "weight_kg": 40,
+          "reps": 12,
+          "weight_kg": 20,
           "rest_seconds": 60,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Calf_Raise_On_A_Dumbbell/0.jpg",
           "description": "De pie en escalón o superficie elevada. <strong>Bajás el talón completamente</strong>. Subís hasta la punta máxima con pausa de 1 segundo arriba.",
-          "notes": "Sin progresión — mantener 40kg (RPE8 la última vez)."
+          "notes": "Recalibrado 2026-07-14: 40kg venía siendo demasiado (confirmado por Ivan). Nueva base 20kg x 12."
         },
         {
           "id": "leg_raises",
