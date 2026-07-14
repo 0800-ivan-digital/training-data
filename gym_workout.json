@@ -17,12 +17,12 @@
           "name": "Media sentadilla con barra",
           "type": "libre",
           "sets": 3,
-          "reps": 8,
-          "weight_kg": 30,
+          "reps": 10,
+          "weight_kg": 35,
           "rest_seconds": 120,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Full_Squat/0.jpg",
           "description": "Barra sobre trapecios. Pies al ancho de hombros. Bajás hasta <strong>90° de rodilla</strong> manteniendo el torso erguido y las rodillas alineadas con los pies. Concéntrico con intención explosiva.",
-          "notes": "Ejercicio principal del protocolo (Rønnestad/Sunde). Primera sesión con barra — priorizá técnica sobre carga. 120s de descanso."
+          "notes": "Sin progresión (TSB -8.1) — mantener 35kg, igual que la última sesión (RPE7)."
         },
         {
           "id": "bulgarian_split_squat",
@@ -35,7 +35,7 @@
           "image_url": "https://www.ivandigital.net/gym/gym_img/bulgarian-split-squat.jpg",
           "image_url_2": null,
           "description": "Pie trasero elevado en banco. Pie delantero al frente. <strong>Bajás hasta 90° de rodilla delantera</strong>. Rodilla no supera la punta del pie. Ejecutar ambos lados.",
-          "notes": "8kg c/u (16kg total). Reemplaza el step-up. Primera sesión — ajustá si es necesario."
+          "notes": "Sin progresión — mantener 8kg (RPE8 la última vez)."
         },
         {
           "id": "rdl",
@@ -48,7 +48,7 @@
           "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Romanian-deadlift-1.png",
           "image_url_2": "https://upload.wikimedia.org/wikipedia/commons/5/58/Romanian-deadlift-2.png",
           "description": "De pie con barra. <strong>Bisagra de cadera</strong> manteniendo la espalda neutra. Bajás hasta sentir tensión en los isquios. No flexionás la rodilla significativamente.",
-          "notes": "Subida desde 25kg."
+          "notes": "Sin progresión — mantener 30kg (RPE7 la última vez)."
         },
         {
           "id": "hip_thrust",
@@ -60,19 +60,19 @@
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Hip_Thrust/0.jpg",
           "description": "Espalda superior apoyada en banco. Barra sobre las caderas con colchoneta. <strong>Empujás las caderas hacia arriba</strong> hasta extensión completa. Pausa 1 segundo arriba.",
-          "notes": "Reemplaza el glúteo bridge. Mismo peso, mayor rango con banco."
+          "notes": "Sin progresión — mantener 40kg (RPE8 la última vez)."
         },
         {
           "id": "calf_raise",
           "name": "Elevación de pantorrillas",
           "type": "libre",
           "sets": 3,
-          "reps": 15,
+          "reps": 10,
           "weight_kg": 40,
           "rest_seconds": 60,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Calf_Raise_On_A_Dumbbell/0.jpg",
           "description": "De pie en escalón o superficie elevada. <strong>Bajás el talón completamente</strong>. Subís hasta la punta máxima con pausa de 1 segundo arriba.",
-          "notes": null
+          "notes": "Sin progresión — mantener 40kg (RPE8 la última vez)."
         },
         {
           "id": "leg_raises",
