@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T18:03:28.402585",
+  "generated_at": "2026-07-15T19:35:09.574248",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -1727,6 +1727,28 @@
           "source": "coros_mcp"
         }
       }
+    },
+    {
+      "activity_id": "i166091872",
+      "date": "2026-07-15",
+      "type": "Ride",
+      "name": "Z2 \u2014 Parque Sarmiento (Mi\u00e9rcoles, gravel)",
+      "interval_summary": null,
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 7665,
+          "avg_power": 129,
+          "max_power": 597,
+          "avg_hr": 117,
+          "max_hr": 142,
+          "avg_cadence": 76.846016,
+          "zone": 2,
+          "training_load": 76.90744,
+          "decoupling": 2.6363258
+        }
+      ],
+      "pedaling_retry": true
     }
   ]
 }
