@@ -575,6 +575,162 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-07-16",
+      "session_id": "upper",
+      "session_name": "Tren superior",
+      "week": 2,
+      "block": "Fuerza Base — Transición AA→FM",
+      "exercises": [
+        {
+          "id": "db_bench_press",
+          "name": "Press de banca con mancuernas",
+          "sets": [
+            {
+              "weight_kg": 10,
+              "reps": 12,
+              "rpe": null
+            },
+            {
+              "weight_kg": 10,
+              "reps": 12,
+              "rpe": null
+            },
+            {
+              "weight_kg": 10,
+              "reps": 12,
+              "rpe": 8
+            }
+          ]
+        },
+        {
+          "id": "db_row",
+          "name": "Remo con mancuerna",
+          "sets": [
+            {
+              "weight_kg": 12,
+              "reps": 12,
+              "rpe": null
+            },
+            {
+              "weight_kg": 12,
+              "reps": 12,
+              "rpe": null
+            },
+            {
+              "weight_kg": 12,
+              "reps": 12,
+              "rpe": 8
+            }
+          ]
+        },
+        {
+          "id": "ohp",
+          "name": "Press militar con mancuernas",
+          "sets": [
+            {
+              "weight_kg": 8,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 8,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 8,
+              "reps": 10,
+              "rpe": 10
+            }
+          ]
+        },
+        {
+          "id": "lat_pulldown",
+          "name": "Jalón de pecho",
+          "sets": [
+            {
+              "weight_kg": 35,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 35,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 35,
+              "reps": 10,
+              "rpe": 8
+            }
+          ]
+        },
+        {
+          "id": "machine_row",
+          "name": "Remo con máquina",
+          "sets": [
+            {
+              "weight_kg": 35,
+              "reps": 12,
+              "rpe": null
+            },
+            {
+              "weight_kg": 35,
+              "reps": 12,
+              "rpe": null
+            },
+            {
+              "weight_kg": 35,
+              "reps": 10,
+              "rpe": 10
+            }
+          ]
+        },
+        {
+          "id": "ab_crunch_machine",
+          "name": "Máquina de abdominales",
+          "sets": [
+            {
+              "weight_kg": 23,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 23,
+              "reps": 10,
+              "rpe": null
+            },
+            {
+              "weight_kg": 23,
+              "reps": 10,
+              "rpe": 6
+            }
+          ]
+        },
+        {
+          "id": "dead_bug",
+          "name": "Dead bug",
+          "sets": [
+            {
+              "weight_kg": 0,
+              "reps": 8,
+              "rpe": null
+            },
+            {
+              "weight_kg": 0,
+              "reps": 8,
+              "rpe": null
+            },
+            {
+              "weight_kg": 0,
+              "reps": 8,
+              "rpe": 7
+            }
+          ]
+        }
+      ]
     }
   ]
 }
