@@ -1467,7 +1467,19 @@
           "decoupling": 3.192317
         }
       ],
-      "pedaling_retry": true
+      "pedaling_retry": true,
+      "pedaling": {
+        "pedal_smoothness": {
+          "left_pct": 19.0,
+          "right_pct": 19.0,
+          "source": "coros_mcp"
+        },
+        "torque_effectiveness": {
+          "left_pct": 67,
+          "right_pct": 65,
+          "source": "coros_mcp"
+        }
+      }
     }
   ]
 }
