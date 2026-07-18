@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T20:22:50.391331",
+  "generated_at": "2026-07-18T21:14:32.479989",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -1339,6 +1339,132 @@
           "zone": 2,
           "training_load": 76.90744,
           "decoupling": 2.6363258
+        }
+      ],
+      "pedaling_retry": true
+    },
+    {
+      "activity_id": "i166975614",
+      "date": "2026-07-18",
+      "type": "Ride",
+      "name": "Sweet Spot 3\u00d710 \u2014 Parque Sarmiento (S\u00e1bado)",
+      "interval_summary": [
+        "1x 8m14s 199w",
+        "2x 4m50s 202w",
+        "1x 9m13s 205w"
+      ],
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 1819,
+          "avg_power": 127,
+          "max_power": 617,
+          "avg_hr": 120,
+          "max_hr": 143,
+          "avg_cadence": 78.644104,
+          "zone": 2,
+          "training_load": 17.990702,
+          "decoupling": -0.70323336
+        },
+        {
+          "type": "WORK",
+          "label": "494s@199w87rpm",
+          "duration_secs": 494,
+          "avg_power": 199,
+          "max_power": 290,
+          "avg_hr": 145,
+          "max_hr": 152,
+          "avg_cadence": 87.15385,
+          "zone": 4,
+          "training_load": 11.340679,
+          "decoupling": -2.876961
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 297,
+          "avg_power": 127,
+          "max_power": 217,
+          "avg_hr": 128,
+          "max_hr": 151,
+          "avg_cadence": 80.96296,
+          "zone": 2,
+          "training_load": 3.0151703,
+          "decoupling": -9.658597
+        },
+        {
+          "type": "WORK",
+          "label": "290s@202w87rpm",
+          "duration_secs": 289,
+          "avg_power": 200,
+          "max_power": 267,
+          "avg_hr": 142,
+          "max_hr": 150,
+          "avg_cadence": 87.65744,
+          "zone": 4,
+          "training_load": 6.5683475,
+          "decoupling": 5.015995
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 23,
+          "avg_power": 145,
+          "max_power": 209,
+          "avg_hr": 140,
+          "max_hr": 144,
+          "avg_cadence": 80.434784,
+          "zone": 2,
+          "training_load": 0.42768595,
+          "decoupling": 7.0165095
+        },
+        {
+          "type": "WORK",
+          "label": "290s@202w87rpm",
+          "duration_secs": 290,
+          "avg_power": 203,
+          "max_power": 274,
+          "avg_hr": 145,
+          "max_hr": 151,
+          "avg_cadence": 87.34138,
+          "zone": 4,
+          "training_load": 6.724225,
+          "decoupling": 2.4060075
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 313,
+          "avg_power": 115,
+          "max_power": 372,
+          "avg_hr": 124,
+          "max_hr": 147,
+          "avg_cadence": 71.38658,
+          "zone": 1,
+          "training_load": 2.7621028,
+          "decoupling": -12.170922
+        },
+        {
+          "type": "WORK",
+          "label": "553s@205w87rpm",
+          "duration_secs": 553,
+          "avg_power": 205,
+          "max_power": 312,
+          "avg_hr": 146,
+          "max_hr": 158,
+          "avg_cadence": 87.37794,
+          "zone": 4,
+          "training_load": 13.4682665,
+          "decoupling": -0.8039317
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 7467,
+          "avg_power": 140,
+          "max_power": 377,
+          "avg_hr": 129,
+          "max_hr": 151,
+          "avg_cadence": 77.84194,
+          "zone": 2,
+          "training_load": 86.688,
+          "decoupling": 3.192317
         }
       ],
       "pedaling_retry": true
