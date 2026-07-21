@@ -1,9 +1,9 @@
 {
   "block": "Fuerza Base — Transición AA→FM",
   "phase": "AA→FM",
-  "week": 2,
+  "week": 3,
   "rest_seconds": 90,
-  "recommended_next": "upper",
+  "recommended_next": "lower",
   "sessions": {
     "lower": {
       "name": "Tren inferior",
@@ -18,11 +18,11 @@
           "type": "libre",
           "sets": 3,
           "reps": 10,
-          "weight_kg": 35,
+          "weight_kg": 30,
           "rest_seconds": 120,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Full_Squat/0.jpg",
           "description": "Barra sobre trapecios. Pies al ancho de hombros. Bajás hasta <strong>90° de rodilla</strong> manteniendo el torso erguido y las rodillas alineadas con los pies. Concéntrico con intención explosiva.",
-          "notes": "Sin progresión (TSB -8.1) — mantener 35kg, igual que la última sesión (RPE7)."
+          "notes": "Sin progresión (TSB -11.6, banda amarilla del protocolo) — mantener 30kg, igual que la sesión de la semana pasada (RPE8)."
         },
         {
           "id": "bulgarian_split_squat",
@@ -60,7 +60,7 @@
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Hip_Thrust/0.jpg",
           "description": "Espalda superior apoyada en banco. Barra sobre las caderas con colchoneta. <strong>Empujás las caderas hacia arriba</strong> hasta extensión completa. Pausa 1 segundo arriba.",
-          "notes": "Sin progresión — mantener 40kg (RPE8 la última vez)."
+          "notes": "⚠ RPE9 la última vez (subió desde RPE8 la sesión anterior). Sin progresión — mantener 40kg y vigilar técnica. Si vuelve a marcar RPE≥9, bajar a 35kg la próxima semana."
         },
         {
           "id": "calf_raise",
