@@ -55,12 +55,12 @@
           "name": "Hip thrust",
           "type": "libre",
           "sets": 3,
-          "reps": 10,
-          "weight_kg": 40,
+          "reps": 12,
+          "weight_kg": 30,
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Hip_Thrust/0.jpg",
           "description": "Espalda superior apoyada en banco. Barra sobre las caderas con colchoneta. <strong>Empujás las caderas hacia arriba</strong> hasta extensión completa. Pausa 1 segundo arriba.",
-          "notes": "⚠ RPE9 la última vez (subió desde RPE8 la sesión anterior). Sin progresión — mantener 40kg y vigilar técnica. Si vuelve a marcar RPE≥9, bajar a 35kg la próxima semana."
+          "notes": "RPE9 dos sesiones seguidas con 40kg (7/14 y 7/21) — se baja carga. Objetivo real era 35kg×10, pero si esa combinación de discos no está disponible, 30kg×12 da prácticamente el mismo volumen (360 vs 350 kg·rep). Si tenés 35kg disponible ese día, usalo a 10 reps en su lugar."
         },
         {
           "id": "calf_raise",
