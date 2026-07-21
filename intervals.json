@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-21T07:15:15.289141",
+  "generated_at": "2026-07-21T11:53:05.137530",
   "version": "3.112",
-  "script_hash": "a60c2ee19b34",
+  "script_hash": "e0696b508661",
   "scan_hours": 72,
   "retention_days": 14,
   "activities": [
@@ -51,7 +51,8 @@
           "training_load": 9.381543,
           "decoupling": 2.428076
         }
-      ]
+      ],
+      "pedaling_retry": true
     },
     {
       "activity_id": "i166975614",
@@ -203,7 +204,8 @@
           "training_load": 15.086004,
           "decoupling": -13.953027
         }
-      ]
+      ],
+      "pedaling_retry": true
     },
     {
       "activity_id": "i166091872",
@@ -277,7 +279,8 @@
           "training_load": 8.842259,
           "decoupling": -3.3924155
         }
-      ]
+      ],
+      "pedaling_retry": true
     }
   ]
 }
