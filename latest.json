@@ -70,7 +70,7 @@
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-07-21T09:59:47.924597",
+    "last_updated": "2026-07-21T07:15:19.753587",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.112"
@@ -130,7 +130,7 @@
       },
       "tsb": {
         "status": "green",
-        "value": -10.3
+        "value": -5.3
       }
     },
     "signal_summary": {
@@ -141,7 +141,7 @@
     },
     "phase_context": {
       "phase": "Build",
-      "phase_week": 1,
+      "phase_week": 4,
       "amber_threshold": 3,
       "modifier_applied": "build_loosened"
     },
@@ -152,8 +152,8 @@
   },
   "history": {
     "available": true,
-    "last_generated": "2026-07-05",
-    "age_days": 16,
+    "last_generated": "2026-07-21",
+    "age_days": 0,
     "total_months": 35,
     "history_confidence": "high"
   },
@@ -191,11 +191,11 @@
   },
   "current_status": {
     "fitness": {
-      "ctl": 43.78,
-      "atl": 54.06,
-      "tsb": -10.28,
-      "ramp_rate": 2.17,
-      "fitness_source": "From Intervals.icu API (reflects completed workouts)"
+      "ctl": 42.53,
+      "atl": 47.83,
+      "tsb": -5.3,
+      "ramp_rate": 0.93,
+      "fitness_source": "Decayed from yesterday (today's planned workouts not yet completed)"
     },
     "thresholds": {
       "eftp": 239.0,
@@ -573,15 +573,16 @@
       },
       "dfa_a1_profile": null
     },
-    "consistency_index": 0.67,
+    "consistency_index": 0.5,
     "consistency_details": {
-      "planned_days": 3,
+      "planned_days": 4,
       "completed_days": 3,
       "matched_days": 2,
       "planned_dates": [
         "2026-07-15",
         "2026-07-18",
-        "2026-07-20"
+        "2026-07-20",
+        "2026-07-21"
       ],
       "completed_dates": [
         "2026-07-15",
@@ -591,14 +592,12 @@
     },
     "phase_detection": {
       "phase": "Build",
-      "confidence": "medium",
-      "reason_codes": [
-        "NO_PLANNED_WORKOUTS"
-      ],
+      "confidence": "high",
+      "reason_codes": [],
       "basis": {
         "stream_1": {
-          "ctl_slope": null,
-          "acwr_trend": null,
+          "ctl_slope": 2.7,
+          "acwr_trend": "rising",
           "hard_day_pattern": 1.7,
           "weeks_available": 4
         },
@@ -609,21 +608,19 @@
           "current_week_hard_days_total": 0,
           "race_proximity": 61,
           "next_week_load": null,
-          "plan_coverage_current_week": 0.0,
+          "plan_coverage_current_week": 0.17,
           "plan_coverage_next_week": 0.0
         },
         "data_quality": "good",
         "stream_agreement": null
       },
-      "previous_phase": null,
-      "phase_duration_weeks": 1,
+      "previous_phase": "Build",
+      "phase_duration_weeks": 4,
       "dossier_declared": null,
       "dossier_agreement": null
     },
     "phase_detected": "Build",
-    "phase_triggers": [
-      "NO_PLANNED_WORKOUTS"
-    ],
+    "phase_triggers": [],
     "seasonal_context": "Peak Race Season",
     "benchmark_indoor": {
       "current_ftp": 210,
@@ -645,13 +642,13 @@
     "p_max": 1251,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-07-21T09:59:47.923325",
+    "calculation_timestamp": "2026-07-21T07:15:19.752179",
     "data_quality": {
       "hrv_data_points": 6,
       "rhr_data_points": 6,
       "activities_7d": 4,
       "activities_28d": 22,
-      "planned_workouts_7d": 3,
+      "planned_workouts_7d": 4,
       "ftp_history_days": {
         "indoor": 0,
         "outdoor": 6
@@ -1058,7 +1055,7 @@
           "z7_time": 11
         }
       },
-      "has_intervals": false,
+      "has_intervals": true,
       "has_dfa": false,
       "terrain_summary": {
         "source": "activity_streams",
@@ -1251,7 +1248,7 @@
           "z7_time": 128
         }
       },
-      "has_intervals": true,
+      "has_intervals": false,
       "has_dfa": false,
       "terrain_summary": {
         "source": "activity_streams",
@@ -1384,7 +1381,7 @@
           "z7_time": 372
         }
       },
-      "has_intervals": true,
+      "has_intervals": false,
       "has_dfa": false,
       "terrain_summary": {
         "source": "activity_streams",
@@ -3136,13 +3133,27 @@
       "readiness": null
     }
   ],
-  "planned_workouts": [],
+  "planned_workouts": [
+    {
+      "id": 124346832,
+      "date": "2026-07-21",
+      "name": "Tren Inferior \u2014 Semana 3",
+      "type": "WORKOUT",
+      "sport_type": "WeightTraining",
+      "planned_tss": 12,
+      "duration_hours": 0.83,
+      "duration_formatted": "50m",
+      "workout_summary": null,
+      "has_terrain": false,
+      "description": "Calentamiento 8-10min: bici suave + movilidad cadera/isquios/tobillo\n\n- Media sentadilla con barra: 3x10 @ 30kg\n- Bulgarian split squat: 3x10/lado @ 8kg mancuerna\n- RDL: 3x10 @ 30kg\n- Hip thrust: 3x10 @ 40kg (RPE9 la semana pasada, sin progresi\u00f3n, vigilar t\u00e9cnica)\n- Elevaci\u00f3n de pantorrillas: 3x12 @ 20kg\n- Elevaci\u00f3n de piernas tumbado: 3x12 peso corporal\n- Plancha frontal: 3x30-40s peso corporal\n\nPost: 20-30g prote\u00edna + carbohidrato dentro de la hora."
+    }
+  ],
   "workout_summary_stats": {
     "attempted": 0,
     "success": 0,
     "patternA": 0,
     "patternB": 0,
-    "bail_no_workout_doc": 0,
+    "bail_no_workout_doc": 1,
     "bail_no_match": 0
   },
   "weekly_summary": {
