@@ -175,11 +175,11 @@
           "type": "maquina",
           "sets": 3,
           "reps": 10,
-          "weight_kg": 28,
+          "weight_kg": 27,
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Ab_Crunch_Machine/0.jpg",
           "description": "Sentado en la máquina, pies bajo los apoyos. <strong>Flexionás el torso hacia adelante</strong> contrayendo el abdomen. Controlá la vuelta sin dejar caer el peso.",
-          "notes": "Progresa a 28kg — RPE6 dos sesiones seguidas (7/10 y 7/16) con 23kg, técnica limpia, había margen de sobra."
+          "notes": "27kg (la máquina salta 23→27, no 23→28) — RPE7 el 7/23, técnica limpia. Próximo salto real sería 27→31 aprox., a confirmar."
         },
         {
           "id": "dead_bug",
