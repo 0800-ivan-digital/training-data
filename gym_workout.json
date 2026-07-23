@@ -3,7 +3,7 @@
   "phase": "AA→FM",
   "week": 3,
   "rest_seconds": 90,
-  "recommended_next": "lower",
+  "recommended_next": "upper",
   "sessions": {
     "lower": {
       "name": "Tren inferior",
@@ -119,7 +119,7 @@
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dumbbell_Bench_Press/0.jpg",
           "description": "Tumbado en banco. Mancuernas a los costados del pecho. <strong>Empuje explosivo</strong> hasta extensión sin bloquear el codo. Bajada controlada en 3 segundos.",
-          "notes": "Volumen normal (TSB proyectado -5.7 para mañana, no banda amarilla). Mantener 10kg — RPE8 la vez pasada."
+          "notes": "RPE8 dos sesiones seguidas (7/10 y 7/16) con 10kg×12 — estable, sin progresión todavía. Tren superior no lo cargó la bici de ayer, volumen completo."
         },
         {
           "id": "db_row",
@@ -131,7 +131,7 @@
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/One-Arm_Dumbbell_Row/0.jpg",
           "description": "Apoyás una mano y rodilla en el banco. Espalda paralela al piso. <strong>Tirás la mancuerna hacia la cadera</strong> sin rotar el torso.",
-          "notes": "Volumen normal. Mantener 12kg — RPE8, dio 14/14/12 reps la vez pasada."
+          "notes": "Mantener 12kg×12 — RPE8 estable, completó las 3 series limpias el 7/16."
         },
         {
           "id": "ohp",
@@ -139,11 +139,11 @@
           "type": "libre",
           "sets": 3,
           "reps": 10,
-          "weight_kg": 8,
+          "weight_kg": 6,
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dumbbell_Shoulder_Press/0.jpg",
           "description": "De pie o sentado. Mancuernas a la altura de los hombros. <strong>Empujás verticalmente hasta extensión completa.</strong> Core apretado durante todo el movimiento.",
-          "notes": "Mantener 8kg — RPE9 la vez pasada (señal del ejercicio puntual, no de fatiga sistémica)."
+          "notes": "⚠ RPE9→10 en las últimas 2 sesiones (7/10, 7/16) con 8kg — se baja a 6kg para recuperar técnica limpia. Si vuelve a marcar RPE≥9 acá, revisar rango de movimiento antes de subir de nuevo."
         },
         {
           "id": "lat_pulldown",
@@ -155,7 +155,7 @@
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Full_Range-Of-Motion_Lat_Pulldown/0.jpg",
           "description": "Agarre prono al ancho de hombros. <strong>Tirás la barra hasta el pecho</strong> llevando los codos hacia abajo y atrás. Controlá la subida.",
-          "notes": "Máquina en saltos de 5kg. Mantener 35kg — RPE9 la vez pasada."
+          "notes": "Máquina en saltos de 5kg. RPE bajó a 8 el 7/16 (venía de RPE9) — se mantiene en 35kg, todavía sin margen claro para el salto a 40kg."
         },
         {
           "id": "machine_row",
@@ -163,11 +163,11 @@
           "type": "maquina",
           "sets": 3,
           "reps": 12,
-          "weight_kg": 35,
+          "weight_kg": 30,
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Elevated_Cable_Rows/0.jpg",
           "description": "Pecho apoyado en el soporte. <strong>Tirás los mangos hacia el torso</strong> apretando los omóplatos al final del movimiento. Bajada controlada.",
-          "notes": "Volumen normal. Mantener 35kg — RPE8."
+          "notes": "⚠ 7/16: RPE10 y falló la última serie (10 reps en vez de 12) con 35kg — se baja a 30kg para recuperar las 3 series completas y limpias antes de volver a subir."
         },
         {
           "id": "ab_crunch_machine",
@@ -175,23 +175,23 @@
           "type": "maquina",
           "sets": 3,
           "reps": 10,
-          "weight_kg": 23,
+          "weight_kg": 28,
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Ab_Crunch_Machine/0.jpg",
           "description": "Sentado en la máquina, pies bajo los apoyos. <strong>Flexionás el torso hacia adelante</strong> contrayendo el abdomen. Controlá la vuelta sin dejar caer el peso.",
-          "notes": "Mantener 23kg (RPE6 la vez pasada, hay margen — progresar cuando termine banda de fatiga por piernas actual)."
+          "notes": "Progresa a 28kg — RPE6 dos sesiones seguidas (7/10 y 7/16) con 23kg, técnica limpia, había margen de sobra."
         },
         {
           "id": "dead_bug",
           "name": "Dead bug",
           "type": "peso_propio",
           "sets": 3,
-          "reps": 8,
+          "reps": 10,
           "weight_kg": 0,
           "rest_seconds": 60,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dead_Bug/0.jpg",
           "description": "Tumbado boca arriba, brazos hacia el techo, caderas y rodillas a 90°. <strong>Extendés brazo opuesto a pierna opuesta</strong> sin despegar la zona lumbar del piso.",
-          "notes": "8 repeticiones por lado."
+          "notes": "Sube a 10 reps por lado — RPE estable en 6-7, progresión vía reps ya que es peso corporal."
         }
       ]
     }
