@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T23:42:45.250290",
+  "generated_at": "2026-07-23T01:14:00.694778",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -58,7 +58,7 @@
       "activity_id": "i166975614",
       "date": "2026-07-18",
       "type": "Ride",
-      "name": "Sweet Spot 3×10 — Parque Sarmiento (Sábado)",
+      "name": "Sweet Spot 3\u00d710 \u2014 Parque Sarmiento (S\u00e1bado)",
       "interval_summary": [
         "1x 5m 128w",
         "1x 5m 149w",
@@ -211,7 +211,7 @@
       "activity_id": "i166091872",
       "date": "2026-07-15",
       "type": "Ride",
-      "name": "Z2 — Parque Sarmiento (Miércoles, gravel)",
+      "name": "Z2 \u2014 Parque Sarmiento (Mi\u00e9rcoles, gravel)",
       "interval_summary": [
         "1x 1h18m 141w",
         "1x 10m 122w"
@@ -286,7 +286,7 @@
       "activity_id": "i168250291",
       "date": "2026-07-22",
       "type": "Ride",
-      "name": "Z2 Fondo — Parque Sarmiento (Miércoles)",
+      "name": "Z2 Fondo \u2014 Parque Sarmiento (Mi\u00e9rcoles)",
       "interval_summary": [
         "3x 4m37s 202w",
         "1x 11s 445w",
