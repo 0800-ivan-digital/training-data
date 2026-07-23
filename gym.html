@@ -281,7 +281,8 @@ function startExercise(idx){
 }
 
 function applyEdit(){
-  const w=parseFloat(document.getElementById('ew')?.value);
+  const wRaw=document.getElementById('ew')?.value.replace(',','.');
+  const w=parseFloat(wRaw);
   const r2=parseInt(document.getElementById('er')?.value);
   if(!isNaN(w)&&w>=0)S.ew=w;
   if(!isNaN(r2)&&r2>0)S.er=r2;
@@ -466,7 +467,7 @@ function renderSet(){
   const notesHtml=ex.notes?`<div class="coach-notes">${ex.notes}</div>`:'';
 
   const editHtml=S.editing?`<div class="field-row">
-    <div><div class="field-lbl">Peso (kg)</div><input class="field" type="number" inputmode="decimal" id="ew" value="${curW}" step="0.5" min="0"></div>
+    <div><div class="field-lbl">Peso (kg)</div><input class="field" type="text" inputmode="decimal" id="ew" value="${curW}"></div>
     <div><div class="field-lbl">${ex.unit_is_seconds?'Segundos':'Reps'}</div><input class="field" type="number" inputmode="numeric" id="er" value="${curR}" min="1"></div>
   </div>
   <div class="btn-row-2" style="margin-top:8px">
