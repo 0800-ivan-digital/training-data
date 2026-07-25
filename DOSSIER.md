@@ -3,7 +3,8 @@
 ## Athlete Profile
 - Age: 35
 - Weight: 74.8 kg
-- FTP: 250w (testeado 2026-07-25, 20min: 263w avg / 267w NP × 0.95)
+- FTP outdoor: 250w (testeado 2026-07-25, 20min: 263w avg / 267w NP × 0.95)
+- FTP indoor: 239w (derivado, -4.5% vs. outdoor — sin re-testear en rodillo)
 - W/kg: 3.34
 - Max HR: 196 bpm
 
