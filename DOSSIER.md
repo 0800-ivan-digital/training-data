@@ -1,21 +1,21 @@
 # DOSSIER.md — Ivan
 
 ## Athlete Profile
-- Age: 34
-- Weight: 74 kg
-- FTP: 220w
-- W/kg: 2.97
+- Age: 35
+- Weight: 74.8 kg
+- FTP: 250w (testeado 2026-07-25, 20min: 263w avg / 267w NP × 0.95)
+- W/kg: 3.34
 - Max HR: 196 bpm
 
-## Training Zones (Power — based on FTP 220w)
-- Z1 Active Recovery: < 121w
-- Z2 Endurance: 122–165w
-- Z3 Tempo: 166–198w
-- Z4 Threshold: 199–231w
-- Z5 VO2max: 232–264w
-- Z6 Anaerobic: 265–330w
-- Z7 Neuromuscular: 331w+
-- Sweet Spot: 184–213w
+## Training Zones (Power — based on FTP 250w)
+- Z1 Active Recovery: < 137w
+- Z2 Endurance: 140–187w
+- Z3 Tempo: 190–225w
+- Z4 Threshold: 228–262w
+- Z5 VO2max: 265–300w
+- Z6 Anaerobic: 303–375w
+- Z7 Neuromuscular: 375w+
+- Sweet Spot: 210–242w
 
 ## Training Zones (HR — based on Max HR 196 bpm)
 - Z1: < 118 bpm
@@ -34,7 +34,7 @@
 
 ## Goals
 - Primary: Improve FTP and power output
-- Event: None currently
+- Event: Campeonato Provincial de Gravel — 2026-09-20, Carmen de Areco (ver PLAN.md)
 
 ## Notes
 - Amateur cyclist, trains with team Strato

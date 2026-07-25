@@ -16,6 +16,12 @@
 - TSB: −11.4
 - Gym: Bloque Fuerza Base AA→FM, Semana 1
 
+## Checkpoint — Test FTP (2026-07-25)
+- Test de 20min afuera, solo: 263W avg / 267W NP → **FTP outdoor 250W** (+30W vs. 220W del 18/5)
+- FTP indoor sin re-testear, se mantiene en 210W
+- eFTP del algoritmo convergió a 251W tras el test — tres estimaciones independientes (NP×0.95, avg×0.95, eFTP) coincidiendo en la misma zona
+- CTL al momento del test: 46.1 · TSB post-test: −19.3 (banda amarilla, esperable después de un esfuerzo máximo)
+
 ---
 
 ## Estructura de bloques
@@ -80,7 +86,7 @@
 
 | Fecha | Checkpoint |
 |---|---|
-| ~Jul 21-25 | Test FTP (rodillo o 20 min exterior) |
+| ~Jul 21-25 | ✅ Test FTP — hecho 25/7, 20min exterior, FTP outdoor 250W |
 | ~Ago 1 | Revisión de CTL — ajustar volumen si estamos por debajo de ~50 |
 | ~Ago 24 | Semana pico — mayor carga de la temporada |
 | Sep 6 | Pausa gym definitiva |
