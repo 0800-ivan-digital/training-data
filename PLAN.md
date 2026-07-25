@@ -18,7 +18,7 @@
 
 ## Checkpoint — Test FTP (2026-07-25)
 - Test de 20min afuera, solo: 263W avg / 267W NP → **FTP outdoor 250W** (+30W vs. 220W del 18/5)
-- FTP indoor sin re-testear, se mantiene en 210W
+- FTP indoor sin re-testear — se deriva por la misma convención que ya usaba (-4.5% vs. outdoor): 239W
 - eFTP del algoritmo convergió a 251W tras el test — tres estimaciones independientes (NP×0.95, avg×0.95, eFTP) coincidiendo en la misma zona
 - CTL al momento del test: 46.1 · TSB post-test: −19.3 (banda amarilla, esperable después de un esfuerzo máximo)
 
