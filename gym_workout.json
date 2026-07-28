@@ -1,78 +1,78 @@
 {
-  "block": "Fuerza Base — Transición AA→FM",
-  "phase": "AA→FM",
-  "week": 3,
+  "block": "Bloque 2 — Fase FM (Fuerza Máxima)",
+  "phase": "FM",
+  "week": 1,
   "rest_seconds": 90,
-  "recommended_next": "upper",
+  "recommended_next": "lower",
   "sessions": {
     "lower": {
       "name": "Tren inferior",
       "day": "Martes",
       "subtitle": "CUÁDRICEPS · GLÚTEOS · ISQUIOS · CORE",
       "duration_min": 60,
-      "warmup": "5 min bicicleta estática suave + movilidad de cadera, isquiotibiales y tobillos.",
+      "warmup": "5 min bicicleta estática suave + movilidad de cadera, isquiotibiales y tobillos. Fase FM: antes de la primera serie de sentadilla, hacé 1-2 series de aproximación con menos peso (ej. barra sola, después ~20kg) para llegar a los 40kg con la técnica ya afianzada.",
       "exercises": [
         {
           "id": "half_squat",
           "name": "Media sentadilla con barra",
           "type": "libre",
-          "sets": 3,
-          "reps": 10,
-          "weight_kg": 30,
-          "rest_seconds": 120,
+          "sets": 4,
+          "reps": 6,
+          "weight_kg": 40,
+          "rest_seconds": 150,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Full_Squat/0.jpg",
           "description": "Barra sobre trapecios. Pies al ancho de hombros. Bajás hasta <strong>90° de rodilla</strong> manteniendo el torso erguido y las rodillas alineadas con los pies. Concéntrico con intención explosiva.",
-          "notes": "Sin progresión (TSB -11.6, banda amarilla del protocolo) — mantener 30kg, igual que la sesión de la semana pasada (RPE8)."
+          "notes": "Primera sesión de Fase FM (Bloque 2) — cambia el esquema de 10 a 6 reps con más carga. 40kg es una estimación (tu 30kg×10 fue RPE6, muy cómodo, así que hay margen). Es calibración: si en la serie 1 el RPE da ≤7, mantené o subí un poco en las siguientes; si da ≥9, bajá. No hace falta acertar el número exacto hoy."
         },
         {
           "id": "bulgarian_split_squat",
           "name": "Bulgarian split squat",
           "type": "libre",
-          "sets": 3,
-          "reps": 10,
-          "weight_kg": 8,
-          "rest_seconds": 90,
+          "sets": 4,
+          "reps": 6,
+          "weight_kg": 12,
+          "rest_seconds": 150,
           "image_url": "https://www.ivandigital.net/gym/gym_img/bulgarian-split-squat.jpg",
           "image_url_2": null,
           "description": "Pie trasero elevado en banco. Pie delantero al frente. <strong>Bajás hasta 90° de rodilla delantera</strong>. Rodilla no supera la punta del pie. Ejecutar ambos lados.",
-          "notes": "Sin progresión — mantener 8kg (RPE8 la última vez)."
+          "notes": "Fase FM — sube de 8kg×10 a 12kg×6 por lado. Mismo criterio de calibración que la sentadilla: ajustar según RPE real de la serie 1."
         },
         {
           "id": "rdl",
           "name": "RDL",
           "type": "libre",
-          "sets": 3,
-          "reps": 10,
-          "weight_kg": 30,
-          "rest_seconds": 90,
+          "sets": 4,
+          "reps": 6,
+          "weight_kg": 38,
+          "rest_seconds": 150,
           "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Romanian-deadlift-1.png",
           "image_url_2": "https://upload.wikimedia.org/wikipedia/commons/5/58/Romanian-deadlift-2.png",
           "description": "De pie con barra. <strong>Bisagra de cadera</strong> manteniendo la espalda neutra. Bajás hasta sentir tensión en los isquios. No flexionás la rodilla significativamente.",
-          "notes": "Sin progresión — mantener 30kg (RPE7 la última vez)."
+          "notes": "Fase FM — sube de 30kg×10 a 38kg×6 (ajustá a los discos disponibles, 35-40kg está bien). Bisagra de cadera: técnica antes que carga, si la espalda pierde la neutralidad bajá el peso."
         },
         {
           "id": "hip_thrust",
           "name": "Hip thrust",
           "type": "libre",
           "sets": 3,
-          "reps": 12,
-          "weight_kg": 30,
-          "rest_seconds": 90,
+          "reps": 8,
+          "weight_kg": 35,
+          "rest_seconds": 120,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Hip_Thrust/0.jpg",
           "description": "Espalda superior apoyada en banco. Barra sobre las caderas con colchoneta. <strong>Empujás las caderas hacia arriba</strong> hasta extensión completa. Pausa 1 segundo arriba.",
-          "notes": "RPE9 dos sesiones seguidas con 40kg (7/14 y 7/21) — se baja carga. Objetivo real era 35kg×10, pero si esa combinación de discos no está disponible, 30kg×12 da prácticamente el mismo volumen (360 vs 350 kg·rep). Si tenés 35kg disponible ese día, usalo a 10 reps en su lugar."
+          "notes": "Este ejercicio ya dio RPE9-10 dos veces en el bloque anterior, así que no lo llevo directo a FM completa (4-6 reps) — paso intermedio a 35kg×8 primero. Si esto sale con RPE≤7 limpio, la próxima sesión sí baja a 6 reps con más carga."
         },
         {
           "id": "calf_raise",
           "name": "Elevación de pantorrillas",
           "type": "libre",
           "sets": 3,
-          "reps": 12,
-          "weight_kg": 20,
+          "reps": 10,
+          "weight_kg": 25,
           "rest_seconds": 60,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Calf_Raise_On_A_Dumbbell/0.jpg",
           "description": "De pie en escalón o superficie elevada. <strong>Bajás el talón completamente</strong>. Subís hasta la punta máxima con pausa de 1 segundo arriba.",
-          "notes": "Recalibrado 2026-07-14: 40kg venía siendo demasiado (confirmado por Ivan). Nueva base 20kg x 12."
+          "notes": "Progresión leve, 20→25kg — accesorio, no sigue el esquema estricto de FM. RPE venía en 7 con margen."
         },
         {
           "id": "leg_raises",
