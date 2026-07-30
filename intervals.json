@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T23:14:34.434893",
+  "generated_at": "2026-07-30T00:12:36.812783",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -203,81 +203,6 @@
           "zone": 1,
           "training_load": 15.086004,
           "decoupling": -13.953027
-        }
-      ],
-      "pedaling_retry": true
-    },
-    {
-      "activity_id": "i166091872",
-      "date": "2026-07-15",
-      "type": "Ride",
-      "name": "Z2 \u2014 Parque Sarmiento (Mi\u00e9rcoles, gravel)",
-      "interval_summary": [
-        "1x 1h18m 141w",
-        "1x 10m 122w"
-      ],
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 1232,
-          "avg_power": 105,
-          "max_power": 360,
-          "avg_hr": 104,
-          "max_hr": 122,
-          "avg_cadence": 70.65981,
-          "zone": 1,
-          "training_load": 9.066428,
-          "decoupling": 0.8150071
-        },
-        {
-          "type": "WORK",
-          "label": "4680s@141w84rpm",
-          "duration_secs": 4680,
-          "avg_power": 141,
-          "max_power": 248,
-          "avg_hr": 121,
-          "max_hr": 142,
-          "avg_cadence": 84.01724,
-          "zone": 2,
-          "training_load": 52.41347,
-          "decoupling": 3.6756916
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 3,
-          "avg_power": 129,
-          "max_power": 131,
-          "avg_hr": 129,
-          "max_hr": 129,
-          "avg_cadence": 85.0,
-          "zone": 2,
-          "training_load": 0.03620007,
-          "decoupling": -0.3875969
-        },
-        {
-          "type": "WORK",
-          "label": "600s@122w78rpm",
-          "duration_secs": 600,
-          "avg_power": 122,
-          "max_power": 221,
-          "avg_hr": 120,
-          "max_hr": 132,
-          "avg_cadence": 78.175,
-          "zone": 2,
-          "training_load": 5.294766,
-          "decoupling": 0.74104345
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 1150,
-          "avg_power": 108,
-          "max_power": 597,
-          "avg_hr": 116,
-          "max_hr": 135,
-          "avg_cadence": 50.667007,
-          "zone": 1,
-          "training_load": 8.842259,
-          "decoupling": -3.3924155
         }
       ],
       "pedaling_retry": true
