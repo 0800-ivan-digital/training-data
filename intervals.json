@@ -1,59 +1,10 @@
 {
-  "generated_at": "2026-08-02T23:55:46.049402",
+  "generated_at": "2026-08-03T02:40:22.712431",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
   "retention_days": 14,
   "activities": [
-    {
-      "activity_id": "i167176703",
-      "date": "2026-07-19",
-      "type": "Ride",
-      "name": "Morning Ride",
-      "interval_summary": [
-        "1x 1h42m 152w"
-      ],
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 958,
-          "avg_power": 120,
-          "max_power": 430,
-          "avg_hr": 117,
-          "max_hr": 138,
-          "avg_cadence": 73.32564,
-          "zone": 1,
-          "training_load": 8.438361,
-          "decoupling": -1.8236789
-        },
-        {
-          "type": "WORK",
-          "label": "6177s@152w81rpm",
-          "duration_secs": 6177,
-          "avg_power": 152,
-          "max_power": 443,
-          "avg_hr": 125,
-          "max_hr": 141,
-          "avg_cadence": 81.137794,
-          "zone": 2,
-          "training_load": 84.186295,
-          "decoupling": -4.2503967
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 909,
-          "avg_power": 128,
-          "max_power": 612,
-          "avg_hr": 115,
-          "max_hr": 129,
-          "avg_cadence": 62.441917,
-          "zone": 2,
-          "training_load": 9.381543,
-          "decoupling": 2.428076
-        }
-      ],
-      "pedaling_retry": true
-    },
     {
       "activity_id": "i168250291",
       "date": "2026-07-22",
