@@ -18,11 +18,11 @@
           "type": "libre",
           "sets": 4,
           "reps": 6,
-          "weight_kg": 30,
+          "weight_kg": 40,
           "rest_seconds": 150,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Full_Squat/0.jpg",
           "description": "Barra sobre trapecios. Pies al ancho de hombros. Bajás hasta <strong>90° de rodilla</strong> manteniendo el torso erguido y las rodillas alineadas con los pies. Concéntrico con intención explosiva.",
-          "notes": "Calibrado real 4/8: 30kg×6×4, RPE7 limpio (la estimación inicial de 40kg fue muy optimista). Este es el número de partida real para Fase FM — mantener y evaluar progresión según cómo salga esta sesión."
+          "notes": "Calibrado real 4/8: serie 1 de aproximación a 30kg, series 2-4 (las que cuentan) a 40kg×6, RPE7 limpio — la estimación original de 40kg fue correcta. Se mantiene."
         },
         {
           "id": "bulgarian_split_squat",
@@ -30,12 +30,12 @@
           "type": "libre",
           "sets": 4,
           "reps": 6,
-          "weight_kg": 12,
+          "weight_kg": 10,
           "rest_seconds": 150,
           "image_url": "https://www.ivandigital.net/gym/gym_img/bulgarian-split-squat.jpg",
           "image_url_2": null,
           "description": "Pie trasero elevado en banco. Pie delantero al frente. <strong>Bajás hasta 90° de rodilla delantera</strong>. Rodilla no supera la punta del pie. Ejecutar ambos lados.",
-          "notes": "Calibrado real 4/8: 12kg×6-7×4, RPE7 estable — este número sí acertó de entrada, se mantiene."
+          "notes": "Calibrado real 4/8: arrancó en 12kg (serie 1), pero no se sostuvo — series 2-4 bajaron a 10kg×7, RPE7 ahí. 12kg era demasiado para las 4 series completas. Se prescribe 10kg como número real."
         },
         {
           "id": "rdl",
