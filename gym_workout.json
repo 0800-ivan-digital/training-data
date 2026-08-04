@@ -18,11 +18,11 @@
           "type": "libre",
           "sets": 4,
           "reps": 6,
-          "weight_kg": 40,
+          "weight_kg": 30,
           "rest_seconds": 150,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Full_Squat/0.jpg",
           "description": "Barra sobre trapecios. Pies al ancho de hombros. Bajás hasta <strong>90° de rodilla</strong> manteniendo el torso erguido y las rodillas alineadas con los pies. Concéntrico con intención explosiva.",
-          "notes": "Primera sesión de Fase FM (Bloque 2) — cambia el esquema de 10 a 6 reps con más carga. 40kg es una estimación (tu 30kg×10 fue RPE6, muy cómodo, así que hay margen). Es calibración: si en la serie 1 el RPE da ≤7, mantené o subí un poco en las siguientes; si da ≥9, bajá. No hace falta acertar el número exacto hoy."
+          "notes": "Calibrado real 4/8: 30kg×6×4, RPE7 limpio (la estimación inicial de 40kg fue muy optimista). Este es el número de partida real para Fase FM — mantener y evaluar progresión según cómo salga esta sesión."
         },
         {
           "id": "bulgarian_split_squat",
@@ -35,7 +35,7 @@
           "image_url": "https://www.ivandigital.net/gym/gym_img/bulgarian-split-squat.jpg",
           "image_url_2": null,
           "description": "Pie trasero elevado en banco. Pie delantero al frente. <strong>Bajás hasta 90° de rodilla delantera</strong>. Rodilla no supera la punta del pie. Ejecutar ambos lados.",
-          "notes": "Fase FM — sube de 8kg×10 a 12kg×6 por lado. Mismo criterio de calibración que la sentadilla: ajustar según RPE real de la serie 1."
+          "notes": "Calibrado real 4/8: 12kg×6-7×4, RPE7 estable — este número sí acertó de entrada, se mantiene."
         },
         {
           "id": "rdl",
@@ -48,31 +48,31 @@
           "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Romanian-deadlift-1.png",
           "image_url_2": "https://upload.wikimedia.org/wikipedia/commons/5/58/Romanian-deadlift-2.png",
           "description": "De pie con barra. <strong>Bisagra de cadera</strong> manteniendo la espalda neutra. Bajás hasta sentir tensión en los isquios. No flexionás la rodilla significativamente.",
-          "notes": "Fase FM — sube de 30kg×10 a 38kg×6 (ajustá a los discos disponibles, 35-40kg está bien). Bisagra de cadera: técnica antes que carga, si la espalda pierde la neutralidad bajá el peso."
+          "notes": "Calibrado real 4/8: 38kg×6×4, RPE7 limpio — número acertado de entrada, se mantiene."
         },
         {
           "id": "hip_thrust",
           "name": "Hip thrust",
           "type": "libre",
           "sets": 3,
-          "reps": 8,
-          "weight_kg": 35,
-          "rest_seconds": 120,
+          "reps": 6,
+          "weight_kg": 40,
+          "rest_seconds": 150,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Hip_Thrust/0.jpg",
           "description": "Espalda superior apoyada en banco. Barra sobre las caderas con colchoneta. <strong>Empujás las caderas hacia arriba</strong> hasta extensión completa. Pausa 1 segundo arriba.",
-          "notes": "Este ejercicio ya dio RPE9-10 dos veces en el bloque anterior, así que no lo llevo directo a FM completa (4-6 reps) — paso intermedio a 35kg×8 primero. Si esto sale con RPE≤7 limpio, la próxima sesión sí baja a 6 reps con más carga."
+          "notes": "El 4/8, 35kg×8 dio RPE7 limpio (venía de RPE9-10 con 40kg×10-12 en el bloque anterior) — pasa a esquema FM completo, 40kg×6. Menos reps que antes con el mismo peso, debería ser más manejable. Si vuelve RPE≥9, retroceder a 35kg×8."
         },
         {
           "id": "calf_raise",
           "name": "Elevación de pantorrillas",
           "type": "libre",
           "sets": 3,
-          "reps": 10,
-          "weight_kg": 25,
+          "reps": 8,
+          "weight_kg": 30,
           "rest_seconds": 60,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Calf_Raise_On_A_Dumbbell/0.jpg",
           "description": "De pie en escalón o superficie elevada. <strong>Bajás el talón completamente</strong>. Subís hasta la punta máxima con pausa de 1 segundo arriba.",
-          "notes": "Progresión leve, 20→25kg — accesorio, no sigue el esquema estricto de FM. RPE venía en 7 con margen."
+          "notes": "El 4/8 hiciste 30kg×8 (subiste vos mismo desde los 25kg prescriptos) con RPE7 — corrijo la prescripción a ese número real."
         },
         {
           "id": "leg_raises",
