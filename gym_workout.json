@@ -3,7 +3,7 @@
   "phase": "FM",
   "week": 1,
   "rest_seconds": 90,
-  "recommended_next": "lower",
+  "recommended_next": "upper",
   "sessions": {
     "lower": {
       "name": "Tren inferior",
@@ -104,7 +104,7 @@
     },
     "upper": {
       "name": "Tren superior",
-      "day": "Martes (excepción esta semana — normalmente jueves)",
+      "day": "Jueves",
       "subtitle": "EMPUJE · TIRÓN · CORE",
       "duration_min": 60,
       "warmup": "5 min bicicleta estática suave + movilidad de hombros y rotadores externos.",
@@ -115,11 +115,11 @@
           "type": "libre",
           "sets": 3,
           "reps": 12,
-          "weight_kg": 10,
+          "weight_kg": 12,
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dumbbell_Bench_Press/0.jpg",
           "description": "Tumbado en banco. Mancuernas a los costados del pecho. <strong>Empuje explosivo</strong> hasta extensión sin bloquear el codo. Bajada controlada en 3 segundos.",
-          "notes": "RPE8 tres sesiones seguidas (7/10, 7/16, 7/23) con 10kg×12 — estable, sin fallos de reps, pero por regla (no progresar con RPE≥8 sostenido) se mantiene en 10kg una vez más antes de subir."
+          "notes": "El 7/28 bajó a RPE7 con 10kg×12 (venía de RPE8 sostenido) — progresa a 12kg. Ajustá al peso real disponible."
         },
         {
           "id": "db_row",
@@ -127,11 +127,11 @@
           "type": "libre",
           "sets": 3,
           "reps": 12,
-          "weight_kg": 12,
+          "weight_kg": 12.5,
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/One-Arm_Dumbbell_Row/0.jpg",
           "description": "Apoyás una mano y rodilla en el banco. Espalda paralela al piso. <strong>Tirás la mancuerna hacia la cadera</strong> sin rotar el torso.",
-          "notes": "Mantener 12kg×12 — RPE8 estable y limpio en 7/16 y 7/23, mismo caso que el press de banca: se sostiene una vez más antes de progresar."
+          "notes": "El 7/28 ya usaste 12.5kg (subiste vos mismo desde 12kg) con RPE8 — se mantiene ahí, sin forzar otra progresión todavía."
         },
         {
           "id": "ohp",
@@ -143,7 +143,7 @@
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dumbbell_Shoulder_Press/0.jpg",
           "description": "De pie o sentado. Mancuernas a la altura de los hombros. <strong>Empujás verticalmente hasta extensión completa.</strong> Core apretado durante todo el movimiento.",
-          "notes": "Corregido: el 7/23 hiciste 7.5kg reales (no 6kg — quedó mal guardado por el bug de coma decimal, ya arreglado en la app) y dio RPE8 limpio, mucha mejora vs. el RPE9-10 con 8kg de antes. Se repite 7.5kg una vez más para confirmar que es estable antes de subir a 8kg de nuevo."
+          "notes": "RPE8 dos sesiones seguidas con 7.5kg (7/23 y 7/28) — estable, sin fallos. Se repite una vez más antes de probar 8kg, dado el historial inestable de este ejercicio en particular."
         },
         {
           "id": "lat_pulldown",
@@ -151,11 +151,11 @@
           "type": "maquina",
           "sets": 3,
           "reps": 10,
-          "weight_kg": 35,
+          "weight_kg": 40,
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Full_Range-Of-Motion_Lat_Pulldown/0.jpg",
           "description": "Agarre prono al ancho de hombros. <strong>Tirás la barra hasta el pecho</strong> llevando los codos hacia abajo y atrás. Controlá la subida.",
-          "notes": "Máquina en saltos de 5kg. RPE8 estable en 7/16 y 7/23 — se mantiene en 35kg, todavía sin margen claro para el salto a 40kg."
+          "notes": "El 7/28 dio RPE7 con 35kg (mejoró de RPE8-9) — progresa al próximo salto real de la máquina, 40kg. Es un salto grande (saltos de 5kg), vigilar RPE de cerca."
         },
         {
           "id": "machine_row",
@@ -163,11 +163,11 @@
           "type": "maquina",
           "sets": 3,
           "reps": 12,
-          "weight_kg": 30,
+          "weight_kg": 32.5,
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Elevated_Cable_Rows/0.jpg",
           "description": "Pecho apoyado en el soporte. <strong>Tirás los mangos hacia el torso</strong> apretando los omóplatos al final del movimiento. Bajada controlada.",
-          "notes": "El 7/23 con 30kg salió RPE7, las 3 series completas y limpias — se recuperó bien del fallo del 7/16 (35kg, RPE10). Se repite 30kg una vez más para confirmar antes de progresar, dado el antecedente reciente en este ejercicio puntual."
+          "notes": "El 7/28 probaste 32.5kg en la última serie (subiste vos mismo desde 30kg) con RPE8, limpio — se consolida en 32.5kg×12×3 completas. Sigue con antecedente de RPE10/fallo en este ejercicio, vigilar de cerca."
         },
         {
           "id": "ab_crunch_machine",
@@ -179,7 +179,7 @@
           "rest_seconds": 90,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Ab_Crunch_Machine/0.jpg",
           "description": "Sentado en la máquina, pies bajo los apoyos. <strong>Flexionás el torso hacia adelante</strong> contrayendo el abdomen. Controlá la vuelta sin dejar caer el peso.",
-          "notes": "27kg (la máquina salta 23→27, no 23→28) — RPE7 el 7/23, técnica limpia. Próximo salto real sería 27→31 aprox., a confirmar."
+          "notes": "27kg (la máquina salta 23→27, no 23→28) — RPE7 estable en 7/23 y 7/28. Lista para progresar, pero no tengo confirmado el próximo salto real de esta máquina — preguntar en el gym en vez de asumir 31kg."
         },
         {
           "id": "dead_bug",
@@ -191,7 +191,7 @@
           "rest_seconds": 60,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dead_Bug/0.jpg",
           "description": "Tumbado boca arriba, brazos hacia el techo, caderas y rodillas a 90°. <strong>Extendés brazo opuesto a pierna opuesta</strong> sin despegar la zona lumbar del piso.",
-          "notes": "10 reps dio RPE6 el 7/23, cómodo — sube a 12 reps por lado, progresión vía reps ya que es peso corporal."
+          "notes": "12 reps dio RPE8 el 7/28 (subió más de lo esperado desde el RPE6 con 10 reps) — se mantiene en 12 reps sin seguir subiendo por ahora."
         }
       ]
     }
