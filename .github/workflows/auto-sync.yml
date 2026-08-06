@@ -2,13 +2,17 @@ name: Auto-Sync Intervals.icu Data
 
 on:
   schedule:
-    # Run every 15 minutes
-    - cron: '*/15 * * * *'
+    # Run every 60 minutes
+    - cron: '0 * * * *'
   workflow_dispatch:  # Allow manual trigger
 
 permissions:
   contents: write
   issues: write
+
+concurrency:
+  group: auto-sync-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   sync:
