@@ -70,7 +70,7 @@
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-08-07T18:10:04.080501",
+    "last_updated": "2026-08-07T19:14:01.763912",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.112"
@@ -195,13 +195,13 @@
       "atl": 42.3,
       "tsb": 2.17,
       "ramp_rate": -0.45,
-      "fitness_source": "From Intervals.icu API (reflects completed workouts)"
+      "fitness_source": "Decayed from yesterday (today's planned workouts not yet completed)"
     },
     "thresholds": {
-      "eftp": 249.2,
-      "w_prime": 20733,
-      "w_prime_kj": 20.7,
-      "p_max": 1242,
+      "eftp": 249.5,
+      "w_prime": 20754,
+      "w_prime_kj": 20.8,
+      "p_max": 1243,
       "vo2max": null,
       "sports": {
         "cycling": {
@@ -579,20 +579,21 @@
           },
           "coverage_ratio": 1.0,
           "ftp_used": 250,
-          "w_prime_used": 20733,
+          "w_prime_used": 20754,
           "ftp_staleness_days": 0,
           "model_trust_note": "CP/W' model (P=CP+W'/t) is primary for durations \u226420min where W' contribution is meaningful. Coggan duration factors (Allen & Coggan, 3rd ed.) are the established reference for \u226560min. 30min is the crossover zone where both apply. model_divergence_pct = (actual - CP_model) / CP_model \u00d7 100. Positive divergence at short durations may indicate strong anaerobic capacity or stale W' value. Indoor MMP is typically 3-5% lower than outdoor (cooling, motivation) \u2014 source flag indicates which environment produced each anchor."
         }
       },
       "dfa_a1_profile": null
     },
-    "consistency_index": 1.0,
+    "consistency_index": 0.5,
     "consistency_details": {
-      "planned_days": 1,
+      "planned_days": 2,
       "completed_days": 3,
       "matched_days": 1,
       "planned_dates": [
-        "2026-08-05"
+        "2026-08-05",
+        "2026-08-07"
       ],
       "completed_dates": [
         "2026-08-02",
@@ -604,8 +605,7 @@
       "phase": null,
       "confidence": "low",
       "reason_codes": [
-        "BUILD_BASE_AMBIGUOUS",
-        "NO_PLANNED_WORKOUTS"
+        "BUILD_BASE_AMBIGUOUS"
       ],
       "basis": {
         "stream_1": {
@@ -615,13 +615,13 @@
           "weeks_available": 4
         },
         "stream_2": {
-          "planned_tss_delta": null,
-          "hard_sessions_planned": 0,
+          "planned_tss_delta": 0.68,
+          "hard_sessions_planned": 1,
           "current_week_hard_days_completed": 0,
-          "current_week_hard_days_total": 0,
+          "current_week_hard_days_total": 1,
           "race_proximity": 44,
           "next_week_load": null,
-          "plan_coverage_current_week": 0.0,
+          "plan_coverage_current_week": 0.2,
           "plan_coverage_next_week": 0.0
         },
         "data_quality": "good",
@@ -634,8 +634,7 @@
     },
     "phase_detected": null,
     "phase_triggers": [
-      "BUILD_BASE_AMBIGUOUS",
-      "NO_PLANNED_WORKOUTS"
+      "BUILD_BASE_AMBIGUOUS"
     ],
     "seasonal_context": "Peak Race Season",
     "benchmark_indoor": {
@@ -652,19 +651,19 @@
       "benchmark_percentage": null,
       "seasonal_expected": null
     },
-    "eftp": 249.2,
-    "w_prime": 20733,
-    "w_prime_kj": 20.7,
-    "p_max": 1242,
+    "eftp": 249.5,
+    "w_prime": 20754,
+    "w_prime_kj": 20.8,
+    "p_max": 1243,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-08-07T18:10:04.079490",
+    "calculation_timestamp": "2026-08-07T19:14:01.762681",
     "data_quality": {
       "hrv_data_points": 7,
       "rhr_data_points": 7,
       "activities_7d": 5,
       "activities_28d": 20,
-      "planned_workouts_7d": 1,
+      "planned_workouts_7d": 2,
       "ftp_history_days": {
         "indoor": 81,
         "outdoor": 87
@@ -3128,11 +3127,25 @@
       "readiness": null
     }
   ],
-  "planned_workouts": [],
+  "planned_workouts": [
+    {
+      "id": 127827509,
+      "date": "2026-08-07",
+      "name": "Umbral 2\u00d720min \u2014 Parque Sarmiento",
+      "type": "WORKOUT",
+      "sport_type": "Ride",
+      "planned_tss": 102,
+      "duration_hours": 1.48,
+      "duration_formatted": "1h29m",
+      "workout_summary": "15m @125W | 5m @181W | 3\u00d71m @237W / 1m rec | 5m @125W | 20m @244W | 8m @125W | 20m @244W | 10m @125W",
+      "has_terrain": false,
+      "description": "- 15m 40%-60%\n\n- 5m 65%-80%\n\n3x\n- 1m 95%\n- 1m 55%\n\n- 5m 50%\n\n- 20m 95%-100%\n\n- 8m 50%\n\n- 20m 95%-100%\n\n- 10m 40%-60%"
+    }
+  ],
   "workout_summary_stats": {
-    "attempted": 0,
-    "success": 0,
-    "patternA": 0,
+    "attempted": 1,
+    "success": 1,
+    "patternA": 1,
     "patternB": 0,
     "bail_no_workout_doc": 0,
     "bail_no_match": 0
