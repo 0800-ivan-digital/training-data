@@ -1,31 +1,10 @@
 {
-  "generated_at": "2026-08-09T23:39:05.304365",
+  "generated_at": "2026-08-10T00:04:14.692951",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
   "retention_days": 14,
   "activities": [
-    {
-      "activity_id": "i169466326",
-      "date": "2026-07-26",
-      "type": "GravelRide",
-      "name": "Falsa primavera",
-      "interval_summary": null,
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 17958,
-          "avg_power": 147,
-          "max_power": 599,
-          "avg_hr": 133,
-          "max_hr": 157,
-          "avg_cadence": 80.50332,
-          "zone": 2,
-          "training_load": 169.85927
-        }
-      ],
-      "pedaling_retry": true
-    },
     {
       "activity_id": "i170604041",
       "date": "2026-07-29",
