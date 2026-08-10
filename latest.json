@@ -70,7 +70,7 @@
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-08-10T12:10:32.226443",
+    "last_updated": "2026-08-10T13:42:36.596246",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.112"
@@ -204,8 +204,8 @@
       "ctl": 47.63,
       "atl": 54.61,
       "tsb": -6.98,
-      "ramp_rate": 0.79,
-      "fitness_source": "From Intervals.icu API (reflects completed workouts)"
+      "ramp_rate": 2.27,
+      "fitness_source": "Decayed from yesterday (today's planned workouts not yet completed)"
     },
     "thresholds": {
       "eftp": 249.5,
@@ -596,14 +596,15 @@
       },
       "dfa_a1_profile": null
     },
-    "consistency_index": 1.0,
+    "consistency_index": 0.67,
     "consistency_details": {
-      "planned_days": 2,
+      "planned_days": 3,
       "completed_days": 4,
       "matched_days": 2,
       "planned_dates": [
         "2026-08-05",
-        "2026-08-07"
+        "2026-08-07",
+        "2026-08-10"
       ],
       "completed_dates": [
         "2026-08-05",
@@ -615,9 +616,7 @@
     "phase_detection": {
       "phase": "Build",
       "confidence": "medium",
-      "reason_codes": [
-        "NO_PLANNED_WORKOUTS"
-      ],
+      "reason_codes": [],
       "basis": {
         "stream_1": {
           "ctl_slope": null,
@@ -626,13 +625,13 @@
           "weeks_available": 4
         },
         "stream_2": {
-          "planned_tss_delta": null,
+          "planned_tss_delta": 0.2,
           "hard_sessions_planned": 0,
           "current_week_hard_days_completed": 0,
           "current_week_hard_days_total": 0,
           "race_proximity": 41,
           "next_week_load": null,
-          "plan_coverage_current_week": 0.0,
+          "plan_coverage_current_week": 0.17,
           "plan_coverage_next_week": 0.0
         },
         "data_quality": "good",
@@ -644,9 +643,7 @@
       "dossier_agreement": null
     },
     "phase_detected": "Build",
-    "phase_triggers": [
-      "NO_PLANNED_WORKOUTS"
-    ],
+    "phase_triggers": [],
     "seasonal_context": "Peak Race Season",
     "benchmark_indoor": {
       "current_ftp": 239,
@@ -668,13 +665,13 @@
     "p_max": 1243,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-08-10T12:10:32.225571",
+    "calculation_timestamp": "2026-08-10T13:42:36.595004",
     "data_quality": {
       "hrv_data_points": 7,
       "rhr_data_points": 7,
       "activities_7d": 7,
       "activities_28d": 22,
-      "planned_workouts_7d": 2,
+      "planned_workouts_7d": 3,
       "ftp_history_days": {
         "indoor": 84,
         "outdoor": 90
@@ -3401,6 +3398,19 @@
   ],
   "planned_workouts": [
     {
+      "id": 128421588,
+      "date": "2026-08-10",
+      "name": "Z2 \u2014 Parque Sarmiento (Lunes)",
+      "type": "WORKOUT",
+      "sport_type": "Ride",
+      "planned_tss": 74,
+      "duration_hours": 2.0,
+      "duration_formatted": "2h",
+      "workout_summary": null,
+      "has_terrain": false,
+      "description": "- 15m 40%-60%\n\n- 95m 56%-70%\n\n- 10m 40%-60%"
+    },
+    {
       "id": 123119343,
       "date": "2026-09-20",
       "name": "Campeonato Provincial de Gravel",
@@ -3415,12 +3425,12 @@
     }
   ],
   "workout_summary_stats": {
-    "attempted": 0,
+    "attempted": 1,
     "success": 0,
     "patternA": 0,
     "patternB": 0,
     "bail_no_workout_doc": 0,
-    "bail_no_match": 0
+    "bail_no_match": 1
   },
   "weekly_summary": {
     "total_training_hours": 9.1,
