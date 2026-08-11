@@ -18,11 +18,11 @@
           "type": "libre",
           "sets": 4,
           "reps": 6,
-          "weight_kg": 40,
+          "weight_kg": 42.5,
           "rest_seconds": 150,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Full_Squat/0.jpg",
           "description": "Barra sobre trapecios. Pies al ancho de hombros. Bajás hasta <strong>90° de rodilla</strong> manteniendo el torso erguido y las rodillas alineadas con los pies. Concéntrico con intención explosiva.",
-          "notes": "Calibrado real 4/8: serie 1 de aproximación a 30kg, series 2-4 (las que cuentan) a 40kg×6, RPE7 limpio — la estimación original de 40kg fue correcta. Se mantiene."
+          "notes": "40kg confirmado dos sesiones (4/8 y 11/8), RPE bajó de 7 a 6 — progresa a 42.5kg."
         },
         {
           "id": "bulgarian_split_squat",
@@ -35,7 +35,7 @@
           "image_url": "https://www.ivandigital.net/gym/gym_img/bulgarian-split-squat.jpg",
           "image_url_2": null,
           "description": "Pie trasero elevado en banco. Pie delantero al frente. <strong>Bajás hasta 90° de rodilla delantera</strong>. Rodilla no supera la punta del pie. Ejecutar ambos lados.",
-          "notes": "Calibrado real 4/8: arrancó en 12kg (serie 1), pero no se sostuvo — series 2-4 bajaron a 10kg×7, RPE7 ahí. 12kg era demasiado para las 4 series completas. Se prescribe 10kg como número real."
+          "notes": "10kg estable dos sesiones (4/8 y 11/8), RPE7 ambas — se mantiene."
         },
         {
           "id": "rdl",
@@ -48,7 +48,7 @@
           "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Romanian-deadlift-1.png",
           "image_url_2": "https://upload.wikimedia.org/wikipedia/commons/5/58/Romanian-deadlift-2.png",
           "description": "De pie con barra. <strong>Bisagra de cadera</strong> manteniendo la espalda neutra. Bajás hasta sentir tensión en los isquios. No flexionás la rodilla significativamente.",
-          "notes": "Calibrado real 4/8: 38kg×6×4, RPE7 limpio — número acertado de entrada, se mantiene."
+          "notes": "38kg dio RPE8 el 11/8 (subió de RPE7 el 4/8) — se mantiene sin progresar, vigilar la próxima sesión."
         },
         {
           "id": "hip_thrust",
@@ -60,7 +60,7 @@
           "rest_seconds": 150,
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Hip_Thrust/0.jpg",
           "description": "Espalda superior apoyada en banco. Barra sobre las caderas con colchoneta. <strong>Empujás las caderas hacia arriba</strong> hasta extensión completa. Pausa 1 segundo arriba.",
-          "notes": "El 4/8, 35kg×8 dio RPE7 limpio (venía de RPE9-10 con 40kg×10-12 en el bloque anterior) — pasa a esquema FM completo, 40kg×6. Menos reps que antes con el mismo peso, debería ser más manejable. Si vuelve RPE≥9, retroceder a 35kg×8."
+          "notes": "40kg×6 confirmado el 11/8 con RPE7 limpio — el salto al esquema FM completo funcionó, sin repetir el RPE9-10 de cuando este mismo peso era ×10-12. Se sostiene una vez más antes de progresar, dado el historial del ejercicio."
         },
         {
           "id": "calf_raise",
