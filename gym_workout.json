@@ -25,6 +25,18 @@
           "notes": "40kg confirmado dos sesiones (4/8 y 11/8), RPE bajó de 7 a 6 — progresa a 42.5kg."
         },
         {
+          "id": "leg_press_unilateral",
+          "name": "Prensa de piernas unilateral",
+          "type": "maquina",
+          "sets": 4,
+          "reps": 6,
+          "weight_kg": 30,
+          "rest_seconds": 150,
+          "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Leg_Press/0.jpg",
+          "description": "Sentado en la prensa, un pie a la vez en el centro de la plataforma. <strong>Empujás hasta extensión casi completa</strong> sin bloquear la rodilla. Concéntrico con intención explosiva.",
+          "notes": "PRIMERA VEZ — sin dato previo. 30kg es un piso conservador de arranque, no un objetivo. Encontrá el peso real hoy: si la serie 1 sale muy fácil, subí para las siguientes series; el número que quede al final es el que uso para la próxima."
+        },
+        {
           "id": "bulgarian_split_squat",
           "name": "Bulgarian split squat",
           "type": "libre",
@@ -61,6 +73,17 @@
           "image_url": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Hip_Thrust/0.jpg",
           "description": "Espalda superior apoyada en banco. Barra sobre las caderas con colchoneta. <strong>Empujás las caderas hacia arriba</strong> hasta extensión completa. Pausa 1 segundo arriba.",
           "notes": "40kg×6 confirmado el 11/8 con RPE7 limpio — el salto al esquema FM completo funcionó, sin repetir el RPE9-10 de cuando este mismo peso era ×10-12. Se sostiene una vez más antes de progresar, dado el historial del ejercicio."
+        },
+        {
+          "id": "hip_flexion_monopodal",
+          "name": "Flexión de cadera monopodal (polea baja)",
+          "type": "maquina",
+          "sets": 3,
+          "reps": 10,
+          "weight_kg": 5,
+          "rest_seconds": 75,
+          "description": "De pie, tobillera en polea baja detrás tuyo. <strong>Llevás la rodilla hacia el pecho</strong> contra la resistencia, controlando la vuelta. Ejecutar ambas piernas. Imita la fase de tirón hacia arriba del pedaleo.",
+          "notes": "PRIMERA VEZ — sin dato previo. 5kg es un piso conservador (los flexores de cadera son mucho más débiles que cuádriceps/glúteo, no compares esto con el peso de otros ejercicios). Encontrá el peso real hoy."
         },
         {
           "id": "calf_raise",
