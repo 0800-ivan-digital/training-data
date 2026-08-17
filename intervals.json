@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T14:00:32.034699",
+  "generated_at": "2026-08-17T15:58:24.144498",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -913,6 +913,28 @@
           "zone": 1,
           "training_load": 5.662184,
           "decoupling": -9.134477
+        }
+      ],
+      "pedaling_retry": true
+    },
+    {
+      "activity_id": "i176794140",
+      "date": "2026-08-17",
+      "type": "Ride",
+      "name": "Morning Ride",
+      "interval_summary": null,
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 4289,
+          "avg_power": 136,
+          "max_power": 648,
+          "avg_hr": 121,
+          "max_hr": 156,
+          "avg_cadence": 73.93872,
+          "zone": 1,
+          "training_load": 47.069866,
+          "decoupling": 0.13128817
         }
       ],
       "pedaling_retry": true
