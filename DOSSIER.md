@@ -35,7 +35,7 @@
 
 ## Goals
 - Primary: Improve FTP and power output
-- Event: Campeonato Provincial de Gravel — 2026-09-20, Carmen de Areco (ver PLAN.md)
+- Event: ninguno confirmado. Fase actual (desde 2026-08-25): base aeróbica + FTP sin fecha fija. Candidatos a futuro: bikepacking, training camps, La Épica (Uruguay, 100mi, ~nov 2026). Campeonato Provincial de Gravel 20/9 dado de baja — ver PLAN.md.
 
 ## Notes
 - Amateur cyclist, trains with team Strato

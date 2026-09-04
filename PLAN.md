@@ -1,6 +1,13 @@
 # Plan de Temporada — Gravel 2026
 
-## Evento Objetivo (A)
+## ESTADO: OBJETIVO DADO DE BAJA (2026-08-25)
+El Campeonato Provincial de Gravel (20/9) queda **cancelado como objetivo A**. Motivo: parate de ~1 semana sin entrenar (7-8 días sin actividad al 25/8) sumado a que la forma real (CTL 35.43) quedó muy por debajo de lo necesario para el pico previsto (~65) a 26 días de la carrera. Decisión del atleta, no por lesión declarada.
+
+Este documento queda como registro histórico del bloque Base→Build→Pico que se ejecutó hasta el 25/8. Pendiente definir nuevo objetivo y reconstruir periodización.
+
+---
+
+## Evento Objetivo (A) — HISTÓRICO, DADO DE BAJA
 - **Carrera:** Campeonato Provincial de Gravel
 - **Fecha:** 2026-09-20
 - **Lugar:** Carmen de Areco, Buenos Aires
