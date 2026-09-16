@@ -70,7 +70,7 @@
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-09-15T22:53:33.813928",
+    "last_updated": "2026-09-16T06:00:41.663249",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.112"
@@ -100,10 +100,10 @@
   "alerts": [
     {
       "metric": "race_week",
-      "value": 5,
+      "value": 4,
       "severity": "info",
       "threshold": "RACE_A within 7 days",
-      "context": "Race week D-5 of 'Campeonato Provincial de Gravel'. Today: Moderate endurance, 9-13 TSS. Z1-Z2 + 2-3 race-pace touches",
+      "context": "Race week D-4 of 'Campeonato Provincial de Gravel'. Today: Easy / rest, 4-8 TSS. Z1-Z2 only",
       "persistence_days": null,
       "tier": 1
     }
@@ -115,13 +115,13 @@
       "hrv": {
         "status": "unavailable",
         "value": null,
-        "baseline_7d": 42.7,
+        "baseline_7d": 43.6,
         "delta_pct": null
       },
       "rhr": {
         "status": "unavailable",
         "value": null,
-        "baseline_7d": 55.2,
+        "baseline_7d": 55.8,
         "delta_bpm": null
       },
       "sleep": {
@@ -136,11 +136,11 @@
       "ri": {
         "status": "unavailable",
         "value": null,
-        "value_yesterday": 1.05
+        "value_yesterday": null
       },
       "tsb": {
         "status": "green",
-        "value": 21.0
+        "value": 20.5
       }
     },
     "signal_summary": {
@@ -163,7 +163,7 @@
   "history": {
     "available": true,
     "last_generated": "2026-09-06",
-    "age_days": 9,
+    "age_days": 10,
     "total_months": 35,
     "history_confidence": "high"
   },
@@ -176,17 +176,17 @@
   },
   "current_status": {
     "fitness": {
-      "ctl": 21.49,
-      "atl": 0.53,
-      "tsb": 20.96,
-      "ramp_rate": -3.9,
+      "ctl": 20.98,
+      "atl": 0.46,
+      "tsb": 20.52,
+      "ramp_rate": -3.81,
       "fitness_source": "From Intervals.icu API (reflects completed workouts)"
     },
     "thresholds": {
-      "eftp": 241.4,
-      "w_prime": 20080,
+      "eftp": 241.2,
+      "w_prime": 20060,
       "w_prime_kj": 20.1,
-      "p_max": 1203,
+      "p_max": 1202,
       "vo2max": null,
       "sports": {
         "cycling": {
@@ -245,7 +245,7 @@
       "respiration": null,
       "body_fat_pct": null,
       "abdomen_cm": null,
-      "steps": 2807,
+      "steps": 100,
       "hydration_volume_l": null,
       "kcal_consumed": null,
       "carbohydrates_g": null,
@@ -258,11 +258,11 @@
   },
   "derived_metrics": {
     "recovery_index": null,
-    "recovery_index_yesterday": 1.05,
-    "hrv_baseline_7d": 42.7,
-    "rhr_baseline_7d": 55.2,
-    "hrv_baseline_28d": 45.2,
-    "rhr_baseline_28d": 54,
+    "recovery_index_yesterday": null,
+    "hrv_baseline_7d": 43.6,
+    "rhr_baseline_7d": 55.8,
+    "hrv_baseline_28d": 45.1,
+    "rhr_baseline_28d": 54.1,
     "latest_hrv": null,
     "latest_rhr": null,
     "acwr": null,
@@ -360,12 +360,12 @@
       "power_curve_delta": {
         "window_days": 28,
         "current_window": {
-          "start": "2026-08-19",
-          "end": "2026-09-15"
+          "start": "2026-08-20",
+          "end": "2026-09-16"
         },
         "previous_window": {
-          "start": "2026-07-22",
-          "end": "2026-08-18"
+          "start": "2026-07-23",
+          "end": "2026-08-19"
         },
         "anchors": null,
         "rotation_index": null,
@@ -374,12 +374,12 @@
       "hr_curve_delta": {
         "window_days": 28,
         "current_window": {
-          "start": "2026-08-19",
-          "end": "2026-09-15"
+          "start": "2026-08-20",
+          "end": "2026-09-16"
         },
         "previous_window": {
-          "start": "2026-07-22",
-          "end": "2026-08-18"
+          "start": "2026-07-23",
+          "end": "2026-08-19"
         },
         "anchors": null,
         "rotation_index": null,
@@ -389,8 +389,8 @@
         "note": "No sustainability data available.",
         "window": {
           "days": 42,
-          "start": "2026-08-05",
-          "end": "2026-09-15"
+          "start": "2026-08-06",
+          "end": "2026-09-16"
         }
       },
       "dfa_a1_profile": null
@@ -420,7 +420,7 @@
           "hard_sessions_planned": 1,
           "current_week_hard_days_completed": 0,
           "current_week_hard_days_total": 1,
-          "race_proximity": 5,
+          "race_proximity": 4,
           "next_week_load": null,
           "plan_coverage_current_week": 1.0,
           "plan_coverage_next_week": 0.0
@@ -452,69 +452,27 @@
       "benchmark_percentage": null,
       "seasonal_expected": null
     },
-    "eftp": 241.4,
-    "w_prime": 20080,
+    "eftp": 241.2,
+    "w_prime": 20060,
     "w_prime_kj": 20.1,
-    "p_max": 1203,
+    "p_max": 1202,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-09-15T22:53:33.812685",
+    "calculation_timestamp": "2026-09-16T06:00:41.662022",
     "data_quality": {
-      "hrv_data_points": 6,
-      "rhr_data_points": 6,
+      "hrv_data_points": 5,
+      "rhr_data_points": 5,
       "activities_7d": 0,
       "activities_28d": 0,
       "planned_workouts_7d": 0,
       "ftp_history_days": {
-        "indoor": 120,
-        "outdoor": 126
+        "indoor": 121,
+        "outdoor": 127
       }
     }
   },
   "recent_activities": [],
   "wellness_data": [
-    {
-      "date": "2026-09-09",
-      "weight_kg": null,
-      "display": {
-        "weight": null
-      },
-      "resting_hr": 52,
-      "hrv_rmssd": 38.0,
-      "hrv_sdnn": null,
-      "sleep_hours": 7.98,
-      "sleep_formatted": "7h59m",
-      "sleep_quality": null,
-      "sleep_score": null,
-      "mental_energy": null,
-      "avg_sleeping_hr": 54.0,
-      "vo2max": null,
-      "fatigue": null,
-      "soreness": null,
-      "stress": null,
-      "mood": null,
-      "motivation": null,
-      "injury": null,
-      "hydration": null,
-      "spO2": null,
-      "blood_glucose": null,
-      "systolic": null,
-      "diastolic": null,
-      "baevsky_si": null,
-      "lactate": null,
-      "respiration": null,
-      "body_fat_pct": null,
-      "abdomen_cm": null,
-      "steps": 4148,
-      "hydration_volume_l": null,
-      "kcal_consumed": null,
-      "carbohydrates_g": null,
-      "protein_g": null,
-      "fat_g": null,
-      "menstrual_phase": null,
-      "menstrual_phase_predicted": null,
-      "readiness": null
-    },
     {
       "date": "2026-09-10",
       "weight_kg": null,
@@ -757,7 +715,49 @@
       "respiration": null,
       "body_fat_pct": null,
       "abdomen_cm": null,
-      "steps": 2807,
+      "steps": 4438,
+      "hydration_volume_l": null,
+      "kcal_consumed": null,
+      "carbohydrates_g": null,
+      "protein_g": null,
+      "fat_g": null,
+      "menstrual_phase": null,
+      "menstrual_phase_predicted": null,
+      "readiness": null
+    },
+    {
+      "date": "2026-09-16",
+      "weight_kg": null,
+      "display": {
+        "weight": null
+      },
+      "resting_hr": null,
+      "hrv_rmssd": null,
+      "hrv_sdnn": null,
+      "sleep_hours": null,
+      "sleep_formatted": null,
+      "sleep_quality": null,
+      "sleep_score": null,
+      "mental_energy": null,
+      "avg_sleeping_hr": null,
+      "vo2max": null,
+      "fatigue": null,
+      "soreness": null,
+      "stress": null,
+      "mood": null,
+      "motivation": null,
+      "injury": null,
+      "hydration": null,
+      "spO2": null,
+      "blood_glucose": null,
+      "systolic": null,
+      "diastolic": null,
+      "baevsky_si": null,
+      "lactate": null,
+      "respiration": null,
+      "body_fat_pct": null,
+      "abdomen_cm": null,
+      "steps": 100,
       "hydration_volume_l": null,
       "kcal_consumed": null,
       "carbohydrates_g": null,
@@ -796,8 +796,8 @@
     "total_training_formatted": "0s",
     "total_tss": 0,
     "activities_count": 0,
-    "avg_hrv": 42.7,
-    "avg_resting_hr": 55.2
+    "avg_hrv": 43.6,
+    "avg_resting_hr": 55.8
   },
   "race_calendar": {
     "next_race": {
@@ -805,7 +805,7 @@
       "date": "2026-09-20",
       "category": "RACE_A",
       "type": "GravelRide",
-      "days_until": 5,
+      "days_until": 4,
       "moving_time_seconds": 12000,
       "distance_meters": null,
       "display": {
@@ -819,7 +819,7 @@
         "date": "2026-09-20",
         "category": "RACE_A",
         "type": "GravelRide",
-        "days_until": 5,
+        "days_until": 4,
         "moving_time_seconds": 12000,
         "distance_meters": null,
         "display": {
@@ -839,18 +839,18 @@
       "event_type": "GravelRide",
       "event_duration_class": "long_endurance",
       "event_moving_time_seconds": 12000,
-      "days_until_event": 5,
-      "current_day": "D-5",
-      "ctl_baseline": 21.5,
-      "normal_weekly_tss": 150.4,
+      "days_until_event": 4,
+      "current_day": "D-4",
+      "ctl_baseline": 21.0,
+      "normal_weekly_tss": 146.9,
       "race_week_tss_budget": {
-        "min": 60,
-        "max": 83
+        "min": 59,
+        "max": 81
       },
       "race_week_tss_spent": 0,
       "race_week_tss_remaining": {
-        "min": 60,
-        "max": 83
+        "min": 59,
+        "max": 81
       },
       "projected_race_day_tsb": 18.8,
       "tsb_target_range": {
@@ -858,17 +858,17 @@
         "max": 25
       },
       "today": {
-        "label": "Moderate endurance",
+        "label": "Easy / rest",
         "load_target_tss": {
-          "min": 9,
-          "max": 13
+          "min": 4,
+          "max": 8
         },
-        "zones": "Z1-Z2 + 2-3 race-pace touches",
-        "purpose": "Maintain feel without adding fatigue."
+        "zones": "Z1-Z2 only",
+        "purpose": "Volume reduction. Carb loading begins if applicable. Easy endurance preferred over complete rest for long events."
       },
       "carb_loading": {
         "applicable": true,
-        "active": false,
+        "active": true,
         "starts": "D-4",
         "start_date": "2026-09-16",
         "note": "10-12 g\u00b7kg\u207b\u00b9/day. No depletion phase needed."
