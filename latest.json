@@ -70,7 +70,7 @@
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-09-20T22:57:10.533766",
+    "last_updated": "2026-09-21T00:54:10.073345",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.112"
@@ -106,15 +106,6 @@
       "context": "ACWR 4.0 above safe range. Injury/overreach risk elevated.",
       "persistence_days": null,
       "tier": 2
-    },
-    {
-      "metric": "race_week",
-      "value": 0,
-      "severity": "info",
-      "threshold": "RACE_A within 7 days",
-      "context": "Race week D-0 of 'Campeonato Provincial de Gravel'. Today: Race day, 0-0 TSS. Race effort",
-      "persistence_days": null,
-      "tier": 1
     }
   ],
   "readiness_decision": {
@@ -122,20 +113,20 @@
     "priority": 1,
     "signals": {
       "hrv": {
-        "status": "amber",
-        "value": 37.0,
-        "baseline_7d": 42.2,
-        "delta_pct": -12.3
+        "status": "unavailable",
+        "value": null,
+        "baseline_7d": 41.8,
+        "delta_pct": null
       },
       "rhr": {
-        "status": "green",
-        "value": 59,
-        "baseline_7d": 56.6,
-        "delta_bpm": 2.4
+        "status": "unavailable",
+        "value": null,
+        "baseline_7d": 57.2,
+        "delta_bpm": null
       },
       "sleep": {
-        "status": "green",
-        "hours": 8.3,
+        "status": "unavailable",
+        "hours": null,
         "quality": null
       },
       "acwr": {
@@ -143,22 +134,22 @@
         "value": 4.0
       },
       "ri": {
-        "status": "green",
-        "value": 0.84,
-        "value_yesterday": 1.29
+        "status": "unavailable",
+        "value": null,
+        "value_yesterday": 0.86
       }
     },
     "signal_summary": {
-      "green": 3,
-      "amber": 1,
+      "green": 0,
+      "amber": 0,
       "red": 1,
-      "unavailable": 0
+      "unavailable": 4
     },
     "phase_context": {
-      "phase": "Taper",
+      "phase": "Base",
       "phase_week": 1,
-      "amber_threshold": 1,
-      "modifier_applied": "race_week_tightened"
+      "amber_threshold": 2,
+      "modifier_applied": "default"
     },
     "race_week_defers": false,
     "modification": null,
@@ -168,7 +159,7 @@
   "history": {
     "available": true,
     "last_generated": "2026-09-06",
-    "age_days": 14,
+    "age_days": 15,
     "total_months": 35,
     "history_confidence": "high"
   },
@@ -206,17 +197,17 @@
   },
   "current_status": {
     "fitness": {
-      "ctl": 20.37,
-      "atl": 6.36,
-      "tsb": 14.01,
-      "ramp_rate": -2.17,
-      "fitness_source": "Decayed from yesterday (today's planned workouts not yet completed)"
+      "ctl": 19.89,
+      "atl": 5.51,
+      "tsb": 14.38,
+      "ramp_rate": -2.12,
+      "fitness_source": "From Intervals.icu API (reflects completed workouts)"
     },
     "thresholds": {
-      "eftp": 240.2,
-      "w_prime": 19980,
+      "eftp": 240.0,
+      "w_prime": 19960,
       "w_prime_kj": 20.0,
-      "p_max": 1197,
+      "p_max": 1196,
       "vo2max": null,
       "sports": {
         "cycling": {
@@ -254,10 +245,10 @@
         }
       },
       "resting_hr": 59,
-      "hrv": 37.0,
+      "hrv": null,
       "sleep_quality": null,
-      "sleep_hours": 8.3,
-      "sleep_formatted": "8h18m",
+      "sleep_hours": null,
+      "sleep_formatted": null,
       "sleep_score": null,
       "fatigue": null,
       "soreness": null,
@@ -275,7 +266,7 @@
       "respiration": null,
       "body_fat_pct": null,
       "abdomen_cm": null,
-      "steps": 1148,
+      "steps": null,
       "hydration_volume_l": null,
       "kcal_consumed": null,
       "carbohydrates_g": null,
@@ -287,14 +278,14 @@
     }
   },
   "derived_metrics": {
-    "recovery_index": 0.84,
-    "recovery_index_yesterday": 1.29,
-    "hrv_baseline_7d": 42.2,
-    "rhr_baseline_7d": 56.6,
-    "hrv_baseline_28d": 44.5,
-    "rhr_baseline_28d": 54.7,
-    "latest_hrv": 37.0,
-    "latest_rhr": 59,
+    "recovery_index": null,
+    "recovery_index_yesterday": 0.86,
+    "hrv_baseline_7d": 41.8,
+    "rhr_baseline_7d": 57.2,
+    "hrv_baseline_28d": 44.0,
+    "rhr_baseline_28d": 54.8,
+    "latest_hrv": null,
+    "latest_rhr": null,
     "acwr": 4.0,
     "acwr_interpretation": "danger",
     "monotony": 0.38,
@@ -306,7 +297,7 @@
     "multi_sport_detected": false,
     "strain": 5.0,
     "stress_tolerance": 0.1,
-    "load_recovery_ratio": 0.1,
+    "load_recovery_ratio": null,
     "tss_7d_total": 12.0,
     "tss_28d_total": 12.0,
     "zone_distribution_7d": {
@@ -412,12 +403,12 @@
       "power_curve_delta": {
         "window_days": 28,
         "current_window": {
-          "start": "2026-08-24",
-          "end": "2026-09-20"
+          "start": "2026-08-25",
+          "end": "2026-09-21"
         },
         "previous_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23"
+          "start": "2026-07-28",
+          "end": "2026-08-24"
         },
         "anchors": {
           "5s": {
@@ -452,12 +443,12 @@
       "hr_curve_delta": {
         "window_days": 28,
         "current_window": {
-          "start": "2026-08-24",
-          "end": "2026-09-20"
+          "start": "2026-08-25",
+          "end": "2026-09-21"
         },
         "previous_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23"
+          "start": "2026-07-28",
+          "end": "2026-08-24"
         },
         "anchors": {
           "60s": {
@@ -488,8 +479,8 @@
         "note": "No sustainability data available.",
         "window": {
           "days": 42,
-          "start": "2026-08-10",
-          "end": "2026-09-20"
+          "start": "2026-08-11",
+          "end": "2026-09-21"
         }
       },
       "dfa_a1_profile": null
@@ -502,26 +493,26 @@
       "note": "No planned workouts in period"
     },
     "phase_detection": {
-      "phase": "Taper",
+      "phase": "Base",
       "confidence": "medium",
       "reason_codes": [
-        "RACE_IMMINENT"
+        "NO_PLANNED_WORKOUTS"
       ],
       "basis": {
         "stream_1": {
-          "ctl_slope": -4.9,
-          "acwr_trend": "stable",
+          "ctl_slope": null,
+          "acwr_trend": null,
           "hard_day_pattern": 0,
           "weeks_available": 4
         },
         "stream_2": {
           "planned_tss_delta": null,
-          "hard_sessions_planned": 1,
+          "hard_sessions_planned": 0,
           "current_week_hard_days_completed": 0,
-          "current_week_hard_days_total": 1,
-          "race_proximity": 0,
+          "current_week_hard_days_total": 0,
+          "race_proximity": null,
           "next_week_load": null,
-          "plan_coverage_current_week": 1.0,
+          "plan_coverage_current_week": 0.0,
           "plan_coverage_next_week": 0.0
         },
         "data_quality": "good",
@@ -532,9 +523,9 @@
       "dossier_declared": null,
       "dossier_agreement": null
     },
-    "phase_detected": "Taper",
+    "phase_detected": "Base",
     "phase_triggers": [
-      "RACE_IMMINENT"
+      "NO_PLANNED_WORKOUTS"
     ],
     "seasonal_context": "Late Season / Transition",
     "benchmark_indoor": {
@@ -551,22 +542,22 @@
       "benchmark_percentage": null,
       "seasonal_expected": null
     },
-    "eftp": 240.2,
-    "w_prime": 19980,
+    "eftp": 240.0,
+    "w_prime": 19960,
     "w_prime_kj": 20.0,
-    "p_max": 1197,
+    "p_max": 1196,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-09-20T22:57:10.532840",
+    "calculation_timestamp": "2026-09-21T00:54:10.072474",
     "data_quality": {
-      "hrv_data_points": 5,
-      "rhr_data_points": 5,
+      "hrv_data_points": 4,
+      "rhr_data_points": 4,
       "activities_7d": 2,
       "activities_28d": 2,
       "planned_workouts_7d": 1,
       "ftp_history_days": {
-        "indoor": 125,
-        "outdoor": 131
+        "indoor": 126,
+        "outdoor": 132
       }
     }
   },
@@ -749,48 +740,6 @@
     }
   ],
   "wellness_data": [
-    {
-      "date": "2026-09-14",
-      "weight_kg": null,
-      "display": {
-        "weight": null
-      },
-      "resting_hr": 54,
-      "hrv_rmssd": 44.0,
-      "hrv_sdnn": null,
-      "sleep_hours": 8.58,
-      "sleep_formatted": "8h35m",
-      "sleep_quality": null,
-      "sleep_score": null,
-      "mental_energy": null,
-      "avg_sleeping_hr": 54.0,
-      "vo2max": null,
-      "fatigue": null,
-      "soreness": null,
-      "stress": null,
-      "mood": null,
-      "motivation": null,
-      "injury": null,
-      "hydration": null,
-      "spO2": null,
-      "blood_glucose": null,
-      "systolic": null,
-      "diastolic": null,
-      "baevsky_si": null,
-      "lactate": null,
-      "respiration": null,
-      "body_fat_pct": null,
-      "abdomen_cm": null,
-      "steps": 4411,
-      "hydration_volume_l": null,
-      "kcal_consumed": null,
-      "carbohydrates_g": null,
-      "protein_g": null,
-      "fat_g": null,
-      "menstrual_phase": null,
-      "menstrual_phase_predicted": null,
-      "readiness": null
-    },
     {
       "date": "2026-09-15",
       "weight_kg": null,
@@ -1042,23 +991,51 @@
       "menstrual_phase": null,
       "menstrual_phase_predicted": null,
       "readiness": null
-    }
-  ],
-  "planned_workouts": [
+    },
     {
-      "id": 123119343,
-      "date": "2026-09-20",
-      "name": "Campeonato Provincial de Gravel",
-      "type": "RACE_A",
-      "sport_type": "GravelRide",
-      "planned_tss": null,
-      "duration_hours": 3.33,
-      "duration_formatted": "3h20m",
-      "workout_summary": null,
-      "has_terrain": false,
-      "description": ""
+      "date": "2026-09-21",
+      "weight_kg": null,
+      "display": {
+        "weight": null
+      },
+      "resting_hr": null,
+      "hrv_rmssd": null,
+      "hrv_sdnn": null,
+      "sleep_hours": null,
+      "sleep_formatted": null,
+      "sleep_quality": null,
+      "sleep_score": null,
+      "mental_energy": null,
+      "avg_sleeping_hr": null,
+      "vo2max": null,
+      "fatigue": null,
+      "soreness": null,
+      "stress": null,
+      "mood": null,
+      "motivation": null,
+      "injury": null,
+      "hydration": null,
+      "spO2": null,
+      "blood_glucose": null,
+      "systolic": null,
+      "diastolic": null,
+      "baevsky_si": null,
+      "lactate": null,
+      "respiration": null,
+      "body_fat_pct": null,
+      "abdomen_cm": null,
+      "steps": null,
+      "hydration_volume_l": null,
+      "kcal_consumed": null,
+      "carbohydrates_g": null,
+      "protein_g": null,
+      "fat_g": null,
+      "menstrual_phase": null,
+      "menstrual_phase_predicted": null,
+      "readiness": null
     }
   ],
+  "planned_workouts": [],
   "workout_summary_stats": {
     "attempted": 0,
     "success": 0,
@@ -1072,92 +1049,17 @@
     "total_training_formatted": "1h12m",
     "total_tss": 12,
     "activities_count": 2,
-    "avg_hrv": 42.2,
-    "avg_resting_hr": 56.6
+    "avg_hrv": 41.8,
+    "avg_resting_hr": 57.2
   },
   "race_calendar": {
-    "next_race": {
-      "name": "Campeonato Provincial de Gravel",
-      "date": "2026-09-20",
-      "category": "RACE_A",
-      "type": "GravelRide",
-      "days_until": 0,
-      "moving_time_seconds": 12000,
-      "distance_meters": null,
-      "display": {
-        "distance": null
-      },
-      "has_terrain": false
-    },
-    "all_races": [
-      {
-        "name": "Campeonato Provincial de Gravel",
-        "date": "2026-09-20",
-        "category": "RACE_A",
-        "type": "GravelRide",
-        "days_until": 0,
-        "moving_time_seconds": 12000,
-        "distance_meters": null,
-        "display": {
-          "distance": null
-        },
-        "has_terrain": false
-      }
-    ],
+    "next_race": null,
+    "all_races": [],
     "taper_alert": {
       "active": false
     },
     "race_week": {
-      "active": true,
-      "event_name": "Campeonato Provincial de Gravel",
-      "event_date": "2026-09-20",
-      "event_category": "RACE_A",
-      "event_type": "GravelRide",
-      "event_duration_class": "long_endurance",
-      "event_moving_time_seconds": 12000,
-      "days_until_event": 0,
-      "current_day": "D-0",
-      "ctl_baseline": 20.4,
-      "normal_weekly_tss": 142.6,
-      "race_week_tss_budget": {
-        "min": 57,
-        "max": 78
-      },
-      "race_week_tss_spent": 12,
-      "race_week_tss_remaining": {
-        "min": 45,
-        "max": 66
-      },
-      "projected_race_day_tsb": 14.0,
-      "tsb_target_range": {
-        "min": 10,
-        "max": 25
-      },
-      "today": {
-        "label": "Race day",
-        "load_target_tss": {
-          "min": 0,
-          "max": 0
-        },
-        "zones": "Race effort",
-        "purpose": "Go/no-go assessment. Execute race plan."
-      },
-      "carb_loading": {
-        "applicable": true,
-        "active": true,
-        "starts": "D-4",
-        "start_date": "2026-09-16",
-        "note": "10-12 g\u00b7kg\u207b\u00b9/day. No depletion phase needed."
-      },
-      "opener": {
-        "day": "D-2",
-        "date": "2026-09-18",
-        "intensity": "lighter"
-      },
-      "go_no_go": {
-        "tsb_status": "green",
-        "notes": []
-      }
+      "active": false
     }
   }
 }
