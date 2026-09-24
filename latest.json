@@ -64,13 +64,13 @@
     "quick_stats": {
       "total_training_hours": 0.0,
       "total_training_formatted": "0s",
-      "total_activities": 2,
+      "total_activities": 3,
       "total_tss": 0
     }
   },
   "metadata": {
     "athlete_id": "REDACTED",
-    "last_updated": "2026-09-24T18:31:32.788897",
+    "last_updated": "2026-09-24T21:49:02.609324",
     "data_range_days": 7,
     "extended_range_days": 28,
     "version": "3.112"
@@ -130,7 +130,7 @@
       },
       "tsb": {
         "status": "green",
-        "value": 14.5
+        "value": 11.9
       }
     },
     "signal_summary": {
@@ -161,11 +161,11 @@
     "period_description": "Last 7 days of training (including today)",
     "note": "Duration calculated from API moving_time field.",
     "total_duration_decimal_hours": 0.0,
-    "total_activities": 2,
+    "total_activities": 3,
     "by_activity_type": {
       "Unknown": {
         "duration_decimal_hours": 0.0,
-        "count": 2,
+        "count": 3,
         "tss": 0,
         "distance_km": 0.0,
         "display": {
@@ -179,10 +179,10 @@
   },
   "current_status": {
     "fitness": {
-      "ctl": 18.52,
-      "atl": 3.99,
-      "tsb": 14.53,
-      "ramp_rate": -2.25,
+      "ctl": 19.08,
+      "atl": 7.18,
+      "tsb": 11.9,
+      "ramp_rate": -1.68,
       "fitness_source": "From Intervals.icu API (reflects completed workouts)"
     },
     "thresholds": {
@@ -372,9 +372,9 @@
         },
         "anchors": {
           "5s": {
-            "current_watts": 413,
+            "current_watts": 456,
             "previous_watts": 763,
-            "pct_change": -45.9
+            "pct_change": -40.2
           },
           "60s": {
             "current_watts": 185,
@@ -397,7 +397,7 @@
             "pct_change": -45.3
           }
         },
-        "rotation_index": 1.2,
+        "rotation_index": 4.1,
         "note": "Compares MMP at 5 anchor durations (5s neuromuscular, 60s anaerobic, 300s MAP, 1200s threshold, 3600s endurance) across two 28d windows. rotation_index = mean(5s,60s pct_change) - mean(1200s,3600s pct_change). Positive = sprint-biased gains, negative = endurance-biased. 300s excluded from rotation (transitional). Null when either window has fewer than 3 valid anchor durations."
       },
       "hr_curve_delta": {
@@ -508,12 +508,12 @@
     "p_max": 1192,
     "power_model_source": "wellness.sportInfo",
     "vo2max": null,
-    "calculation_timestamp": "2026-09-24T18:31:32.787657",
+    "calculation_timestamp": "2026-09-24T21:49:02.608189",
     "data_quality": {
       "hrv_data_points": 7,
       "rhr_data_points": 7,
-      "activities_7d": 2,
-      "activities_28d": 3,
+      "activities_7d": 3,
+      "activities_28d": 4,
       "planned_workouts_7d": 1,
       "ftp_history_days": {
         "indoor": 129,
@@ -522,6 +522,56 @@
     }
   },
   "recent_activities": [
+    {
+      "id": "20316258757",
+      "date": "2026-09-24T17:31:28",
+      "type": "Unknown",
+      "name": "",
+      "duration_hours": 0.0,
+      "distance_km": 0.0,
+      "tss": null,
+      "intensity_factor": null,
+      "avg_power": null,
+      "normalized_power": null,
+      "avg_hr": null,
+      "max_hr": null,
+      "avg_cadence": null,
+      "avg_speed": null,
+      "avg_speed_unit": "KPH",
+      "max_speed": null,
+      "max_speed_unit": "KPH",
+      "avg_pace": null,
+      "avg_temp": null,
+      "avg_temp_unit": "C",
+      "weather": null,
+      "humidity": null,
+      "wind_speed": null,
+      "wind_speed_unit": "KMH",
+      "work_kj": null,
+      "calories": null,
+      "carbs_used": null,
+      "carbs_ingested": null,
+      "variability_index": null,
+      "decoupling": null,
+      "efficiency_factor": null,
+      "hrrc": null,
+      "elevation_m": null,
+      "display": {
+        "distance": {
+          "value": 0.0,
+          "unit": "km"
+        },
+        "elevation": null,
+        "avg_speed": null,
+        "max_speed": null
+      },
+      "feel": null,
+      "rpe": null,
+      "effort_response": null,
+      "zone_distribution": null,
+      "has_intervals": false,
+      "has_dfa": false
+    },
     {
       "id": "20280175380",
       "date": "2026-09-22T07:36:37",
@@ -1058,7 +1108,7 @@
     "total_training_hours": 0.0,
     "total_training_formatted": "0s",
     "total_tss": 0,
-    "activities_count": 2,
+    "activities_count": 3,
     "avg_hrv": 43.1,
     "avg_resting_hr": 55.1
   },
