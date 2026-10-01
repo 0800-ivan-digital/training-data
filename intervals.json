@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T20:18:22.686202",
+  "generated_at": "2026-10-01T00:02:28.295366",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -45,6 +45,35 @@
           "zone": 1,
           "training_load": 24.125,
           "decoupling": -1.1470715
+        }
+      ],
+      "pedaling_retry": true
+    },
+    {
+      "activity_id": "i192055776",
+      "date": "2026-09-30",
+      "type": "Ride",
+      "name": "Evening Ride",
+      "interval_summary": [
+        "1x 28m39s 99bpm",
+        "1x 21m1s 100bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "1719s@99bpm",
+          "duration_secs": 1719,
+          "avg_hr": 99,
+          "max_hr": 122,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "1261s@100bpm",
+          "duration_secs": 1261,
+          "avg_hr": 100,
+          "max_hr": 121,
+          "zone": 1
         }
       ],
       "pedaling_retry": true
