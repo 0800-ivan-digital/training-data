@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T18:33:55.104503",
+  "generated_at": "2026-10-24T21:11:52.238078",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -21,6 +21,37 @@
           "avg_hr": 121,
           "max_hr": 178,
           "avg_cadence": 68.43969,
+          "zone": 2
+        }
+      ],
+      "pedaling_retry": true
+    },
+    {
+      "activity_id": "i201221678",
+      "date": "2026-10-24",
+      "type": "GravelRide",
+      "name": "Lunch Gravel Ride",
+      "interval_summary": [
+        "1x 1h38m 127bpm",
+        "1x 3h44m 135bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "5937s@127bpm67rpm",
+          "duration_secs": 5937,
+          "avg_hr": 127,
+          "max_hr": 155,
+          "avg_cadence": 67.058784,
+          "zone": 2
+        },
+        {
+          "type": "WORK",
+          "label": "13462s@135bpm61rpm",
+          "duration_secs": 13462,
+          "avg_hr": 135,
+          "max_hr": 171,
+          "avg_cadence": 61.422108,
           "zone": 2
         }
       ],
