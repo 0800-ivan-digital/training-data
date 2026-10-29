@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T20:34:23.116512",
+  "generated_at": "2026-10-29T00:25:38.916634",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
@@ -74,6 +74,27 @@
           "max_hr": 179,
           "avg_cadence": 59.21941,
           "zone": 2
+        }
+      ],
+      "pedaling_retry": true
+    },
+    {
+      "activity_id": "i202953977",
+      "date": "2026-10-28",
+      "type": "GravelRide",
+      "name": "Morning Gravel Ride",
+      "interval_summary": [
+        "1x 9h1m 145bpm"
+      ],
+      "intervals": [
+        {
+          "type": "WORK",
+          "label": "32465s@145bpm51rpm",
+          "duration_secs": 32465,
+          "avg_hr": 145,
+          "max_hr": 179,
+          "avg_cadence": 51.322483,
+          "zone": 3
         }
       ],
       "pedaling_retry": true
