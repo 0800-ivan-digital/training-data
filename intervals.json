@@ -1,31 +1,10 @@
 {
-  "generated_at": "2026-11-08T22:01:58.497463",
+  "generated_at": "2026-11-09T01:43:09.859043",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
   "retention_days": 14,
   "activities": [
-    {
-      "activity_id": "i201635550",
-      "date": "2026-10-25",
-      "type": "GravelRide",
-      "name": "Lunch GravelRide",
-      "interval_summary": [
-        "1x 4h42m 137bpm"
-      ],
-      "intervals": [
-        {
-          "type": "WORK",
-          "label": "16959s@137bpm59rpm",
-          "duration_secs": 16959,
-          "avg_hr": 137,
-          "max_hr": 179,
-          "avg_cadence": 59.21941,
-          "zone": 2
-        }
-      ],
-      "pedaling_retry": true
-    },
     {
       "activity_id": "i202953977",
       "date": "2026-10-28",
