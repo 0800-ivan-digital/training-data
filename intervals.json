@@ -1,59 +1,10 @@
 {
-  "generated_at": "2026-11-16T21:09:21.608738",
+  "generated_at": "2026-11-17T03:51:42.873111",
   "version": "3.112",
   "script_hash": "e0696b508661",
   "scan_hours": 72,
   "retention_days": 14,
   "activities": [
-    {
-      "activity_id": "i204989372",
-      "date": "2026-11-02",
-      "type": "Ride",
-      "name": "Afternoon Ride",
-      "interval_summary": [
-        "1x 10s 533w"
-      ],
-      "intervals": [
-        {
-          "type": "RECOVERY",
-          "duration_secs": 649,
-          "avg_power": 119,
-          "max_power": 419,
-          "avg_hr": 117,
-          "max_hr": 138,
-          "avg_cadence": 66.161736,
-          "zone": 1,
-          "training_load": 4.9049654,
-          "decoupling": 12.043672
-        },
-        {
-          "type": "WORK",
-          "label": "10s@533w78rpm",
-          "duration_secs": 10,
-          "avg_power": 533,
-          "max_power": 652,
-          "avg_hr": 133,
-          "max_hr": 141,
-          "avg_cadence": 78.3,
-          "zone": 7,
-          "training_load": 0.16044444,
-          "decoupling": -3.5366318
-        },
-        {
-          "type": "RECOVERY",
-          "duration_secs": 3899,
-          "avg_power": 141,
-          "max_power": 631,
-          "avg_hr": 134,
-          "max_hr": 157,
-          "avg_cadence": 78.82261,
-          "zone": 2,
-          "training_load": 40.475307,
-          "decoupling": -3.5695531
-        }
-      ],
-      "pedaling_retry": true
-    },
     {
       "activity_id": "i205905537",
       "date": "2026-11-04",
